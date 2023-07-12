@@ -1,0 +1,621 @@
+Items: {
+	AeroScimitar: {
+		Tooltip: ""
+		DisplayName: Aero Scimitar
+	}
+
+	AnubisHammer: {
+		DisplayName: Anubis Hammer
+		Tooltip: ""
+	}
+
+	DeathstalkerShell: {
+		DisplayName: Deathstalker Shell
+		Tooltip: ""
+	}
+
+	JellyfishTentacle: {
+		DisplayName: Jellyfish Tentacle
+		Tooltip: ""
+	}
+
+	SoulCloth: {
+		DisplayName: Soul Cloth
+		Tooltip: ""
+	}
+
+	SoulPiece: {
+		DisplayName: Soul Piece
+		Tooltip: ""
+	}
+
+	ThankYou: {
+		DisplayName: Thank You
+		Tooltip: ""
+	}
+
+	ChristmasClaymore: {
+		DisplayName: Christmas Claymore
+		Tooltip: ""
+	}
+
+	CorruptedJoustingLance: {
+		DisplayName: Corrupted Jousting Lance
+		Tooltip: ""
+	}
+
+	DragonHorns: {
+		DisplayName: Dragon Horns
+		Tooltip: ""
+	}
+
+	EmperorSword: {
+		DisplayName: Emperor Sword
+		Tooltip: ""
+	}
+
+	EternalFlames: {
+		DisplayName: Eternal Flames
+		Tooltip: ""
+	}
+
+	EyeOfTheStorm: {
+		DisplayName: Eye Of The Storm
+		Tooltip: ""
+	}
+
+	GloriousSpear: {
+		DisplayName: Glorious Spear
+		Tooltip: ""
+	}
+
+	LightningBlade: {
+		DisplayName: Lightning Blade
+		Tooltip: ""
+	}
+
+	LightningSpear: {
+		DisplayName: Lightning Spear
+		Tooltip: ""
+	}
+
+	LivingWoodSword: {
+		DisplayName: Living Wood Sword
+		Tooltip: ""
+	}
+
+	MohgsTrident: {
+		DisplayName: Mohgs Trident
+		Tooltip: ""
+	}
+
+	MoonlightGreatsword: {
+		DisplayName: Moonlight Greatsword
+		Tooltip: ""
+	}
+
+	MountainBreaker: {
+		DisplayName: Mountain Breaker
+		Tooltip: ""
+	}
+
+	OldNail: {
+		DisplayName: Old Nail
+		Tooltip: ""
+	}
+
+	OreClub: {
+		DisplayName: Ore Club
+		Tooltip: ""
+	}
+
+	Pencil: {
+		DisplayName: Pencil
+		Tooltip: ""
+	}
+
+	Petal: {
+		DisplayName: Petal
+		Tooltip: ""
+	}
+
+	SoulBreaker: {
+		DisplayName: Soul Breaker
+		Tooltip: ""
+	}
+
+	TheSwarm: {
+		DisplayName: The Swarm
+		Tooltip: ""
+	}
+
+	ItemTransfer1: {
+		DisplayName: Item Transfer1
+		Tooltip: ""
+	}
+
+	AnubisStaff: {
+		DisplayName: Anubis Staff
+		Tooltip: ""
+	}
+
+	BombingStaff: {
+		DisplayName: Bombing Staff
+		Tooltip: ""
+	}
+
+	Brainstalks: {
+		DisplayName: Brainstalks
+		Tooltip: ""
+	}
+
+	Duality: {
+		DisplayName: Duality
+		Tooltip: ""
+	}
+
+	Exoplasm: {
+		DisplayName: Exoplasm
+		Tooltip: ""
+	}
+
+	GloriousScepter: {
+		DisplayName: Glorious Scepter
+		Tooltip: ""
+	}
+
+	LivingWoodStaff: {
+		DisplayName: Living Wood Staff
+		Tooltip: ""
+	}
+
+	Purgatory: {
+		DisplayName: Purgatory
+		Tooltip: ""
+	}
+
+	SoulStaff: {
+		DisplayName: Soul Staff
+		Tooltip: ""
+	}
+
+	SpaceBlaster: {
+		DisplayName: Space Blaster
+		Tooltip: ""
+	}
+
+	Wabbajack: {
+		DisplayName: Wabbajack
+		Tooltip: ""
+	}
+
+	AK47u: {
+		DisplayName: A K47u
+		Tooltip: ""
+	}
+
+	AnubisCannon: {
+		DisplayName: Anubis Cannon
+		Tooltip: ""
+	}
+
+	Armored: {
+		DisplayName: Armored
+		Tooltip: ""
+	}
+
+	Breakneck: {
+		DisplayName: Breakneck
+		Tooltip: ""
+	}
+
+	DesertDandelion: {
+		DisplayName: Desert Dandelion
+		Tooltip: ""
+	}
+
+	Dynasty: {
+		DisplayName: Dynasty
+		Tooltip: ""
+	}
+
+	GloriousLauncher: {
+		DisplayName: Glorious Launcher
+		Tooltip: ""
+	}
+
+	Infinity: {
+		DisplayName: Infinity
+		Tooltip: ""
+	}
+
+	Kohm: {
+		DisplayName: Kohm
+		Tooltip: ""
+	}
+
+	LivingWoodBow: {
+		DisplayName: Living Wood Bow
+		Tooltip: ""
+	}
+
+	MobyDick: {
+		DisplayName: Moby Dick
+		Tooltip: ""
+	}
+
+	OccularRepeater: {
+		DisplayName: Occular Repeater
+		Tooltip: ""
+	}
+
+	OperationOutbreak: {
+		DisplayName: Operation Outbreak
+		Tooltip: ""
+	}
+
+	PainTrain: {
+		DisplayName: Pain Train
+		Tooltip: ""
+	}
+
+	PortableCannon: {
+		DisplayName: Portable Cannon
+		Tooltip: ""
+	}
+
+	ShotRevolver: {
+		DisplayName: Shot Revolver
+		Tooltip: ""
+	}
+
+	SoulStrike: {
+		DisplayName: Soul Strike
+		Tooltip: ""
+	}
+
+	TommyGun: {
+		DisplayName: Tommy Gun
+		Tooltip: ""
+	}
+
+	TortoiseCannon: {
+		DisplayName: Tortoise Cannon
+		Tooltip: ""
+	}
+
+	WindSong: {
+		DisplayName: Wind Song
+		Tooltip: ""
+	}
+
+	EmeraldSlate: {
+		DisplayName: Emerald Slate
+		Tooltip: ""
+	}
+
+	JellyUmbrella: {
+		DisplayName: Jelly Umbrella
+		Tooltip: ""
+	}
+
+	RatInterphone: {
+		DisplayName: Rat Interphone
+		Tooltip: ""
+	}
+
+	SusStaff: {
+		DisplayName: Sus Staff
+		Tooltip: ""
+	}
+
+	Amalgam: {
+		DisplayName: Amalgam
+		Tooltip: ""
+	}
+
+	BrittleBones: {
+		DisplayName: Brittle Bones
+		Tooltip: ""
+	}
+
+	Bumbullets: {
+		DisplayName: Bumbullets
+		Tooltip: ""
+	}
+
+	CursedT: {
+		DisplayName: Cursed T
+		Tooltip: ""
+	}
+
+	DiplopiaItem: {
+		DisplayName: Diplopia Item
+		Tooltip: ""
+	}
+
+	ElectricCrystal: {
+		DisplayName: Electric Crystal
+		Tooltip: ""
+	}
+
+	FriendshipBracelet: {
+		DisplayName: Friendship Bracelet
+		Tooltip: ""
+	}
+
+	GoldenRabbitsFoot: {
+		DisplayName: Golden Rabbits Foot
+		Tooltip: ""
+	}
+
+	HeartSynthesizer: {
+		DisplayName: Heart Synthesizer
+		Tooltip: ""
+	}
+
+	Polyute: {
+		DisplayName: Polyute
+		Tooltip: ""
+	}
+
+	RabbitsFoot: {
+		DisplayName: Rabbits Foot
+		Tooltip: ""
+	}
+
+	SilverBullets: {
+		DisplayName: Silver Bullets
+		Tooltip: ""
+	}
+
+	SnailShell: {
+		DisplayName: Snail Shell
+		Tooltip: ""
+	}
+
+	Steroids: {
+		DisplayName: Steroids
+		Tooltip: ""
+	}
+
+	StrawberryHeart: {
+		DisplayName: Strawberry Heart
+		Tooltip: ""
+	}
+
+	Synthol: {
+		DisplayName: Synthol
+		Tooltip: ""
+	}
+
+	WindGrass: {
+		DisplayName: Wind Grass
+		Tooltip: ""
+	}
+
+	CloseCall: {
+		DisplayName: Close Call
+		Tooltip: ""
+	}
+
+	Glass: {
+		DisplayName: Glass
+		Tooltip: ""
+	}
+
+	HunnyPot: {
+		DisplayName: Hunny Pot
+		Tooltip: ""
+	}
+
+	Justice: {
+		DisplayName: Justice
+		Tooltip: ""
+	}
+
+	War: {
+		DisplayName: War
+		Tooltip: ""
+	}
+
+	Wealth: {
+		DisplayName: Wealth
+		Tooltip: ""
+	}
+
+	ArmorOfTheSun: {
+		DisplayName: Armor Of The Sun
+		Tooltip: ""
+	}
+
+	BootsOfTheSun: {
+		DisplayName: Boots Of The Sun
+		Tooltip: ""
+	}
+
+	HelmetOfTheSun: {
+		DisplayName: Helmet Of The Sun
+		Tooltip: ""
+	}
+
+	OnionKnightArmor: {
+		DisplayName: Onion Knight Armor
+		Tooltip: ""
+	}
+
+	OnionKnightHelm: {
+		DisplayName: Onion Knight Helm
+		Tooltip: ""
+	}
+
+	OnionKnightLeggings: {
+		DisplayName: Onion Knight Leggings
+		Tooltip: ""
+	}
+
+	DandukeMask: {
+		DisplayName: Danduke Mask
+		Tooltip: ""
+	}
+
+	AnubisBossBag: {
+		DisplayName: Anubis Boss Bag
+		Tooltip: ""
+	}
+
+	DandukeBossBag: {
+		DisplayName: Danduke Boss Bag
+		Tooltip: ""
+	}
+
+	QueenBag: {
+		DisplayName: Queen Bag
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	AnubisHammerProj.DisplayName: Anubis Hammer Proj
+	GiantTornado.DisplayName: Giant Tornado
+	Tornado.DisplayName: Tornado
+	Boom.DisplayName: Boom
+	Boom_.DisplayName: Boom_
+	BloodSplash.DisplayName: Blood Splash
+	CC.DisplayName: C C
+	Coal.DisplayName: Coal
+	CorruptedJoustingLanceProjectile.DisplayName: Corrupted Jousting Lance Projectile
+	DragonHornsProj.DisplayName: Dragon Horns Proj
+	EmperorProj.DisplayName: Emperor Proj
+	EmperorProj2.DisplayName: Emperor Proj2
+	EternalFlamesProj.DisplayName: Eternal Flames Proj
+	GloriousSpearProj.DisplayName: Glorious Spear Proj
+	MB.DisplayName: M B
+	ML.DisplayName: M L
+	MohgsTridentProjectile.DisplayName: Mohgs Trident Projectile
+	MoonlightSlash.DisplayName: Moonlight Slash
+	MountainBreakerProj.DisplayName: Mountain Breaker Proj
+	NailProj.DisplayName: Nail Proj
+	NailProj2.DisplayName: Nail Proj2
+	OC.DisplayName: O C
+	PetalBoomerang.DisplayName: Petal Boomerang
+	PetalBoomerang2.DisplayName: Petal Boomerang2
+	PetalBoomerang3.DisplayName: Petal Boomerang3
+	PetalBoomerang4.DisplayName: Petal Boomerang4
+	PetalBoomerang5.DisplayName: Petal Boomerang5
+	PetalBoomerang6.DisplayName: Petal Boomerang6
+	Present.DisplayName: Present
+	Present2.DisplayName: Present2
+	Present3.DisplayName: Present3
+	StormYoyo.DisplayName: Storm Yoyo
+	SwarmYoyo.DisplayName: Swarm Yoyo
+	TestLightning.DisplayName: Test Lightning
+	ThunderSpear.DisplayName: Thunder Spear
+	TortoiseCannonHold.DisplayName: Tortoise Cannon Hold
+	TortoiseCannonProj.DisplayName: Tortoise Cannon Proj
+	SeedBomb.DisplayName: Seed Bomb
+	AnubisStaffProj1.DisplayName: Anubis Staff Proj1
+	BombStaffProj.DisplayName: Bomb Staff Proj
+	BoomX.DisplayName: Boom X
+	BoomY.DisplayName: Boom Y
+	Brain.DisplayName: Brain
+	Donut.DisplayName: Donut
+	GhostBoom.DisplayName: Ghost Boom
+	Ghosty.DisplayName: Ghosty
+	Ghosty2.DisplayName: Ghosty2
+	Rune1.DisplayName: Rune1
+	Rune2.DisplayName: Rune2
+	Rune3.DisplayName: Rune3
+	ScepterProjectile.DisplayName: Scepter Projectile
+	SineWave.DisplayName: Sine Wave
+	SoulTear.DisplayName: Soul Tear
+	Staff1.DisplayName: Staff1
+	Staff2.DisplayName: Staff2
+	WabbajackProj.DisplayName: Wabbajack Proj
+	WabbajackStaff.DisplayName: Wabbajack Staff
+	AntlionRocket.DisplayName: Antlion Rocket
+	AnubisCannonProj.DisplayName: Anubis Cannon Proj
+	BoomDandelion.DisplayName: Boom Dandelion
+	Cannonball.DisplayName: Cannonball
+	CowboyGun.DisplayName: Cowboy Gun
+	CowboyGun2.DisplayName: Cowboy Gun2
+	DandelionBullet.DisplayName: Dandelion Bullet
+	DynastyProj.DisplayName: Dynasty Proj
+	EyeProj.DisplayName: Eye Proj
+	SeedCannonball.DisplayName: Seed Cannonball
+	WindArrow.DisplayName: Wind Arrow
+	EmeraldWall.DisplayName: Emerald Wall
+	EmeraldWallSharp.DisplayName: Emerald Wall Sharp
+	Jellyfish.DisplayName: Jellyfish
+	Shook.DisplayName: Shook
+	Sus.DisplayName: Sus
+	CursedTrident.DisplayName: Cursed Trident
+}
+
+Buffs: {
+	ArmamentCooldown: {
+		DisplayName: Armament Cooldown
+		Description: Mods.Conquest.Buffs.ArmamentCooldown.Description
+	}
+
+	BrokenBones: {
+		DisplayName: Broken Bones
+		Description: Mods.Conquest.Buffs.BrokenBones.Description
+	}
+
+	BrokenBones2: {
+		DisplayName: Broken Bones2
+		Description: Mods.Conquest.Buffs.BrokenBones2.Description
+	}
+
+	Cursed: {
+		DisplayName: Cursed
+		Description: Mods.Conquest.Buffs.Cursed.Description
+	}
+
+	Electrified2: {
+		DisplayName: Electrified2
+		Description: Mods.Conquest.Buffs.Electrified2.Description
+	}
+
+	HunnySickness: {
+		DisplayName: Hunny Sickness
+		Description: Mods.Conquest.Buffs.HunnySickness.Description
+	}
+
+	Immune: {
+		DisplayName: Immune
+		Description: Mods.Conquest.Buffs.Immune.Description
+	}
+
+	MoonlightBlessing: {
+		DisplayName: Moonlight Blessing
+		Description: Mods.Conquest.Buffs.MoonlightBlessing.Description
+	}
+
+	Steamy: {
+		DisplayName: Steamy
+		Description: Mods.Conquest.Buffs.Steamy.Description
+	}
+
+	JellyfishBuff: {
+		DisplayName: Jellyfish Buff
+		Description: Mods.Conquest.Buffs.JellyfishBuff.Description
+	}
+
+	ShookBuff: {
+		DisplayName: Shook Buff
+		Description: Mods.Conquest.Buffs.ShookBuff.Description
+	}
+
+	SusBuff: {
+		DisplayName: Sus Buff
+		Description: Mods.Conquest.Buffs.SusBuff.Description
+	}
+}
+
+Keybinds: {
+	"Legendary Armament Activation.DisplayName": Legendary  Armament  Activation
+	"Hunny Pot Activation.DisplayName": Hunny  Pot  Activation
+	"Cursed Trident Activation.DisplayName": Cursed  Trident  Activation
+}

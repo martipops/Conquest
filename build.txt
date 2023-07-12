@@ -1,0 +1,3 @@
+displayName = Conquest
+author = Bandito
+version = 1.0
