@@ -11,9 +11,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
-
-
-using Terraria.UI;
 using Conquest.Items.Accessory;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.Items.Weapons.Magic;

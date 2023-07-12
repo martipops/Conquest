@@ -473,6 +473,200 @@ Items: {
 		DisplayName: Queen Bag
 		Tooltip: ""
 	}
+
+	PermanentSpelunkerPotion: {
+		DisplayName: Permanent Spelunker Potion
+		Tooltip:
+			'''
+			Drink to permanently gain the Spelunker Buff.
+			Can be toggled.
+			'''
+	}
+
+	PermanentInvisPotion: {
+		DisplayName: Permanent Invis Potion
+		Tooltip: ""
+	}
+
+	PermanentShinePotion: {
+		DisplayName: Permanent Shine Potion
+		Tooltip: ""
+	}
+
+	PermanentAle: {
+		DisplayName: Permanent Ale
+		Tooltip: ""
+	}
+
+	PermanentAmmoReservationPotion: {
+		DisplayName: Permanent Ammo Reservation Potion
+		Tooltip: ""
+	}
+
+	PermanentArcheryPotion: {
+		DisplayName: Permanent Archery Potion
+		Tooltip: ""
+	}
+
+	PermanentBattlePotion: {
+		DisplayName: Permanent Battle Potion
+		Tooltip: ""
+	}
+
+	PermanentBuilderPotion: {
+		DisplayName: Permanent Builder Potion
+		Tooltip: ""
+	}
+
+	PermanentCalmingPotion: {
+		DisplayName: Permanent Calming Potion
+		Tooltip: ""
+	}
+
+	PermanentCratePotion: {
+		DisplayName: Permanent Crate Potion
+		Tooltip: ""
+	}
+
+	PermanentDangersensePotion: {
+		DisplayName: Permanent Dangersense Potion
+		Tooltip: ""
+	}
+
+	PermanentEndurancePotion: {
+		DisplayName: Permanent Endurance Potion
+		Tooltip: ""
+	}
+
+	PermanentFeatherfallPotion: {
+		DisplayName: Permanent Featherfall Potion
+		Tooltip: ""
+	}
+
+	PermanentFishingPotion: {
+		DisplayName: Permanent Fishing Potion
+		Tooltip: ""
+	}
+
+	PermanentFlipperPotion: {
+		DisplayName: Permanent Flipper Potion
+		Tooltip: ""
+	}
+
+	PermanentGillsPotion: {
+		DisplayName: Permanent Gills Potion
+		Tooltip: ""
+	}
+
+	PermanentGravitationPotion: {
+		DisplayName: Permanent Gravitation Potion
+		Tooltip: ""
+	}
+
+	PermanentHeartreachPotion: {
+		DisplayName: Permanent Heartreach Potion
+		Tooltip: ""
+	}
+
+	PermanentHunterPotion: {
+		DisplayName: Permanent Hunter Potion
+		Tooltip: ""
+	}
+
+	PermanentInfernoPotion: {
+		DisplayName: Permanent Inferno Potion
+		Tooltip: ""
+	}
+
+	PermanentInvisibilityPotion: {
+		DisplayName: Permanent Invisibility Potion
+		Tooltip: ""
+	}
+
+	PermanentIronskinPotion: {
+		DisplayName: Permanent Ironskin Potion
+		Tooltip: ""
+	}
+
+	PermanentLifeforcePotion: {
+		DisplayName: Permanent Lifeforce Potion
+		Tooltip: ""
+	}
+
+	PermanentMagicPowerPotion: {
+		DisplayName: Permanent Magic Power Potion
+		Tooltip: ""
+	}
+
+	PermanentManaRegenerationPotion: {
+		DisplayName: Permanent Mana Regeneration Potion
+		Tooltip: ""
+	}
+
+	PermanentMiningPotion: {
+		DisplayName: Permanent Mining Potion
+		Tooltip: ""
+	}
+
+	PermanentNightOwlPotion: {
+		DisplayName: Permanent Night Owl Potion
+		Tooltip: ""
+	}
+
+	PermanentObsidianSkinPotion: {
+		DisplayName: Permanent Obsidian Skin Potion
+		Tooltip: ""
+	}
+
+	PermanentRagePotion: {
+		DisplayName: Permanent Rage Potion
+		Tooltip: ""
+	}
+
+	PermanentRegenerationPotion: {
+		DisplayName: Permanent Regeneration Potion
+		Tooltip: ""
+	}
+
+	PermanentSonarPotion: {
+		DisplayName: Permanent Sonar Potion
+		Tooltip: ""
+	}
+
+	PermanentSummoningPotion: {
+		DisplayName: Permanent Summoning Potion
+		Tooltip: ""
+	}
+
+	PermanentSwiftnessPotion: {
+		DisplayName: Permanent Swiftness Potion
+		Tooltip: ""
+	}
+
+	PermanentThornsPotion: {
+		DisplayName: Permanent Thorns Potion
+		Tooltip: ""
+	}
+
+	PermanentTitanPotion: {
+		DisplayName: Permanent Titan Potion
+		Tooltip: ""
+	}
+
+	PermanentWarmthPotion: {
+		DisplayName: Permanent Warmth Potion
+		Tooltip: ""
+	}
+
+	PermanentWaterWalkingPotion: {
+		DisplayName: Permanent Water Walking Potion
+		Tooltip: ""
+	}
+
+	PermanentWrathPotion: {
+		DisplayName: Permanent Wrath Potion
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

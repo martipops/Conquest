@@ -1,1 +1,11 @@
-Conquest is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+The mod currently adds;
+- 110+ Items
+- 1 Town Npc
+- 3 Bosses
+- 8 Enemies
+- 1 Armor Set
+- 2 Dungeons
+- Permanent Potion System
+- New special type of accessories, Artiacts
+- Dungeons that acts as lairs for bosses
+- Custom World Gen (Underground Desert)
