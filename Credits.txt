@@ -1,0 +1,32 @@
+﻿Code
+Hayden (Me) - Mostly Everything
+VictorTekelili - (Weapons,Projectiles,Bosses,UI,Items)
+Supychan (Weapons,Projectiles,NPC'S)
+Sprites
+Logar (Items)
+The Possum (UI)
+VictorTekelili#7697 (Bosses, Items, Enemies, Tiles)
+Raddize (Tiles, Projectiles)
+IamPolaaris (Items)
+ThirtsyBoi (Projectiles, Items)
+NITO (Enemies, Projectiles, Items)
+GOLD (Enemies)
+IZ (Items)
+Dyl (Items, Projectiles)
+Composers
+Spadey (Boss Themes)
+Ideas
+Ezra (Weapons)
+Other (MIT Licensed Mods, or GPL 3.0 Licensed mods or permission)
+VolcanicMG - All of the Diplopia Code
+PaperLuigi - Trail Code
+PaperLuigi - Projectiles Coming From the side, see Anubis.cs
+Consolaria (Wyvern Code)
+Gabehaswon (Spirit Mod) - Boss spawning from tile, see Queenlarva.cs
+Scalar (Starlight River) - Base Spear Projectile
+Gabehaswon (Spirit Mod) - Projectiles raining from the sky, see Anubis.cs
+Stormytuna - Boomerang Related Code
+Stormytuna (Canisters Mod) - Explosive related code
+Stormytuna (Canisters Mod) - Lightning Code
+Storymtuna - Making Minions Crit
+Photonic0 - Applying shaders to display names
