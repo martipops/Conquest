@@ -16,6 +16,7 @@ namespace Conquest
         public static Mod SubworldLibrary;
         public override void Load()
         {
+            Instance = this;
             oreTileToItem = new Dictionary<int, int>();
             oreItemToTile = new Dictionary<int, int>();
         }

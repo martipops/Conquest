@@ -484,188 +484,336 @@ Items: {
 	}
 
 	PermanentInvisPotion: {
-		DisplayName: Permanent Invis Potion
-		Tooltip: ""
+		DisplayName: Permanent Invisibility Potion
+		Tooltip:
+			'''
+			Drink to permanently gain the Invisibility Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentShinePotion: {
 		DisplayName: Permanent Shine Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Shine Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentAle: {
 		DisplayName: Permanent Ale
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Tipsy Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentAmmoReservationPotion: {
 		DisplayName: Permanent Ammo Reservation Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Ammo Reservation Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentArcheryPotion: {
 		DisplayName: Permanent Archery Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Archery Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentBattlePotion: {
 		DisplayName: Permanent Battle Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Battle Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentBuilderPotion: {
 		DisplayName: Permanent Builder Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Builder Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentCalmingPotion: {
 		DisplayName: Permanent Calming Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Calming Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentCratePotion: {
 		DisplayName: Permanent Crate Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Crate Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentDangersensePotion: {
 		DisplayName: Permanent Dangersense Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Dangersense Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentEndurancePotion: {
 		DisplayName: Permanent Endurance Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Endurance Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentFeatherfallPotion: {
 		DisplayName: Permanent Featherfall Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Featherfall Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentFishingPotion: {
 		DisplayName: Permanent Fishing Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Fishing Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentFlipperPotion: {
 		DisplayName: Permanent Flipper Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Flipper Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentGillsPotion: {
 		DisplayName: Permanent Gills Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Gills Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentGravitationPotion: {
 		DisplayName: Permanent Gravitation Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Gravitation Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentHeartreachPotion: {
 		DisplayName: Permanent Heartreach Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Heartreach Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentHunterPotion: {
 		DisplayName: Permanent Hunter Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Hunter Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentInfernoPotion: {
 		DisplayName: Permanent Inferno Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Inferno Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentInvisibilityPotion: {
 		DisplayName: Permanent Invisibility Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Invisibility Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentIronskinPotion: {
 		DisplayName: Permanent Ironskin Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Ironskin Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentLifeforcePotion: {
 		DisplayName: Permanent Lifeforce Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Lifeforce Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentMagicPowerPotion: {
 		DisplayName: Permanent Magic Power Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Magic Power Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentManaRegenerationPotion: {
 		DisplayName: Permanent Mana Regeneration Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Mana Regeneration Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentMiningPotion: {
 		DisplayName: Permanent Mining Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Mining Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentNightOwlPotion: {
 		DisplayName: Permanent Night Owl Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Night Owl Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentObsidianSkinPotion: {
 		DisplayName: Permanent Obsidian Skin Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Obsidian Skin Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentRagePotion: {
 		DisplayName: Permanent Rage Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Rage Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentRegenerationPotion: {
 		DisplayName: Permanent Regeneration Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Regeneration Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentSonarPotion: {
 		DisplayName: Permanent Sonar Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Sonar Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentSummoningPotion: {
 		DisplayName: Permanent Summoning Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Summoning Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentSwiftnessPotion: {
 		DisplayName: Permanent Swiftness Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Swiftness Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentThornsPotion: {
 		DisplayName: Permanent Thorns Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Thorns Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentTitanPotion: {
 		DisplayName: Permanent Titan Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Titan Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentWarmthPotion: {
 		DisplayName: Permanent Warmth Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Warmth Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentWaterWalkingPotion: {
 		DisplayName: Permanent Water Walking Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Water Walking Buff.
+			Can be toggled.
+			'''
 	}
 
 	PermanentWrathPotion: {
 		DisplayName: Permanent Wrath Potion
-		Tooltip: ""
+		Tooltip:
+			'''
+			Drink to permanently gain the Wrath Buff.
+			Can be toggled.
+			'''
 	}
 }
 

@@ -1,4 +1,5 @@
-﻿using Conquest.Buffs;
+﻿using Conquest.Assets.GUI;
+using Conquest.Buffs;
 using Conquest.Items.Weapons.Melee;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.Projectiles;
@@ -46,7 +47,11 @@ namespace Conquest.Assets.Common
         public bool canDoubleJump;
         public bool DoubleJump;
         public bool Polyute;
-
+        public int lostLife = 0;
+        public int lostLifeCounter = 0;
+        public int exLifeRegen = 0;
+        public int exLifeRegenCounter = 0;
+        public int lostLifeRegen = 0;
         public bool waitDoubleJump;
 
         public override void ResetEffects()
@@ -88,11 +93,39 @@ namespace Conquest.Assets.Common
         }
         public override void OnHurt(Player.HurtInfo info)
         {
-            if(Justice)
+            if (T8.p15On == true && info.Damage < Player.statLife)
+            {
+                {
+                    Player.GetModPlayer<MyPlayer>().lostLife += (int)info.Damage;
+                }
+            }
+            if (Justice)
             {
                 JusticeDamage += info.Damage;
             }
         }
+        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
+            {
+                Player.GetModPlayer<MyPlayer>().lostLifeRegen = hit.Damage / 50;
+                if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
+                {
+                    Player.GetModPlayer<MyPlayer>().lostLifeRegen = 10;
+                }
+                Player.GetModPlayer<MyPlayer>().lostLife -= Player.GetModPlayer<MyPlayer>().lostLifeRegen;
+                if (Player.GetModPlayer<MyPlayer>().lostLife < 0)
+                {
+                    Player.GetModPlayer<MyPlayer>().lostLife = 0;
+                }
+                Player.statLife += Player.GetModPlayer<MyPlayer>().lostLifeRegen;
+                if (Player.statLife > Player.statLifeMax2)
+                {
+                    Player.statLife = Player.statLifeMax2;
+                }
+            }
+        }
+       
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
         {
             if (Bones)
@@ -152,6 +185,25 @@ namespace Conquest.Assets.Common
             {
                 target.AddBuff(BuffID.Midas, 60 * 5);
             }
+            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
+            {
+                Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 50;
+                if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
+                {
+                    Player.GetModPlayer<MyPlayer>().lostLifeRegen = 10;
+                }
+                Player.GetModPlayer<MyPlayer>().lostLife -= Player.GetModPlayer<MyPlayer>().lostLifeRegen;
+                if (Player.GetModPlayer<MyPlayer>().lostLife < 0)
+                {
+                    Player.GetModPlayer<MyPlayer>().lostLife = 0;
+                }
+                Player.statLife += Player.GetModPlayer<MyPlayer>().lostLifeRegen;
+                if (Player.statLife > Player.statLifeMax2)
+                {
+                    Player.statLife = Player.statLifeMax2;
+                }
+            }
+
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
@@ -249,7 +301,14 @@ namespace Conquest.Assets.Common
                     }
                 }
             }
+            if (T8.p15On == true && info.Damage >= Player.statLife && info.Damage < Player.statLife + Player.GetModPlayer<MyPlayer>().lostLife)
+            {
+                Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
 
+                Player.statLife = 1;
+
+                return true;
+            }
             return false;
         }
         int timer;
@@ -266,6 +325,7 @@ namespace Conquest.Assets.Common
                 stop = false;
             }
         }
+        
         public override void PostUpdate()
         {
             if (Player.HasBuff(ModContent.BuffType<Steamy>()))
