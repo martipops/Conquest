@@ -16,7 +16,7 @@ namespace Conquest.Assets.Common
 
         public override void EditSpawnPool(IDictionary<int, float> pool, NPCSpawnInfo spawnInfo)
         {
-            if (SubworldSystem.IsActive<AntlionNest>())
+            if (SubworldSystem.IsActive<DesertTemple>())
             {
                 pool.Clear();
                 pool.Add(NPCID.FlyingAntlion, 0.10f);

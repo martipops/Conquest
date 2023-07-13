@@ -1,5 +1,8 @@
-﻿using Conquest.Assets.GUI;
+﻿using Assortedarmaments.Projectiles;
+using Conquest.Assets.GUI;
 using Conquest.Buffs;
+using Conquest.Buffs.Minion;
+using Conquest.Items.Consumable;
 using Conquest.Items.Weapons.Melee;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.Projectiles;
@@ -22,58 +25,88 @@ namespace Conquest.Assets.Common
 {
     public class MyPlayer : ModPlayer
     {
-        public float ScreenShake;
-        public int emeraldCD = 0;
-        public bool emerald = false;
-        public bool CloseCall;
-        public bool emeraldBoom = false;
+        public int summonCD = 0;
         public bool immune = false;
         public int immuneTime = 0;
-        public bool HunnyPot;
-        public bool CursedTrident;
-        public bool resetspeed;
-        public bool Bones;
-        public bool Bees;
-        public bool Diplopia;
-        public bool windGrass;
-        public bool SilverBullets;
-        public bool Glass;
-        public int Glasstime;
-         public bool Justice;
-        public int JusticeDamage;
-        public bool war;
-        public bool Glory;
-        public bool ElectroCrystal;
-        public bool HeartSynthesizer;
-        public bool canDoubleJump;
-        public bool DoubleJump;
-        public bool Polyute;
+        public int unshootingTime = 0;
+        public static int exMeleeSpeed = 0;
+        public int unshootingCounter = 0;
+        public bool blocking = false;
+        public int blockCounter = 0;
         public int lostLife = 0;
         public int lostLifeCounter = 0;
         public int exLifeRegen = 0;
         public int exLifeRegenCounter = 0;
         public int lostLifeRegen = 0;
+        public bool war;
+        public bool Glass;
+        public bool test;
+        public bool Pickaxe = false;
+        public bool Diplopia;
+        public bool CursedTrident;
+        public float ScreenShake;
+        public bool Bones;
+        public bool Bees;
+        public bool SilverBullets;
+        public bool HeavyBullets;
+        public int Glasstime;
+        public bool HunnyPot;
+        public bool Loaded;
+        public bool HeartSynthesizer;
+        public bool canDoubleJump;
+        public bool DoubleJump;
         public bool waitDoubleJump;
+        public bool Polyute;
+        public bool Upgrade1;
+        public bool Upgrade2;
+        public float testspeedmulti;
+        public bool resetspeed;
+        public bool ElectroCrystal;
+        public bool windGrass;
+        public static int damageGivenForWeakPoints;
+        public int emeraldCD = 0;
+        public bool emerald = false;
+        public bool CloseCall;
+        public bool emeraldBoom = false;
+        public static float warpSelfAimDespawn = 60; // don't touch
+        public int TimeWarpSwitch = 0;
+        public static bool TimeWarpIsPossible;
+        public static int WarpEnergy = 300;
+        public bool Glory;
+        public bool Justice;
+        public int JusticeDamage;
+        public int TimesHit;
 
         public override void ResetEffects()
         {
-            HunnyPot = false;
-            CursedTrident = false;
+            Diplopia = false;
             Bones = false;
+            CursedTrident = false;
             Bees = false;
             SilverBullets = false;
-            Polyute = false;
-            windGrass = false;
-            Glory =  false;
-            war = false;
-            Justice = false;
-            ElectroCrystal = false;
+            HeavyBullets = false;
+            HunnyPot = false;
             HeartSynthesizer = false;
             canDoubleJump = false;
-            Diplopia = false;
-            CloseCall = false;
+            Polyute = false;
+            Upgrade1 = false;
+            Upgrade2 = false;
+            ElectroCrystal = false;
+            Glory = false;
+            windGrass = false;
+            war = false;
             Glass = false;
             Glasstime = 0;
+            CloseCall = false;
+            Justice = false;
+            if (Player.GetModPlayer<MyPlayer>().blocking == true)
+            {
+                if (++Player.GetModPlayer<MyPlayer>().blockCounter >= 30)
+                {
+                    Player.GetModPlayer<MyPlayer>().blockCounter = 0;
+                    Player.GetModPlayer<MyPlayer>().blocking = false;
+                }
+            }
             if (Player.GetModPlayer<MyPlayer>().emeraldCD > 0)
             {
                 emeraldCD--;
@@ -123,6 +156,29 @@ namespace Conquest.Assets.Common
         }
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
+            if (T8.p12On == true)
+            {
+                if (item.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee <= 5)
+                {
+                    if (target.GetGlobalNPC<MyNpc>().speedMelee < 5)
+                    {
+                        target.GetGlobalNPC<MyNpc>().speedMelee += 1;
+
+                    }
+
+                    target.GetGlobalNPC<MyNpc>().speedMeleeClear = 0;
+                }
+
+                if (item.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee > 0)
+                {
+                    exMeleeSpeed = target.GetGlobalNPC<MyNpc>().speedMelee * target.GetGlobalNPC<MyNpc>().speedMelee / 100;
+                }
+            }
+            if (T8.p13On == true)
+            {
+                Player.GetModPlayer<MyPlayer>().blocking = true;
+            }
+
             if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
             {
                 Player.GetModPlayer<MyPlayer>().lostLifeRegen = hit.Damage / 50;
@@ -185,9 +241,150 @@ namespace Conquest.Assets.Common
 
                 }
             }
+            if (Player.HeldItem.type != ModContent.ItemType<PainTrain>() && Player.HasBuff(ModContent.BuffType<Steamy>()))
+            {
+                Player.ClearBuff(ModContent.BuffType<Steamy>());
 
-        }
+            }
+            if (Player.HeldItem.type != ModContent.ItemType<MoonlightGreatsword>() && Player.HasBuff(ModContent.BuffType<MoonlightBlessing>()))
+            {
+                Player.ClearBuff(ModContent.BuffType<MoonlightBlessing>());
+            }
+            if (T1.p1On == true)
+            {
+                Player.GetDamage(DamageClass.Magic) += 0.02f;
+                //Player.statManaMax2 += 20;
+            }
+            if (T1.p4On == true)
+            {
+                Player.GetDamage(DamageClass.Magic) += (float)Player.statMana / 1000;
+            }
+            if (T3.p21On == true)
+            {
+                Player.GetDamage(DamageClass.Ranged) += 0.02f;
+                Player.GetCritChance(DamageClass.Generic) += 0.02f;
+            }
+            if (T3.p25On == true)
+            {
+                Player.GetCritChance(DamageClass.Ranged) += 10f;
+            }
+            if (T3.p22On == true)
+            {
+                if (Player.HeldItem.DamageType == DamageClass.Ranged)
+                {
+                    if (Player.GetModPlayer<MyPlayer>().unshootingTime <= 10 && ++Player.GetModPlayer<MyPlayer>().unshootingCounter >= 15)
+                    {
+                        Player.GetModPlayer<MyPlayer>().unshootingCounter = 0;
+                        Player.GetModPlayer<MyPlayer>().unshootingTime++;
+                    }
 
+                    if (Player.GetModPlayer<MyPlayer>().unshootingTime > 0)
+                    {
+                        Player.GetDamage(DamageClass.Ranged) += 0.01f * Player.GetModPlayer<MyPlayer>().unshootingTime;
+                        if (Player.controlUseItem)
+                        {
+                            Player.GetModPlayer<MyPlayer>().unshootingTime = 0;
+                        }
+                    }
+                }
+                if (Player.HeldItem.DamageType != DamageClass.Ranged)
+                {
+                    Player.GetModPlayer<MyPlayer>().unshootingTime = 0;
+                }
+            }
+            if (T3.p23On == true && Player.HeldItem.DamageType == DamageClass.Ranged)
+            {
+                if (Player.controlUseItem)
+                {
+                    Player.HeldItem.GetGlobalItem<MyItem>();
+                }
+            }
+            if (item.useTime >= 35 && item.DamageType.CountsAsClass(DamageClass.Ranged) && T3.p26On)
+            {
+                Player.GetDamage(DamageClass.Ranged) += 0.25f;
+            }
+
+            if (T6.p32On)
+            {
+                Player.GetDamage(DamageClass.Summon).Flat += 2;
+            }
+            if (T8.p16On == true)
+            {
+                if (Player.statLife >= Player.statLifeMax2 / 4)
+                {
+                    Player.GetAttackSpeed<MeleeDamageClass>() += 1 - (Player.statLife / Player.statLifeMax2);
+
+                }
+                else if (Player.statLife < Player.statLifeMax2 / 4)
+                {
+                    Player.GetAttackSpeed<MeleeDamageClass>() += 0.75f;
+                }
+            }
+
+            if (T8.p17On == true)
+            {
+                Player.GetModPlayer<MyPlayer>().exLifeRegen = (int)(Player.statLifeMax2 / 25f);
+
+                if (++Player.GetModPlayer<MyPlayer>().exLifeRegenCounter >= 60 - Player.GetModPlayer<MyPlayer>().exLifeRegen)
+                {
+                    Player.GetModPlayer<MyPlayer>().exLifeRegenCounter = 0;
+                    Player.statLife += 1;
+                    if (Player.velocity.X == 0 && Player.velocity.Y == 0)
+                    {
+                        Player.statLife += 1;
+                    }
+                    if (Player.statLife > Player.statLifeMax2)
+                    {
+                        Player.statLife = Player.statLifeMax2;
+                    }
+                }
+            }
+            if (T8.p12On == true)
+            {
+                Player.GetAttackSpeed(DamageClass.Melee) += exMeleeSpeed;
+            }
+            if (T8.p14On == true)
+            {
+                if (Player.velocity.Y > 0)
+                {
+                    Player.GetDamage<MeleeDamageClass>() *= Player.velocity.X * Player.velocity.X / 400 + Player.velocity.Y / 20 + Player.GetAttackSpeed(DamageClass.Melee);
+                }
+                else if (Player.velocity.Y <= 0)
+                {
+                    Player.GetDamage<MeleeDamageClass>() *= Player.velocity.X * Player.velocity.X / 400 + Player.GetAttackSpeed(DamageClass.Melee);
+                }
+            }
+
+            if (T8.p11On == true)
+            {
+                Player.GetDamage(DamageClass.Melee) += 0.02f;
+                Player.statLifeMax2 += 20;
+            }
+            if (T6.p34On == true && Player.HeldItem.DamageType == DamageClass.Summon && Player.GetModPlayer<MyPlayer>().summonCD <= 0)
+            {
+                if (Player.controlUseItem)
+                {
+                    Player.GetModPlayer<MyPlayer>().immune = true;
+                }
+            }
+            if (Player.GetModPlayer<MyPlayer>().immuneTime > 0)
+            {
+                Player.GetModPlayer<MyPlayer>().immuneTime--;
+            }
+
+
+            if (Player.GetModPlayer<MyPlayer>().summonCD > 0)
+            {
+                Player.GetModPlayer<MyPlayer>().summonCD--;
+                Terraria.Dust.NewDust(Player.position, 30, 30, DustID.GiantCursedSkullBolt, 0, 0, 0, default, 1);
+                if (Player.HeldItem.DamageType == DamageClass.Summon)
+                {
+                    Player.controlUseItem = false;
+                }
+            }
+
+            }
+        int fired;
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (HeartSynthesizer)
@@ -201,6 +398,24 @@ namespace Conquest.Assets.Common
             if (Glory)
             {
                 target.AddBuff(BuffID.Midas, 60 * 5);
+            }
+            if (T8.p12On == true)
+            {
+                if (proj.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee <= 5)
+                {
+                    if (target.GetGlobalNPC<MyNpc>().speedMelee < 5)
+                    {
+                        target.GetGlobalNPC<MyNpc>().speedMelee += 1;
+
+                    }
+
+                    target.GetGlobalNPC<MyNpc>().speedMeleeClear = 0;
+                }
+
+                if (proj.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee > 0)
+                {
+                    exMeleeSpeed = target.GetGlobalNPC<MyNpc>().speedMelee * target.GetGlobalNPC<MyNpc>().speedMelee / 200;
+                }
             }
             if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
             {
@@ -220,7 +435,21 @@ namespace Conquest.Assets.Common
                     Player.statLife = Player.statLifeMax2;
                 }
             }
+            Vector2 perturbedSpeed = new Vector2(0, -6).RotatedByRandom(MathHelper.ToRadians(360));
+            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && target.life <= 0 && proj.type != ModContent.ProjectileType<LightningGunProj3>())
+            {
+                Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
+            }
+            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && proj.type != ModContent.ProjectileType<LightningGunProj3>())
+            {
+                fired++;
+                if (fired == 3)
+                {
+                    Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
+                    fired = 0;
 
+                }
+            }
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
@@ -231,6 +460,22 @@ namespace Conquest.Assets.Common
             if (Glory)
             {
                 target.AddBuff(BuffID.Midas, 60 * 5);
+            }
+            if (target.HasBuff<WeakPointDeBuff>())
+            {
+                damageGivenForWeakPoints = damageDone;
+                WeakPointDeBuff.letsExplode = true;
+                WeakPoint.pointTimeLeft = 0;
+                double n = 1000;
+                for (int k = 0; k < 50; k++)
+                {
+                    Vector2 gigaVelocity = new Vector2(
+                        3f * (float)Math.Pow(Math.Abs(Math.Cos(k)), 2 / n) * Math.Sign(Math.Cos(k)),
+                        3f * (float)Math.Pow(Math.Abs(Math.Sin(k)), 2 / n) * Math.Sign(Math.Sin(k))
+                        );
+                    Dust killDust = Dust.NewDustPerfect(target.Center, DustID.VampireHeal, gigaVelocity, 255, Color.Red, 1f);
+                    killDust.noGravity = true;
+                }
             }
         }
         public override bool Shoot(Item item, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -299,12 +544,37 @@ namespace Conquest.Assets.Common
                 Player.noFallDmg = false;
             }
         }
+        bool rez;
         public override bool FreeDodge(Player.HurtInfo info)
         {
             if (Player.GetModPlayer<MyPlayer>().emerald)
             {
                 Player.GetModPlayer<MyPlayer>().immuneTime = 15;
                 Player.GetModPlayer<MyPlayer>().emeraldBoom = true;
+                return true;
+            }
+            if (T8.p15On == true && info.Damage >= Player.statLife && info.Damage < Player.statLife + Player.GetModPlayer<MyPlayer>().lostLife)
+            {
+                Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
+
+                Player.statLife = 1;
+
+                return true;
+            }
+            if (T6.p34On == true && info.Damage >= Player.statLife && Player.GetModPlayer<MyPlayer>().immune == true && !rez)
+            {
+                rez = true;
+                Player.GetModPlayer<MyPlayer>().summonCD = 1000;
+                Player.statLife = 1;
+                for (int i = 0; i < Player.MaxBuffs; i++)
+                {
+                    Player.ClearBuff(Player.buffType[i]);
+                }
+                Player.Heal(Player.maxMinions * 10);
+                Player.GetModPlayer<MyPlayer>().immuneTime = 60;
+                Player.GetModPlayer<MyPlayer>().immune = false;
+                SoundStyle Revive = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Items/Guns/Revive");
+                SoundEngine.PlaySound(Revive);
                 return true;
             }
             if (CloseCall)
@@ -318,12 +588,8 @@ namespace Conquest.Assets.Common
                     }
                 }
             }
-            if (T8.p15On == true && info.Damage >= Player.statLife && info.Damage < Player.statLife + Player.GetModPlayer<MyPlayer>().lostLife)
+            if (Player.GetModPlayer<MyPlayer>().immuneTime > 0)
             {
-                Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
-
-                Player.statLife = 1;
-
                 return true;
             }
             return false;
@@ -341,8 +607,38 @@ namespace Conquest.Assets.Common
                 timer = 0;
                 stop = false;
             }
+            if (T1.p7On == true && !Player.HasBuff<StarSpirit>())
+            {
+                Player.AddBuff(ModContent.BuffType<StarSpirit>(), 999);
+            }
+            if (T3.p24On)
+            {
+                Player.AddBuff(ModContent.BuffType<WeakPointBuff>(), 900);
+            }
         }
-        
+        public override void PostUpdateEquips()
+        {
+            if (T6.p37On == true)
+            {
+                Player.GetDamage<SummonDamageClass>() *= 1f + (Player.maxMinions * 0.02f + Player.maxTurrets * 0.04f);
+                Player.GetDamage<SummonMeleeSpeedDamageClass>() *= 1f + (Player.maxMinions * 0.02f + Player.maxTurrets * 0.04f);
+            }
+            if (T6.p33On == true)
+            {
+                Player.maxMinions += 2;
+            }
+            if (T6.p35On == true)
+            {
+                Player.maxMinions += (int)(Player.statManaMax2 / 100);
+                Player.maxTurrets += (int)(Player.maxMinions / 4);
+            }
+            if (T6.p31On)
+            {
+
+                Player.GetDamage(DamageClass.Summon) += 0.02f;
+                Player.maxMinions += 1;
+            }
+        }
         public override void PostUpdate()
         {
             if (Player.HasBuff(ModContent.BuffType<Steamy>()))
@@ -358,6 +654,22 @@ namespace Conquest.Assets.Common
             {
                 Player.immuneTime = Glasstime;
             }
+        }
+        public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
+        {
+            return new[] {
+                new Item(ModContent.ItemType<EightTrigramsMirror>()),
+                new Item(ModContent.ItemType<DesertMirror>()),
+
+            };
+        }
+        public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+        {
+            if (Player.GetModPlayer<MyPlayer>().summonCD > 0)
+            {
+                Player.GetModPlayer<MyPlayer>().summonCD = 0;
+            }
+            rez = false;
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
@@ -586,6 +898,64 @@ namespace Conquest.Assets.Common
 
             //    Player.GetModPlayer<ETControl>().onShield = false;
 
+        }
+        public override void ModifyHitByProjectile(Projectile proj, ref Player.HurtModifiers modifiers)
+        {
+            if (T1.p5On == true)
+            {
+                Player.statMana += (int)(proj.damage * 0.25);
+            }
+            if (T8.p13On == true && Player.GetModPlayer<MyPlayer>().blocking == true)
+            {
+                if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 4 >= proj.damage / 2)
+                {
+                    proj.damage /= 2;
+                }
+                if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 4 < proj.damage / 2)
+                {
+                    proj.damage -= Player.HeldItem.damage / 4;
+                }
+            }
+        }
+        public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
+        {
+            if (T6.p32On == true && proj.DamageType == DamageClass.Summon)
+            {
+                if (Main.rand.NextFloat() >= 0.9)
+                    proj.damage += (int)(proj.damage * 0.5f);
+            }
+
+            if (T6.p36On == true && proj.DamageType == DamageClass.Summon)
+            {
+                target.GetGlobalNPC<MyNpc>().minionMark += 1;
+                if (target.GetGlobalNPC<MyNpc>().minionMark >= 4)
+                {
+                    proj.damage += (int)(proj.damage * 0.5f);
+                    target.GetGlobalNPC<MyNpc>().minionMark = 0;
+                }
+            }
+        }
+        public override void ModifyHitByNPC(NPC npc, ref Player.HurtModifiers modifiers)
+        {
+            if (T8.p13On == true && Player.GetModPlayer<MyPlayer>().blocking == true)
+            {
+                if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 2 >= npc.damage * 0.75)
+                {
+                    npc.damage /= 4;
+                }
+                if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 2 < npc.damage * 0.75)
+                {
+                    npc.damage -= Player.HeldItem.damage / 2;
+                }
+            }
+        }
+        public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+        {
+            if (Glass)
+            {
+                Player.immuneTime = Glasstime;
+            }
+            else base.ModifyHurt(ref modifiers);
         }
         public override void ModifyScreenPosition()
         {

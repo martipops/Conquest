@@ -1,8 +1,12 @@
 Items: {
 	AeroScimitar: {
-		Tooltip: ""
-		DisplayName: Aero Scimitar
-	}
+				DisplayName: Aero Scimitar
+				Tooltip:
+					'''
+					Press "Weapon Ability Hotkey" to unleash a massive tornado at your cursor!
+					While holding this weapon, gain increased movement speed
+					'''
+			}
 
 	AnubisHammer: {
 		DisplayName: Anubis Hammer
@@ -56,7 +60,7 @@ Items: {
 
 	EternalFlames: {
 		DisplayName: Eternal Flames
-		Tooltip: ""
+		Tooltip: "Got it memorized?"
 	}
 
 	EyeOfTheStorm: {
@@ -69,20 +73,20 @@ Items: {
 		Tooltip: ""
 	}
 
-	LightningBlade: {
-		DisplayName: Lightning Blade
-		Tooltip: ""
-	}
+	
+			LightningBlade: {
+				DisplayName: Lightning Blade
+				Tooltip: Fires a lightning bolt on impact with an enemy or a tile, spreads electricty to all surrounding enemies
+			}
 
-	LightningSpear: {
-		DisplayName: Lightning Spear
-		Tooltip: ""
-	}
-
+			LightningSpear: {
+				DisplayName: Lightning Spear
+				Tooltip: On hitting an enemy, fire lightning to nearby enemies
+			}
 	LivingWoodSword: {
-		DisplayName: Living Wood Sword
-		Tooltip: ""
-	}
+				DisplayName: Living Wood Sword
+				Tooltip: Critical hits heal you
+			}
 
 	MohgsTrident: {
 		DisplayName: Mohgs Trident
@@ -90,9 +94,13 @@ Items: {
 	}
 
 	MoonlightGreatsword: {
-		DisplayName: Moonlight Greatsword
-		Tooltip: ""
-	}
+				DisplayName: Moonlight Greatsword
+				Tooltip:
+					'''
+					Press "Weapon Ability Hotkey" to acquire Moonlights Blessing!
+					While affected by Moonlights blessing, the Moonlight Greatsword gains increased stats and fires projectiles
+					'''
+			}
 
 	MountainBreaker: {
 		DisplayName: Mountain Breaker
@@ -100,9 +108,17 @@ Items: {
 	}
 
 	OldNail: {
-		DisplayName: Old Nail
-		Tooltip: ""
-	}
+				DisplayName: Old Nail
+				Tooltip:
+					'''
+					While holding activates the soul gauge
+					Special actions can be performed when the soul gauge is filled up
+					When the Soul Gauge is filled, you can peform a dash towards your cursor with right click
+					On hit adds 3 charge
+					On kill adds 10 charge
+
+					'''
+			}
 
 	OreClub: {
 		DisplayName: Ore Club
@@ -166,13 +182,14 @@ Items: {
 
 	LivingWoodStaff: {
 		DisplayName: Living Wood Staff
-		Tooltip: ""
+		Tooltip: "Critical hits heal you"
 	}
 
-	Purgatory: {
-		DisplayName: Purgatory
-		Tooltip: ""
-	}
+	
+			Purgatory: {
+				DisplayName: Purgatory
+				Tooltip: Fires homing ghosts. Killing enemies with these ghosts causes an explosion.
+			}
 
 	SoulStaff: {
 		DisplayName: Soul Staff
@@ -180,9 +197,10 @@ Items: {
 	}
 
 	SpaceBlaster: {
-		DisplayName: Space Blaster
-		Tooltip: ""
-	}
+				DisplayName: Space Blaster
+				Tooltip: No mana cost if wearing full Adamantite set
+			}
+
 
 	Wabbajack: {
 		DisplayName: Wabbajack
@@ -215,49 +233,56 @@ Items: {
 	}
 
 	Dynasty: {
-		DisplayName: Dynasty
-		Tooltip: ""
-	}
+				DisplayName: Dynasty
+				Tooltip: Fires helix rounds
+			}
 
 	GloriousLauncher: {
 		DisplayName: Glorious Launcher
 		Tooltip: ""
 	}
 
-	Infinity: {
-		DisplayName: Infinity
-		Tooltip: ""
-	}
+Infinity: {
+				DisplayName: Infinity
+				Tooltip: Doesn't Consume Ammo
+			}
 
 	Kohm: {
-		DisplayName: Kohm
-		Tooltip: ""
-	}
-
+				DisplayName: Kohm
+				Tooltip:
+					'''
+					Fire rate increases up to 80% while using this weapon, bonus is lost when you stop firing
+					66% Chance to not consume ammo
+					'''
+			}
 	LivingWoodBow: {
-		DisplayName: Living Wood Bow
-		Tooltip: ""
-	}
+				DisplayName: Living Wood Bow
+				Tooltip: Critical hits heal you
+			}
+
 
 	MobyDick: {
-		DisplayName: Moby Dick
-		Tooltip: ""
-	}
-
-	OccularRepeater: {
-		DisplayName: Occular Repeater
-		Tooltip: ""
-	}
-
+				DisplayName: Moby Dick
+				Tooltip:
+					'''
+					Fires 3 Cannoballs which explode on impact
+					99% Chance to not consume ammo
+					'''
+			}
+OccularRepeater: {
+				DisplayName: Occular Repeater
+				Tooltip: Converts wooden arrows to eye balls which stop moving after a short time and bounce off of enemies
+			}
 	OperationOutbreak: {
-		DisplayName: Operation Outbreak
-		Tooltip: ""
-	}
+				Tooltip: Releases high damaging nanites on killing an enemy
+				DisplayName: Outbreak Prime
+			}
 
 	PainTrain: {
-		DisplayName: Pain Train
-		Tooltip: ""
-	}
+				DisplayName: Pain Train
+				Tooltip: Press "Weapon Ability Hotkey" to release steam, which increases fire rate but lowers defense
+			}
+
 
 	PortableCannon: {
 		DisplayName: Portable Cannon
@@ -288,11 +313,15 @@ Items: {
 		DisplayName: Wind Song
 		Tooltip: ""
 	}
-
-	EmeraldSlate: {
-		DisplayName: Emerald Slate
-		Tooltip: ""
-	}
+EmeraldSlate: {
+				DisplayName: Emerald Slate
+				Tooltip:
+					'''
+					Summon an Emerald Barrier to protect you
+					The Barrier will shield you for 1 attack, after it will explode into glass shards
+					8 Second Cooldown
+					'''
+			}
 
 	JellyUmbrella: {
 		DisplayName: Jelly Umbrella
@@ -310,88 +339,125 @@ Items: {
 	}
 
 	Amalgam: {
-		DisplayName: Amalgam
-		Tooltip: ""
-	}
-
+				DisplayName: Amalgam
+				Tooltip:
+					'''
+					Reduces damage taken by 17%
+					Has a chance to create illusions and dodge an attack
+					Temporarily increase critical chance after dodge
+					May confuse nearby enemies after being struck
+					'''
+			}
 	BrittleBones: {
-		DisplayName: Brittle Bones
-		Tooltip: ""
-	}
+				DisplayName: Brittle Bones
+				Tooltip:
+					'''
+					Everything hurts
+					Going under 100 health causes your bones to break
+					When your bones are broken you gain 0 defense, 0 life regneration, and +50% more damage
+					Going over 100 health removes the changed stats
+					'''
+			}
 
-	Bumbullets: {
-		DisplayName: Bumbullets
-		Tooltip: ""
-	}
+			Bumbullets: {
+				DisplayName: Bumbullets
+				Tooltip:
+					'''
+					Bumblecore
+					Shooting occasionally spawns additional bees.
+					'''
+			}
+
 
 	CursedT: {
-		DisplayName: Cursed T
-		Tooltip: ""
-	}
+				DisplayName: Cursed Trident
+				Tooltip:
+					'''
+					Press "Cursd Trident Hotkey" to spawn a homing trident at the position of your cursor
+					If the trident has no target it'll implode on itself, Consumes 25% of the players max health on use
+					'''
+			}
 
-	DiplopiaItem: {
-		DisplayName: Diplopia Item
-		Tooltip: ""
-	}
+			DiplopiaItem: {
+				DisplayName: Diplopia
+				Tooltip:
+					'''
+					Your seeing double!
+					Ore drops are now doubled!
+					'''
+			}
 
-	ElectricCrystal: {
-		DisplayName: Electric Crystal
-		Tooltip: ""
-	}
 
-	FriendshipBracelet: {
-		DisplayName: Friendship Bracelet
-		Tooltip: ""
-	}
+ElectricCrystal: {
+				DisplayName: Electro Crystal
+				Tooltip: Weapons have a chance to inflict electrified against enemies
+			}
 
-	GoldenRabbitsFoot: {
-		DisplayName: Golden Rabbits Foot
-		Tooltip: ""
-	}
+			FriendshipBracelet: {
+				DisplayName: Friendship Bracelet
+				Tooltip: +10% Summon Damage
+			}
 
-	HeartSynthesizer: {
-		DisplayName: Heart Synthesizer
-		Tooltip: ""
-	}
+			GoldenRabbitsFoot: {
+				DisplayName: Golden Rabbit's Foot
+				Tooltip: +10% Crit Chance
+			}
+
+			HeartSynthesizer: {
+				DisplayName: Heart Synthesizer
+				Tooltip: Projectiles have a chance to spawn a heart
+			}
+
 
 	Polyute: {
-		DisplayName: Polyute
-		Tooltip: ""
-	}
+				DisplayName: Polyute
+				Tooltip: All projectiles have a 10% chance on hit to release homing bullets
+			}
 
-	RabbitsFoot: {
-		DisplayName: Rabbits Foot
-		Tooltip: ""
-	}
+			RabbitsFoot: {
+				DisplayName: Rabbit's Foot
+				Tooltip: +5% Crit Chance
+			}
+SilverBullets: {
+				DisplayName: Silver Rounds
+				Tooltip:
+					'''
+					!BUGGED CURRENNTLY!
+					: +50% damage against bosses, -50% against everything else... unless your a vampire
+					'''
+			}
 
-	SilverBullets: {
-		DisplayName: Silver Bullets
-		Tooltip: ""
-	}
 
 	SnailShell: {
-		DisplayName: Snail Shell
-		Tooltip: ""
-	}
+				DisplayName: Snail Shell
+				Tooltip: Increases Defense by 10, reduces speed by 10%
+			}
 
-	Steroids: {
-		DisplayName: Steroids
-		Tooltip: ""
-	}
+			Steroids: {
+				DisplayName: Steroids
+				Tooltip: +10% Melee Speed
+			}
 
-	StrawberryHeart: {
-		DisplayName: Strawberry Heart
-		Tooltip: ""
-	}
+			StrawberryHeart: {
+				DisplayName: Strawberry Heart
+				Tooltip: Grants a double jump
+			}
 
-	Synthol: {
-		DisplayName: Synthol
-		Tooltip: ""
-	}
-
+			Synthol: {
+				DisplayName: Synthol
+				Tooltip:
+					'''
+					+10% Melee Speed
+					+10% Melee Crit Chance
+					'''
+			}
 	WindGrass: {
 		DisplayName: Wind Grass
-		Tooltip: ""
+		Tooltip:
+					'''
+					Fall Damage Immunity
+					Increases Movement Speed based on wind speed
+					'''
 	}
 
 	CloseCall: {
@@ -400,59 +466,87 @@ Items: {
 	}
 
 	Glass: {
-		DisplayName: Glass
-		Tooltip: ""
-	}
+				Tooltip:
+					'''
+					Removed player immunity frames
+					Increases All Damage by 100%
+					'''
+				DisplayName: Glass
+			}
 
 	HunnyPot: {
-		DisplayName: Hunny Pot
-		Tooltip: ""
-	}
-
+				DisplayName: Hunny Pot
+				Tooltip:
+					'''
+					Sweet Memories
+					Press "Hunny Pot Hotkey" to heal yourself, induces hunny sickness
+					'''
+			}
 	Justice: {
 		DisplayName: Justice
-		Tooltip: ""
+		Tooltip:
+					'''
+					Taking damage increases your damage.
+					The max amount of damage you can receive is 5 flat damage for 500 damage taken.
+					'''
 	}
 
 	War: {
-		DisplayName: War
-		Tooltip: ""
-	}
+				Tooltip: Increases enemy spawn rate by 100x
+				DisplayName: War
+			}
 
 	Wealth: {
-		DisplayName: Wealth
-		Tooltip: ""
-	}
+				DisplayName: Wealth
+				Tooltip:
+					'''
+					Your attacks always inflict the midas buff
+					Additionally, enemies have a small chance to drop a gold coin.
+					'''
+			}
 
 	ArmorOfTheSun: {
-		DisplayName: Armor Of The Sun
-		Tooltip: ""
-	}
+				DisplayName: Armor of the Sun
+				Tooltip:
+					'''
+					Armor of Solaire of Astora, Knight of Sunlight
+					+10% Melee Crit Chance
+					'''
+			}
 
-	BootsOfTheSun: {
-		DisplayName: Boots Of The Sun
-		Tooltip: ""
-	}
+			BootsOfTheSun: {
+				DisplayName: Boots of the Sun
+				Tooltip:
+					'''
+					Leggings of Solaire of Astora, Knight of Sunlight
+					+10% Melee Speed
+					'''
+			}
 
-	HelmetOfTheSun: {
-		DisplayName: Helmet Of The Sun
-		Tooltip: ""
-	}
+			HelmetOfTheSun: {
+				DisplayName: Helmet of the Sun
+				Tooltip:
+					'''
+					Helm of Solaire of Astora, Knight of Sunlight
+					+4% Melee Damage
+					'''
+			}
 
 	OnionKnightArmor: {
-		DisplayName: Onion Knight Armor
-		Tooltip: ""
-	}
+				DisplayName: Onion Knight Armor
+				Tooltip: 10% Increased melee damage
+			}
 
-	OnionKnightHelm: {
-		DisplayName: Onion Knight Helm
-		Tooltip: ""
-	}
+			OnionKnightHelm: {
+				DisplayName: Onion Knight Helm
+				Tooltip: 6% Increased melee damage and crit chance
+			}
 
-	OnionKnightLeggings: {
-		DisplayName: Onion Knight Leggings
-		Tooltip: ""
-	}
+			OnionKnightLeggings: {
+				DisplayName: Onion Knight Leggings
+				Tooltip: 10% Increased melee damage
+			}
+
 
 	DandukeMask: {
 		DisplayName: Danduke Mask
@@ -460,17 +554,17 @@ Items: {
 	}
 
 	AnubisBossBag: {
-		DisplayName: Anubis Boss Bag
+		DisplayName: Treasure Chest
 		Tooltip: ""
 	}
 
 	DandukeBossBag: {
-		DisplayName: Danduke Boss Bag
+		DisplayName: Treasure Bag
 		Tooltip: ""
 	}
 
 	QueenBag: {
-		DisplayName: Queen Bag
+		DisplayName: Treasure Bag
 		Tooltip: ""
 	}
 
@@ -817,39 +911,43 @@ Items: {
 	}
 
 	CalobogusAle: {
-		DisplayName: Calobogus Ale
-		Tooltip: ""
-	}
+				DisplayName: Calobogus Ale
+				Tooltip: You feel tipsy, and satisfied?
+			}
 
-	Fireball: {
-		DisplayName: Fireball
-		Tooltip: ""
-	}
+			Fireball: {
+				DisplayName: Fireball
+				Tooltip: Increases melee damage by 10%, but you are ignited
+			}
 
-	Moonshine: {
-		DisplayName: Moonshine
-		Tooltip: ""
-	}
+			Moonshine: {
+				DisplayName: Moonshine
+				Tooltip: Increases defense by 10, but you feel slower
+			}
 
-	PigsEar: {
-		DisplayName: Pigs Ear
-		Tooltip: ""
-	}
+			PigsEar: {
+				DisplayName: Pigs Ear
+				Tooltip: Increases magic damage by 10%, but you feel slower
+			}
 
-	RyeWhiskey: {
-		DisplayName: Rye Whiskey
-		Tooltip: ""
-	}
+			RyeWhiskey: {
+				DisplayName: Rye Whiskey
+				Tooltip: Increases summon damage by 10%, but your grounded
+			}
 
-	WildWestCocktail: {
-		DisplayName: Wild West Cocktail
-		Tooltip: ""
-	}
+			WildWestCocktail: {
+				DisplayName: Wild West Cocktail
+				Tooltip: Increases ranged damage by 10%, but your less resistant
+			}
 
 	CharcoalPineResin: {
-		DisplayName: Charcoal Pine Resin
-		Tooltip: ""
-	}
+				DisplayName: Charcoal Pine Resin
+				Tooltip:
+					'''
+					Black charcoal-like pine resin.
+					Applies fire to your melee weapons.
+					'''
+			}
 
 	Cleanser: {
 		DisplayName: Cleanser
@@ -857,14 +955,18 @@ Items: {
 	}
 
 	DesertMirror: {
-		DisplayName: Desert Mirror
-		Tooltip: ""
-	}
+				DisplayName: World Map
+				Tooltip: Right click to access the world map.
+			}
 
 	EightTrigramsMirror: {
-		DisplayName: Eight Trigrams Mirror
-		Tooltip: ""
-	}
+				Tooltip:
+					'''
+					Left click to access the talent tree
+					Right click to reset your talent points
+					'''
+				DisplayName: Eight Trigrams Mirror
+			}
 
 	DandukeRelic: {
 		DisplayName: Danduke Relic
@@ -992,9 +1094,9 @@ Projectiles: {
 
 Buffs: {
 	ArmamentCooldown: {
-		DisplayName: Armament Cooldown
-		Description: Mods.Conquest.Buffs.ArmamentCooldown.Description
-	}
+				DisplayName: Armament Cooldown
+				Description: You are unable to unleash your armaments legendary ability
+			}
 
 	BrokenBones: {
 		DisplayName: Broken Bones
@@ -1002,9 +1104,14 @@ Buffs: {
 	}
 
 	BrokenBones2: {
-		DisplayName: Broken Bones2
-		Description: Mods.Conquest.Buffs.BrokenBones2.Description
-	}
+				DisplayName: Broken Bones!
+				Description:
+					'''
+					0 Defense
+					No Life Regen
+					+50% Damage
+					'''
+			}
 
 	Cursed: {
 		DisplayName: Cursed
@@ -1012,69 +1119,75 @@ Buffs: {
 	}
 
 	Electrified2: {
-		DisplayName: Electrified2
-		Description: Mods.Conquest.Buffs.Electrified2.Description
-	}
+				DisplayName: Electrified
+				Description: bzzzz
+			}
+
 
 	HunnySickness: {
-		DisplayName: Hunny Sickness
-		Description: Mods.Conquest.Buffs.HunnySickness.Description
-	}
+				DisplayName: Hunny Sickness
+				Description: Description of all time
+			}
 
 	Immune: {
 		DisplayName: Immune
 		Description: Mods.Conquest.Buffs.Immune.Description
 	}
-
-	MoonlightBlessing: {
-		DisplayName: Moonlight Blessing
-		Description: Mods.Conquest.Buffs.MoonlightBlessing.Description
-	}
-
 	Steamy: {
-		DisplayName: Steamy
-		Description: Mods.Conquest.Buffs.Steamy.Description
-	}
+				DisplayName: Conductor
+				Description:
+					'''
+					While holding pain train, increased fire rate and crit chance but halved defense
+					This buff will be removed if your not holding pain train
+					'''
+			}
 
 	JellyfishBuff: {
-		DisplayName: Jellyfish Buff
-		Description: Mods.Conquest.Buffs.JellyfishBuff.Description
-	}
+				DisplayName: Spirit Jellyfish
+				Description: The Jellyfish will fight for you
+			}
+
+			MoonlightBlessing: {
+				DisplayName: Moonlight Blessing
+				Description: Increased Damage and Crit Chance
+			}
 
 	ShookBuff: {
 		DisplayName: Shook Buff
-		Description: Mods.Conquest.Buffs.ShookBuff.Description
+				Description: Shook will fight for you
 	}
 
 	SusBuff: {
 		DisplayName: Sus Buff
-		Description: Mods.Conquest.Buffs.SusBuff.Description
+				Description: This eye will fight for you
 	}
 
 	FireballBuff: {
-		DisplayName: Fireball Buff
-		Description: Mods.Conquest.Buffs.FireballBuff.Description
-	}
+				DisplayName: Fireball
+				Description: Grants +10% Melee Damage, but your ignited
+			}
+
 
 	MoonshineBuff: {
-		DisplayName: Moonshine Buff
-		Description: Mods.Conquest.Buffs.MoonshineBuff.Description
-	}
+				DisplayName: Moonshine
+				Description: Grants +10 defense, but you feel slow
+			}
 
 	PigsEarBuff: {
-		DisplayName: Pigs Ear Buff
-		Description: Mods.Conquest.Buffs.PigsEarBuff.Description
-	}
+				DisplayName: Pig's Ear
+				Description: Grants +10% Magic Damage, but you feel slower
+			}
 
-	RyeWhiskeyBuff: {
-		DisplayName: Rye Whiskey Buff
-		Description: Mods.Conquest.Buffs.RyeWhiskeyBuff.Description
-	}
+			RyeWhiskeyBuff: {
+				DisplayName: Rhy Whiskey
+				Description: Grants +10% summoning Damage, and lowered gravity
+			}
 
-	West: {
-		DisplayName: West
-		Description: Mods.Conquest.Buffs.West.Description
-	}
+			West: {
+				DisplayName: Wild West Cocktail
+				Description: Grants +10% Ranged Damage, -10 defense
+			}
+
 }
 
 Keybinds: {

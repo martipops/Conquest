@@ -96,7 +96,7 @@ namespace Conquest.Tiles
         {
             if (DownedBossSystem.DownedBruiser && DownedBossSystem.DownedAnubis)
             {
-                SubworldSystem.Enter<AntlionArena>();
+                SubworldSystem.Enter<DesertTemple>();
             }
             return true;
         }

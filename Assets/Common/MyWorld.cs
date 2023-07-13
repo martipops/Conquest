@@ -22,9 +22,6 @@ namespace Conquest.Assets.Common {
     public class MyWorld : ModSystem
     {
 
-        
-
-        //Hayden your code below//
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
@@ -38,7 +35,7 @@ namespace Conquest.Assets.Common {
         }
         public override void PreUpdateWorld()
         {
-            if (SubworldSystem.IsActive<AntlionNest>())
+            if (SubworldSystem.IsActive<DesertTemple>())
             {
                 Main.LocalPlayer.ZoneDesert = true;
                 // Update mechanisms

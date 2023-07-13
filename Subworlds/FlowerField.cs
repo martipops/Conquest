@@ -30,7 +30,7 @@ namespace Conquest.Subworlds
                      int x = 50;
                      int y = 160;
                      Point16 point = new Point16(x, y);
-                    Generator.GenerateStructure("Structures/FlowerField", point, Mod, false);
+                    Generator.GenerateStructure("Structures/FlowerField", point, Conquest.Instance, false);
                 },90f),
 
         };

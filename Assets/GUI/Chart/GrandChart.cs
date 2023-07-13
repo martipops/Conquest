@@ -165,7 +165,7 @@ namespace Conquest.Assets.GUI.Chart
                 }
                 else
                 {
-                    SubworldSystem.Enter<AntlionNest>();
+                    SubworldSystem.Enter<DesertTemple>();
                 }
                 infoImg.Remove();
                 GSB = false;

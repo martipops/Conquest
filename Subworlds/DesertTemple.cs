@@ -8,7 +8,7 @@ using StructureHelper;
 
 namespace Conquest.Subworlds
 {
-    public class AntlionNest : Subworld
+    public class DesertTemple : Subworld
     {
         public override int Width => 800;
         public override int Height => 500;
@@ -29,7 +29,7 @@ namespace Conquest.Subworlds
                      int x = 50;
                      int y = 120;
                      Point16 point = new Point16(x, y);
-                    Generator.GenerateStructure("Structures/DesertTemple", point, Mod, false);
+                    Generator.GenerateStructure("Structures/DesertTemple", point, Conquest.Instance, false);
                 },90f),
               
         };
