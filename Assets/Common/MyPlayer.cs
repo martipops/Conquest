@@ -21,13 +21,13 @@ using static tModPorter.ProgressUpdate;
 using Terraria.ModLoader.IO;
 using Conquest.Assets.Common;
 using Conquest.Assets.GUI;
-using Conquest.Buffs.Minion;
 using Conquest.Buffs;
 using Conquest.Items.Consumable;
 using Conquest.Items.Weapons.Melee;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.Projectiles.Melee;
 using Conquest.Projectiles;
+using Conquest.Projectiles.Ranged;
 
 namespace Conquest.Assets.Common
 {
@@ -1011,7 +1011,7 @@ namespace Conquest.Assets.Common
             }
             if(America && proj.DamageType == DamageClass.Ranged)
             {
-                modifiers.CritDamage *= 20;
+                modifiers.CritDamage *= 1.25f;
             }
         }
         /*public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)

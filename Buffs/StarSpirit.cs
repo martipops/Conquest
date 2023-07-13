@@ -1,5 +1,6 @@
 ﻿
 using Conquest.Projectiles;
+using Conquest.Projectiles.Summoner;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Conquest.Buffs.Minion
+namespace Conquest.Buffs
 {
     public class StarSpirit : ModBuff
     {

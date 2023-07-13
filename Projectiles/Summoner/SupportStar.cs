@@ -1,6 +1,6 @@
 ﻿
 using Conquest.Assets.GUI;
-using Conquest.Buffs.Minion;
+using Conquest.Buffs;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using Terraria.ModLoader;
 using static Humanizer.In;
 using static Terraria.ModLoader.PlayerDrawLayer;
 
-namespace Conquest.Projectiles
+namespace Conquest.Projectiles.Summoner
 {
     public class SupportStar : ModProjectile
     {

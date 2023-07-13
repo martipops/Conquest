@@ -11,7 +11,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Conquest.Projectiles
+namespace Conquest.Projectiles.Ranged
 {
     public class LightningGunProj1 : ModProjectile
     {
