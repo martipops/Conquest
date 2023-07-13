@@ -1,4 +1,4 @@
-Assorted Armaments mod for Tmodloader 1.4.4
+Conquest mod for Tmodloader 1.4.4
 
 # Important info
 1. This mod was developed mostly by a person with no prior experience in programming.
