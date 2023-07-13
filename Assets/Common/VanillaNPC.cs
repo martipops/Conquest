@@ -8,7 +8,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Assortedarmaments.Assets.Common
+namespace Conquest.Assets.Common
 {
     public class VanillaNPC : GlobalNPC
     {

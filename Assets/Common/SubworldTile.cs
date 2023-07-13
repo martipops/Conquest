@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using tModPorter;
 
-namespace Assortedarmaments.Assets.Common
+namespace Conquest.Assets.Common
 {
     public class SubworldTile : GlobalTile
     {

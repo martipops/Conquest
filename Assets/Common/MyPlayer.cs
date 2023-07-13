@@ -16,6 +16,7 @@ using Terraria.DataStructures;
 using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace Conquest.Assets.Common
 {
@@ -89,6 +90,22 @@ namespace Conquest.Assets.Common
                     Terraria.Dust.NewDust(Player.position, 32, 48, DustID.GreenFairy);
                     Terraria.Dust.NewDust(Player.position, 32, 48, DustID.GreenFairy);
                 }
+            }
+            if (NPC.downedBoss1 == true && EightTrigrams.tMaxLoad < 6)
+            {
+                EightTrigrams.tMaxLoad = 6;
+            }
+            if (Main.hardMode == true && EightTrigrams.tMaxLoad < 10)
+            {
+                EightTrigrams.tMaxLoad = 10;
+            }
+            if (NPC.downedPlantBoss == true && EightTrigrams.tMaxLoad < 18)
+            {
+                EightTrigrams.tMaxLoad = 18;
+            }
+            if (NPC.downedMoonlord == true && EightTrigrams.tMaxLoad < 24)
+            {
+                EightTrigrams.tMaxLoad = 24;
             }
         }
         public override void OnHurt(Player.HurtInfo info)
@@ -401,6 +418,173 @@ namespace Conquest.Assets.Common
                 }
 
             }
+
+        }
+        public override void SaveData(TagCompound tag)
+        {
+            tag.Add("TLoad", EightTrigrams.tLoad);
+
+
+            if (Player.GetModPlayer<MyPlayer>().immune == true)
+            {
+                tag.Add("immune", Player.GetModPlayer<MyPlayer>().immune);
+
+            }
+            if (T1.p1On == true)
+            {
+                tag.Add("isP1On", T1.p1On);
+            }
+            if (T1.p2On == true)
+            {
+                tag.Add("isP2On", T1.p2On);
+            }
+            if (T1.p3On == true)
+            {
+                tag.Add("isP3On", T1.p3On);
+            }
+            if (T1.p4On == true)
+            {
+                tag.Add("isP4On", T1.p4On);
+            }
+            if (T1.p5On == true)
+            {
+                tag.Add("isP5On", T1.p5On);
+            }
+            if (T1.p6On == true)
+            {
+                tag.Add("isP6On", T1.p6On);
+            }
+            if (T1.p7On == true)
+            {
+                tag.Add("isP7On", T1.p7On);
+            }
+
+            if (T8.p11On == true)
+            {
+                tag.Add("isP11On", T8.p11On);
+            }
+            if (T8.p12On == true)
+            {
+                tag.Add("isP12On", T8.p12On);
+            }
+            if (T8.p13On == true)
+            {
+                tag.Add("isP13On", T8.p13On);
+            }
+            if (T8.p14On == true)
+            {
+                tag.Add("isP14On", T8.p14On);
+            }
+            if (T8.p15On == true)
+            {
+                tag.Add("isP15On", T8.p15On);
+            }
+            if (T8.p16On == true)
+            {
+                tag.Add("isP16On", T8.p16On);
+            }
+            if (T8.p17On == true)
+            {
+                tag.Add("isP17On", T8.p17On);
+            }
+
+            if (T3.p21On == true)
+            {
+                tag.Add("isP21On", T3.p21On);
+            }
+            if (T3.p22On == true)
+            {
+                tag.Add("isP22On", T3.p22On);
+            }
+            if (T3.p23On == true)
+            {
+                tag.Add("isP23On", T3.p23On);
+            }
+            if (T3.p24On == true)
+            {
+                tag.Add("isP24On", T3.p24On);
+            }
+            if (T3.p25On == true)
+            {
+                tag.Add("isP25On", T3.p25On);
+            }
+            if (T3.p26On == true)
+            {
+                tag.Add("isP26On", T3.p26On);
+            }
+            if (T3.p27On == true)
+            {
+                tag.Add("isP27On", T3.p27On);
+            }
+
+            if (T6.p31On == true)
+            {
+                tag.Add("isP31On", T6.p31On);
+            }
+            if (T6.p32On == true)
+            {
+                tag.Add("isP32On", T6.p32On);
+            }
+            if (T6.p33On == true)
+            {
+                tag.Add("isP33On", T6.p33On);
+            }
+            if (T6.p34On == true)
+            {
+                tag.Add("isP34On", T6.p34On);
+            }
+            if (T6.p35On == true)
+            {
+                tag.Add("isP35On", T6.p35On);
+            }
+            if (T6.p36On == true)
+            {
+                tag.Add("isP36On", T6.p36On);
+            }
+            if (T6.p37On == true)
+            {
+                tag.Add("isP37On", T6.p37On);
+            }
+        }
+        public override void LoadData(TagCompound tag)
+        {
+            EightTrigrams.tLoad = tag.GetInt("TLoad");
+
+            Player.GetModPlayer<MyPlayer>().immune = tag.GetBool("immune");
+
+            T1.p1On = tag.GetBool("isP1On");
+            T1.p2On = tag.GetBool("isP2On");
+            T1.p3On = tag.GetBool("isP3On");
+            T1.p4On = tag.GetBool("isP4On");
+            T1.p5On = tag.GetBool("isP5On");
+            T1.p6On = tag.GetBool("isP6On");
+            T1.p7On = tag.GetBool("isP7On");
+
+            T8.p11On = tag.GetBool("isP11On");
+            T8.p12On = tag.GetBool("isP12On");
+            T8.p13On = tag.GetBool("isP13On");
+            T8.p14On = tag.GetBool("isP14On");
+            T8.p15On = tag.GetBool("isP15On");
+            T8.p16On = tag.GetBool("isP16On");
+            T8.p17On = tag.GetBool("isP17On");
+
+            T3.p21On = tag.GetBool("isP21On");
+            T3.p22On = tag.GetBool("isP22On");
+            T3.p23On = tag.GetBool("isP23On");
+            T3.p24On = tag.GetBool("isP24On");
+            T3.p25On = tag.GetBool("isP25On");
+            T3.p26On = tag.GetBool("isP26On");
+            T3.p27On = tag.GetBool("isP27On");
+
+            T6.p31On = tag.GetBool("isP31On");
+            T6.p32On = tag.GetBool("isP32On");
+            T6.p33On = tag.GetBool("isP33On");
+            T6.p34On = tag.GetBool("isP34On");
+            T6.p35On = tag.GetBool("isP35On");
+            T6.p36On = tag.GetBool("isP36On");
+            T6.p37On = tag.GetBool("isP37On");
+
+            //    Player.GetModPlayer<ETControl>().onShield = false;
 
         }
         public override void ModifyScreenPosition()

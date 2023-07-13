@@ -815,6 +815,91 @@ Items: {
 			Can be toggled.
 			'''
 	}
+
+	CalobogusAle: {
+		DisplayName: Calobogus Ale
+		Tooltip: ""
+	}
+
+	Fireball: {
+		DisplayName: Fireball
+		Tooltip: ""
+	}
+
+	Moonshine: {
+		DisplayName: Moonshine
+		Tooltip: ""
+	}
+
+	PigsEar: {
+		DisplayName: Pigs Ear
+		Tooltip: ""
+	}
+
+	RyeWhiskey: {
+		DisplayName: Rye Whiskey
+		Tooltip: ""
+	}
+
+	WildWestCocktail: {
+		DisplayName: Wild West Cocktail
+		Tooltip: ""
+	}
+
+	CharcoalPineResin: {
+		DisplayName: Charcoal Pine Resin
+		Tooltip: ""
+	}
+
+	Cleanser: {
+		DisplayName: Cleanser
+		Tooltip: ""
+	}
+
+	DesertMirror: {
+		DisplayName: Desert Mirror
+		Tooltip: ""
+	}
+
+	EightTrigramsMirror: {
+		DisplayName: Eight Trigrams Mirror
+		Tooltip: ""
+	}
+
+	DandukeRelic: {
+		DisplayName: Danduke Relic
+		Tooltip: ""
+	}
+
+	DandukeTrophy: {
+		DisplayName: Danduke Trophy
+		Tooltip: ""
+	}
+
+	EnchantedSandstoneItem: {
+		DisplayName: Enchanted Sandstone Item
+		Tooltip: ""
+	}
+
+	EnchantedSandstoneWallItem: {
+		DisplayName: Enchanted Sandstone Wall Item
+		Tooltip: ""
+	}
+
+	QueenRelicItem: {
+		DisplayName: Queen Relic Item
+		Tooltip: ""
+	}
+
+	QueenTrophyItem: {
+		DisplayName: Queen Trophy Item
+		Tooltip: ""
+	}
+
+	RatKingStatue: {
+		DisplayName: Rat King Statue
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -882,6 +967,7 @@ Projectiles: {
 	CowboyGun.DisplayName: Cowboy Gun
 	CowboyGun2.DisplayName: Cowboy Gun2
 	DandelionBullet.DisplayName: Dandelion Bullet
+	Dandelion.DisplayName: Dandelion
 	DynastyProj.DisplayName: Dynasty Proj
 	EyeProj.DisplayName: Eye Proj
 	SeedCannonball.DisplayName: Seed Cannonball
@@ -892,6 +978,16 @@ Projectiles: {
 	Shook.DisplayName: Shook
 	Sus.DisplayName: Sus
 	CursedTrident.DisplayName: Cursed Trident
+	AnubisBeam.DisplayName: Anubis Beam
+	AnubisDisc.DisplayName: Anubis Disc
+	AnubisProj.DisplayName: Anubis Proj
+	BruiserBeam.DisplayName: Bruiser Beam
+	DangerousDandelion.DisplayName: Dangerous Dandelion
+	FloralSpit.DisplayName: Floral Spit
+	HelixSand.DisplayName: Helix Sand
+	SandExplosion.DisplayName: Sand Explosion
+	SandFall.DisplayName: Sand Fall
+	SuperSeedBomb.DisplayName: Super Seed Bomb
 }
 
 Buffs: {
@@ -954,10 +1050,88 @@ Buffs: {
 		DisplayName: Sus Buff
 		Description: Mods.Conquest.Buffs.SusBuff.Description
 	}
+
+	FireballBuff: {
+		DisplayName: Fireball Buff
+		Description: Mods.Conquest.Buffs.FireballBuff.Description
+	}
+
+	MoonshineBuff: {
+		DisplayName: Moonshine Buff
+		Description: Mods.Conquest.Buffs.MoonshineBuff.Description
+	}
+
+	PigsEarBuff: {
+		DisplayName: Pigs Ear Buff
+		Description: Mods.Conquest.Buffs.PigsEarBuff.Description
+	}
+
+	RyeWhiskeyBuff: {
+		DisplayName: Rye Whiskey Buff
+		Description: Mods.Conquest.Buffs.RyeWhiskeyBuff.Description
+	}
+
+	West: {
+		DisplayName: West
+		Description: Mods.Conquest.Buffs.West.Description
+	}
 }
 
 Keybinds: {
 	"Legendary Armament Activation.DisplayName": Legendary  Armament  Activation
 	"Hunny Pot Activation.DisplayName": Hunny  Pot  Activation
 	"Cursed Trident Activation.DisplayName": Cursed  Trident  Activation
+}
+
+Tiles.QueenLarva2.MapEntry: Queen Larva2
+
+NPCs: {
+	AntlionQueen.DisplayName: Antlion Queen
+	Anubis.DisplayName: Anubis
+
+	Dande: {
+		DisplayName: Dande
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LoveBiome: I love {BiomeName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	DandukeBoss.DisplayName: Danduke Boss
+	Deathstalker.DisplayName: Deathstalker
+	GiantMusnail.DisplayName: Giant Musnail
+	Ghostling.DisplayName: Ghostling
+	FloralThreat.DisplayName: Floral Threat
+	DragonBody.DisplayName: Dragon Body
+	DragonBody2.DisplayName: Dragon Body2
+	DragonBody3.DisplayName: Dragon Body3
+	DragonHead.DisplayName: Dragon Head
+	DragonLegs.DisplayName: Dragon Legs
+	DragonTail.DisplayName: Dragon Tail
+	Bruiser.DisplayName: Bruiser
+	SpiritJellyfish.DisplayName: Spirit Jellyfish
+	IceHead.DisplayName: Ice Head
+
+	Cowboy: {
+		DisplayName: Cowboy
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
 }

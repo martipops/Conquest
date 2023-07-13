@@ -187,11 +187,11 @@ namespace Conquest.NPCs.Bosses.Anubis
                 AI_Timer = 0;
             }
         }
-        SoundStyle Begone = new SoundStyle($"{nameof(Assortedarmaments)}/Assets/Sounds/Begone");
-        SoundStyle Fire = new SoundStyle($"{nameof(Assortedarmaments)}/Assets/Sounds/Fire");
-        SoundStyle Arise = new SoundStyle($"{nameof(Assortedarmaments)}/Assets/Sounds/Arise");
-        SoundStyle Pierce = new SoundStyle($"{nameof(Assortedarmaments)}/Assets/Sounds/Pierce");
-        SoundStyle Guard = new SoundStyle($"{nameof(Assortedarmaments)}/Assets/Sounds/Guard");
+        SoundStyle Begone = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Begone");
+        SoundStyle Fire = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Fire");
+        SoundStyle Arise = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Arise");
+        SoundStyle Pierce = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Pierce");
+        SoundStyle Guard = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Guard");
 
         private void Attack2()
         {
