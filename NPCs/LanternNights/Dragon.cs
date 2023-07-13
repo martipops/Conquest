@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
-using Assortedarmaments.NPCs;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.Bestiary;

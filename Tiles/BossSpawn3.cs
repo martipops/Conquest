@@ -13,9 +13,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Microsoft.Xna.Framework;
-using Assortedarmaments.NPCs.Bosses;
 
-using Assortedarmaments.NPCs.Bosses.Danduke;
+using Conquest.NPCs.Bosses.Danduke;
 
 namespace Conquest.Tiles
 {

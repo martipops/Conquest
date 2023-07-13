@@ -19,7 +19,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Assortedarmaments.NPCs.Bosses.Danduke
+namespace Conquest.NPCs.Bosses.Danduke
 {
     [AutoloadBossHead]
 
@@ -44,7 +44,7 @@ namespace Assortedarmaments.NPCs.Bosses.Danduke
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.HitSound = SoundID.NPCHit1;
-            NPC.BossBar = ModContent.GetInstance<Conquest.BossBar.DandukeBossBar>();
+            NPC.BossBar = ModContent.GetInstance<BossBar.DandukeBossBar>();
 
             NPCDebuffImmunityData debuffData = new NPCDebuffImmunityData
             {

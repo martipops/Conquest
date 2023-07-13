@@ -1,4 +1,4 @@
-﻿using Assortedarmaments.NPCs.Bosses;
+﻿
 using Conquest.NPCs.Bosses;
 using Microsoft.Xna.Framework;
 
