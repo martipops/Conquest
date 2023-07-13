@@ -24,8 +24,8 @@ namespace Conquest.Tiles
         public const int HorizontalFrames = 1;
         public const int VerticalFrames = 1;
         public Asset<Texture2D> RelicTexture;
-        public virtual string RelicTextureName => "Assortedarmaments/Tiles/BossSpawn1";
-        public override string Texture => "Assortedarmaments/Tiles/RelicPedestal";
+        public virtual string RelicTextureName => "Conquest/Tiles/BossSpawn1";
+        public override string Texture => "Conquest/Tiles/RelicPedestal";
         public override void Load()
         {
             if (!Main.dedServ)
