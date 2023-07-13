@@ -88,10 +88,7 @@ namespace Conquest.Assets.Common
             }
         }
        
-        public override bool CanConsumeAmmo(Terraria.Item weapon, Terraria.Item ammo, Player player)
-        {
-            return Main.rand.NextFloat() >= 0.2f;
-        }
+      
     }
     
 }
