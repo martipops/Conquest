@@ -28,7 +28,6 @@ using Conquest.Items.Weapons.Melee;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.Projectiles.Melee;
 using Conquest.Projectiles;
-using Assortedarmaments.Projectiles;
 
 namespace Conquest.Assets.Common
 {
@@ -86,6 +85,7 @@ namespace Conquest.Assets.Common
         public bool Justice;
         public int JusticeDamage;
         public int TimesHit;
+        public bool America;
         public override void ResetEffects()
         {
             Diplopia = false;
@@ -107,6 +107,7 @@ namespace Conquest.Assets.Common
             Glass = false;
             Glasstime = 0;
             CloseCall = false;
+            America = false;
             Justice = false;
             if (Player.GetModPlayer<MyPlayer>().blocking == true)
             {
@@ -1007,6 +1008,10 @@ namespace Conquest.Assets.Common
                     proj.damage += (int)(proj.damage * 0.5f);
                     target.GetGlobalNPC<MyNpc>().minionMark = 0;
                 }
+            }
+            if(America && proj.DamageType == DamageClass.Ranged)
+            {
+                modifiers.CritDamage *= 20;
             }
         }
         /*public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)

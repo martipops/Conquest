@@ -9,7 +9,7 @@ using Terraria.GameContent;
 using ReLogic.Content;
 using Conquest.Buffs;
 
-namespace Assortedarmaments.Projectiles {
+namespace Conquest.Projectiles {
     public class WeakPoint : ModProjectile {
 
 		// IF YOU WANT TO CHANGE DAMAGE OF THE MARKER EXLPODE, CHECK WeakpointDeBuff.cs!!!

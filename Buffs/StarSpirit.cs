@@ -1,4 +1,4 @@
-﻿using Assortedarmaments.Projectiles;
+﻿
 using Conquest.Projectiles;
 using System;
 using System.Collections.Generic;

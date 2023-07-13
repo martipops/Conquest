@@ -6,7 +6,7 @@ using Terraria.Graphics.Effects;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Conquest.Assets.GUI;
-using Assortedarmaments.Projectiles;
+using Conquest.Projectiles;
 
 namespace Conquest.Buffs {
     public class WeakPointBuff : ModBuff {

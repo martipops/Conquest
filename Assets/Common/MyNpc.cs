@@ -114,6 +114,10 @@ namespace Conquest.Assets.Common
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WarPick>(), 95));
             }
+            if(npc.type == NPCID.GoblinSummoner)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShadowflameCandle>(), 10));
+            }
             if (npc.type == NPCID.Harpy)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AeroScimitar>(), 300));
