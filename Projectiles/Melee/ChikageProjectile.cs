@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Conquest.Assets.Common;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using Conquest.Assets.Common;
+using Conquest.Buffs;
 
 namespace Conquest.Projectiles.Melee
 {
-    public class OC : ModProjectile
+    internal class ChikageProjectile : ModProjectile
     {
         private const float SWINGRANGE = 1.67f * (float)Math.PI; // The angle a swing attack covers (300 deg)
         private const float FIRSTHALFSWING = 0.45f; // How much of the swing happens before it reaches the target angle (in relation to swingRange)
@@ -40,8 +41,12 @@ namespace Conquest.Projectiles.Melee
             Execute,
             Unwind
         }
-        public int HitStop;
-
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Player player = Main.player[Main.myPlayer];
+            MyPlayer modPlayer = player.GetModPlayer<MyPlayer>();
+            player.GetModPlayer<MyPlayer>().ScreenShake = 6;
+        }
         // These properties wrap the usual ai and localAI arrays for cleaner and easier to understand code.
         private AttackType CurrentAttack
         {
@@ -67,9 +72,9 @@ namespace Conquest.Projectiles.Melee
 
         // We define timing functions for each stage, taking into account melee attack speed
         // Note that you can change this to suit the need of your projectile
-        private float prepTime => 24f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
-        private float execTime => 24f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
-        private float hideTime => 24f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
+        public float prepTime => 12f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
+        public float execTime => 12f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
+        public float hideTime => 12f / Owner.GetTotalAttackSpeed(Projectile.DamageType);
 
         private Player Owner => Main.player[Projectile.owner];
 
@@ -80,8 +85,8 @@ namespace Conquest.Projectiles.Melee
 
         public override void SetDefaults()
         {
-            Projectile.width = 54; // Hitbox width of projectile
-            Projectile.height = 82; // Hitbox height of projectile
+            Projectile.width = 56; // Hitbox width of projectile
+            Projectile.height = 108; // Hitbox height of projectile
             Projectile.friendly = true; // Projectile hits enemies
             Projectile.timeLeft = 10000; // Time it takes for projectile to expire
             Projectile.penetrate = -1; // Projectile pierces infinitely
@@ -135,10 +140,10 @@ namespace Conquest.Projectiles.Melee
 
         public override void AI()
         {
-
             // Extend use animation until projectile is killed
             Owner.itemAnimation = 2;
             Owner.itemTime = 2;
+            Player owner = Main.player[Projectile.owner]; // Get the owner of the projectile.
 
             // Kill the projectile if the player dies or gets crowd controlled
             if (!Owner.active || Owner.dead || Owner.noItems || Owner.CCed)
@@ -146,7 +151,7 @@ namespace Conquest.Projectiles.Melee
                 Projectile.Kill();
                 return;
             }
-
+            
             // AI depends on stage and attack
             // Note that these stages are to facilitate the scaling effect at the beginning and end
             // If this is not desireable for you, feel free to simplify
@@ -162,7 +167,7 @@ namespace Conquest.Projectiles.Melee
                     UnwindStrike();
                     break;
             }
-
+           
             SetSwordPosition();
             Timer++;
         }
@@ -199,7 +204,7 @@ namespace Conquest.Projectiles.Melee
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
             Vector2 start = Owner.MountedCenter;
-            Vector2 end = start + Projectile.rotation.ToRotationVector2() * (Projectile.Size.Length() * Projectile.scale);
+            Vector2 end = start + Projectile.rotation.ToRotationVector2() * ((Projectile.Size.Length()) * Projectile.scale);
             float collisionPoint = 0f;
             return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, 15f * Projectile.scale, ref collisionPoint);
         }
@@ -229,15 +234,8 @@ namespace Conquest.Projectiles.Melee
             if (CurrentAttack == AttackType.Spin)
                 modifiers.Knockback += 1;
         }
-        int timer;
-        // Function to easily set projectile and arm position
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            Player player = Main.player[Main.myPlayer];
-            MyPlayer modPlayer = player.GetModPlayer<MyPlayer>();
-            player.GetModPlayer<MyPlayer>().ScreenShake = 6;
 
-        }
+        // Function to easily set projectile and arm position
         public void SetSwordPosition()
         {
             Projectile.rotation = InitialAngle + Projectile.spriteDirection * Progress; // Set projectile rotation
@@ -300,7 +298,7 @@ namespace Conquest.Projectiles.Melee
         {
             if (CurrentAttack == AttackType.Swing)
             {
-                Progress = MathHelper.SmoothStep(0, SWINGRANGE, 1f - UNWIND + UNWIND * Timer / hideTime);
+                Progress = MathHelper.SmoothStep(0, SWINGRANGE, (1f - UNWIND) + UNWIND * Timer / hideTime);
                 Size = 1f - MathHelper.SmoothStep(0, 1, Timer / hideTime); // Make sword slowly decrease in size as we end the swing to make a smooth hiding animation
 
                 if (Timer >= hideTime)
@@ -310,7 +308,7 @@ namespace Conquest.Projectiles.Melee
             }
             else
             {
-                Progress = MathHelper.SmoothStep(0, SPINRANGE, 1f - UNWIND / 2 + UNWIND / 2 * Timer / (hideTime * SPINTIME / 2));
+                Progress = MathHelper.SmoothStep(0, SPINRANGE, (1f - UNWIND / 2) + UNWIND / 2 * Timer / (hideTime * SPINTIME / 2));
                 Size = 1f - MathHelper.SmoothStep(0, 1, Timer / (hideTime * SPINTIME / 2));
 
                 if (Timer >= hideTime * SPINTIME / 2)

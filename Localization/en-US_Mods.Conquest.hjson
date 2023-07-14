@@ -1004,21 +1004,33 @@ Items: {
 
 	Murica: {
 		DisplayName: Murica
-		Tooltip: 
-		'''
-		Increases ranged damage by 12%
-		Increases ranged crit damage multiplier by 1.25x
-		'''
+		Tooltip:
+			'''
+			Increases ranged damage by 12%
+			Increases ranged crit damage multiplier by 1.25x
+			'''
 	}
 
 	ShadowflameCandle: {
 		DisplayName: Shadowflame Candle
-		Tooltip: ""
+		Tooltip:
+			'''
+			Increases magic crit chance by 8%
+			Increases magic damage by 12%
+			'''
 	}
 
 	WarPick: {
 		DisplayName: War Pick
 		Tooltip: ""
+	}
+
+	Chikage: {
+		DisplayName: Chikage
+		Tooltip: 
+		'''
+			Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost to this weapons stats
+			'''
 	}
 }
 
@@ -1112,6 +1124,7 @@ Projectiles: {
 	LightningGunProj3.DisplayName: Lightning Gun Proj3
 	SupportStar.DisplayName: Support Star
 	WeakPoint.DisplayName: Weak Point
+	ChikageProjectile.DisplayName: Chikage Projectile
 }
 
 Buffs: {
@@ -1232,6 +1245,11 @@ Buffs: {
 	SupportStarBuff2: {
 		DisplayName: Support Star Buff2
 		Description: Mods.Conquest.Buffs.SupportStarBuff2.Description
+	}
+
+	ChikageBuff: {
+		DisplayName: Intense Bleeding
+		Description: 100% Increased damge and 50% increased attack speed with Chikage
 	}
 }
 

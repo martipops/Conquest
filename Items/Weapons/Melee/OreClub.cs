@@ -29,8 +29,8 @@ namespace Conquest.Items.Weapons.Melee
             Item.height = 68;
             // Use Properties
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useAnimation = 60;
-            Item.useTime = 60;
+            Item.useAnimation = 120;
+            Item.useTime = 120;
             Item.noUseGraphic = true;
             //Item.UseSound = SoundID.Item1;
             Item.noMelee = true;

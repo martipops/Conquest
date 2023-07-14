@@ -13,13 +13,13 @@ namespace Conquest.Assets.Systems
         {
             Recipe recipe = Recipe.Create(ItemID.Gladius)
                   .AddCustomShimmerResult(ModContent.ItemType<EmperorSword>())
-                  .AddCondition(Condition.DownedBrainOfCthulhu)
+                  .AddCondition(Condition.DownedEowOrBoc)
                   .AddCondition(Language.GetOrRegister("Shimmered"), () => NPC.downedBoss2)
                   .Register();
-            Recipe recipe2 = Recipe.Create(ItemID.Gladius)
-                 .AddCustomShimmerResult(ModContent.ItemType<EmperorSword>())
-                 .AddCondition(Language.GetOrRegister("Shimmered"), () => NPC.downedBoss2)
-                 .AddCondition(Condition.DownedEaterOfWorlds)
+            Recipe recipe2 = Recipe.Create(ItemID.Muramasa)
+                 .AddCustomShimmerResult(ModContent.ItemType<Chikage>())
+                 .AddCondition(Language.GetOrRegister("Shimmered"), () => NPC.downedBoss3)
+                 .AddCondition(Condition.DownedSkeletron)
                  .Register();
 
         }
@@ -30,8 +30,17 @@ namespace Conquest.Assets.Systems
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            // Here we add a tooltip to the gel to let the player know what will happen
             tooltips.Add(new(Mod, "", "Can be shimmered"));
         }
     }
+    public class MuramasaGlobal : GlobalItem
+    {
+        public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.Muramasa;
+
+        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        {
+            tooltips.Add(new(Mod, "", "Can be shimmered"));
+        }
+    }
+
 }

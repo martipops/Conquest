@@ -460,6 +460,10 @@ namespace Conquest.Assets.Common
             {
                 Player.ClearBuff(ModContent.BuffType<MoonlightBlessing>());
             }
+            if (Player.HeldItem.type != ModContent.ItemType<Chikage>() && Player.HasBuff(ModContent.BuffType<ChikageBuff>()))
+            {
+                Player.ClearBuff(ModContent.BuffType<ChikageBuff>());
+            }
             if (T1.p1On == true)
             {
                 Player.GetDamage(DamageClass.Magic) += 0.02f;
@@ -761,6 +765,7 @@ namespace Conquest.Assets.Common
                 Player.Hurt(PlayerDeathReason.ByCustomReason((Player.name + "Was claimed by the underworld")), AmountHurt, 1, false, false, 1, false, 100);
                 Projectile.NewProjectile(entitySource, Main.MouseWorld, velocity, type, 300, 1, Player.whoAmI);
             }
+          
 
             // here is time Warp trigger
 
@@ -810,7 +815,12 @@ namespace Conquest.Assets.Common
                     Player.AddBuff(ModContent.BuffType<MoonlightBlessing>(), 720);
 
                 }
-
+                if (Player.HeldItem.type == ModContent.ItemType<Chikage>() && !Player.HasBuff(ModContent.BuffType<ArmamentCooldown>()))
+                {
+                    Player.AddBuff(ModContent.BuffType<ChikageBuff>(), 800);
+                    Player.AddBuff(ModContent.BuffType<ArmamentCooldown>(), 3600);
+                    Player.Hurt(PlayerDeathReason.ByCustomReason((Player.name + "Got to cocky")), AmountHurt, 1, false, false, 1, false, 100);
+                }
             }
 
         }

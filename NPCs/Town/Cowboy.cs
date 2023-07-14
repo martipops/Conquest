@@ -17,6 +17,7 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Conquest.Items.Consumable.Alcohol;
 using Conquest.Items.Weapons.Ranged;
+using Conquest.Items.Accessory;
 
 namespace Conquest.NPCs.Town
 {
@@ -124,7 +125,7 @@ namespace Conquest.NPCs.Town
                 shop = ShopName;
             }
         }
-      
+
         public override void AddShops()
         {
             var npcShop = new NPCShop(Type, ShopName)
@@ -134,7 +135,9 @@ namespace Conquest.NPCs.Town
                 .Add<RyeWhiskey>()
                 .Add<Moonshine>()
                 .Add<CalobogusAle>()
-                .Add<ShotRevolver>();
+                .Add<ShotRevolver>()
+                .Add<Murica>(Condition.Hardmode);
+
             npcShop.Register();
         }
         public override ITownNPCProfile TownNPCProfile()

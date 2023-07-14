@@ -4,13 +4,15 @@ VictorTekelili - (Weapons,Projectiles,Bosses,UI,Items)
 Supychan (Weapons,Projectiles,NPC'S)
 Sprites
 Logar (Items)
-The Possum (UI)
+The Possum (UI, Items)
 VictorTekelili#7697 (Bosses, Items, Enemies, Tiles)
 Raddize (Tiles, Projectiles)
-IamPolaaris (Items)
+IamPolaaris (Items, Projectiles)
+Serger (Items,Projectiles)
 ThirtsyBoi (Projectiles, Items)
 NITO (Enemies, Projectiles, Items)
 GOLD (Enemies)
+Mrati (Items, Enemies, Projectiles)
 IZ (Items)
 Dyl (Items, Projectiles)
 Composers
@@ -30,3 +32,4 @@ Stormytuna (Canisters Mod) - Explosive related code
 Stormytuna (Canisters Mod) - Lightning Code
 Storymtuna - Making Minions Crit
 Photonic0 - Applying shaders to display names
+Tscorc Revamp - Electrified buff
