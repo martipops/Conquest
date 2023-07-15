@@ -1037,7 +1037,7 @@ Items: {
 
 	FreshFork: {
 		DisplayName: Fresh Fork
-		Tooltip: ""
+		Tooltip: "Has a chance to heal based on the amount of damage done"
 	}
 }
 
