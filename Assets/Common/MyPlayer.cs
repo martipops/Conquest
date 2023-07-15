@@ -426,6 +426,7 @@ namespace Conquest.Assets.Common
                 if (JusticeDamage >= 100)
                 {
                     Player.GetDamage(DamageClass.Generic).Flat += 1f;
+                    Player.GetDamage(DamageClass.Generic).Flat += 1f;
 
                 }
                 if (JusticeDamage >= 200)

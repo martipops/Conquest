@@ -1029,6 +1029,11 @@ Items: {
 		DisplayName: Chikage
 		Tooltip: Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost to this weapons stats
 	}
+
+	AnvilStaff: {
+		DisplayName: Anvil Staff
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1122,6 +1127,7 @@ Projectiles: {
 	SupportStar.DisplayName: Support Star
 	WeakPoint.DisplayName: Weak Point
 	ChikageProjectile.DisplayName: Chikage Projectile
+	AnvilMinion.DisplayName: Anvil Minion
 }
 
 Buffs: {
@@ -1247,6 +1253,11 @@ Buffs: {
 	ChikageBuff: {
 		DisplayName: Intense Bleeding
 		Description: 100% Increased damge and 50% increased attack speed with Chikage
+	}
+
+	AnvilBuff: {
+		DisplayName: Anvil Buff
+		Description: Mods.Conquest.Buffs.AnvilBuff.Description
 	}
 }
 
