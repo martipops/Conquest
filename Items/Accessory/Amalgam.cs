@@ -20,6 +20,8 @@ namespace Conquest.Items.Accessory
             Item.rare = ItemRarityID.Expert;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             Item.master = true;
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 12));
+            ItemID.Sets.AnimatesAsSoul[Item.type] = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

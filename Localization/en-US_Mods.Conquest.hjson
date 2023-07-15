@@ -1027,10 +1027,7 @@ Items: {
 
 	Chikage: {
 		DisplayName: Chikage
-		Tooltip: 
-		'''
-			Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost to this weapons stats
-			'''
+		Tooltip: Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost to this weapons stats
 	}
 }
 
