@@ -1034,6 +1034,11 @@ Items: {
 		DisplayName: Anvil Staff
 		Tooltip: ""
 	}
+
+	FreshFork: {
+		DisplayName: Fresh Fork
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1128,6 +1133,7 @@ Projectiles: {
 	WeakPoint.DisplayName: Weak Point
 	ChikageProjectile.DisplayName: Chikage Projectile
 	AnvilMinion.DisplayName: Anvil Minion
+	ForkProjectile.DisplayName: Fork Projectile
 }
 
 Buffs: {

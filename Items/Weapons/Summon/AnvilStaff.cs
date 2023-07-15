@@ -54,22 +54,7 @@ namespace Conquest.Items.Weapons.Summon
             // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
             return false;
         }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.IronAnvil);
-            recipe.AddIngredient(ItemID.SoulofLight, 4);
-            recipe.AddIngredient(ItemID.SoulofNight, 4);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
-
-            recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.LeadAnvil);
-            recipe.AddIngredient(ItemID.SoulofLight, 4);
-            recipe.AddIngredient(ItemID.SoulofNight, 4);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
-        }
+        
     }
 }
     

@@ -33,7 +33,7 @@ namespace Conquest.Items.Weapons.Melee
             Item.useTime = 40;
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.UseSound = SoundID.Item71;
+            Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.noMelee = true;
             Item.noUseGraphic = true;
