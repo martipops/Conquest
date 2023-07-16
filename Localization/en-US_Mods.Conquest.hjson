@@ -1037,7 +1037,7 @@ Items: {
 
 	FreshFork: {
 		DisplayName: Fresh Fork
-		Tooltip: "Has a chance to heal based on the amount of damage done"
+		Tooltip: Has a chance to heal based on the amount of damage done
 	}
 }
 
@@ -1134,6 +1134,11 @@ Projectiles: {
 	ChikageProjectile.DisplayName: Chikage Projectile
 	AnvilMinion.DisplayName: Anvil Minion
 	ForkProjectile.DisplayName: Fork Projectile
+	ManaBomb.DisplayName: Mana Bomb
+	ManaBoom.DisplayName: Mana Boom
+	Fireinthehole.DisplayName: Fireinthehole
+	Flashbang.DisplayName: Flashbang
+	FlashbangLight.DisplayName: Flashbang Light
 }
 
 Buffs: {

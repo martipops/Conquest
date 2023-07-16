@@ -33,7 +33,7 @@ namespace Conquest.Projectiles.Summoner
             Projectile.height = 16;
             Projectile.friendly = true;
             Projectile.minion = true;
-            Projectile.minionSlots = 2;
+            Projectile.minionSlots = 1;
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;

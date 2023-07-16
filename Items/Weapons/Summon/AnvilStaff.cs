@@ -22,7 +22,7 @@ namespace Conquest.Items.Weapons.Summon
 
         public override void SetDefaults()
         {
-            Item.damage = 18;
+            Item.damage = 14;
             Item.knockBack = 6f;
             Item.mana = 12;
             Item.width = 32;
@@ -54,7 +54,21 @@ namespace Conquest.Items.Weapons.Summon
             // Since we spawned the projectile manually already, we do not need the game to spawn it for ourselves anymore, so return false
             return false;
         }
-        
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddIngredient(ItemID.IronAnvil, 1)
+            .AddIngredient(ItemID.Book, 1)
+            .AddTile(TileID.Anvils)
+            .Register();
+            CreateRecipe()
+            .AddIngredient(ItemID.LeadAnvil, 1)
+            .AddIngredient(ItemID.Book, 1)
+            .AddTile(TileID.Anvils)
+            .Register();
+
+
+        }
     }
 }
     

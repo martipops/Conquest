@@ -22,6 +22,7 @@ namespace Conquest.Items.Accessory
             Item.master = true;
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 12));
             ItemID.Sets.AnimatesAsSoul[Item.type] = true;
+            ItemID.Sets.ItemNoGravity[Item.type] = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
