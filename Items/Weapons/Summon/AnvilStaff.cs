@@ -30,7 +30,7 @@ namespace Conquest.Items.Weapons.Summon
             Item.useTime = 30;
             Item.useAnimation = 30;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.value = Item.sellPrice(0, 1, 0, 0);
+            Item.value = Item.sellPrice(0, 0, 5, 0);
             Item.rare = ItemRarityID.LightRed;
             Item.UseSound = SoundID.Item44;
             Item.noMelee = true;
