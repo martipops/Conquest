@@ -32,8 +32,12 @@ namespace Conquest.Items.Weapons.Summon
             Item.useStyle = ItemUseStyleID.Swing;
             Item.value = Item.sellPrice(0, 0, 5, 0);
             Item.rare = ItemRarityID.LightRed;
-            Item.UseSound = SoundID.Item44;
-            Item.noMelee = true;
+            Item.UseSound = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Anvil_Summon")
+            {
+                Volume = 0.9f,
+                PitchVariance = 0.2f,
+                MaxInstances = 3,
+            }; Item.noMelee = true;
             Item.DamageType = DamageClass.Summon;
             Item.buffType = ModContent.BuffType<AnvilBuff>();
             Item.shoot = ModContent.ProjectileType<AnvilMinion>();

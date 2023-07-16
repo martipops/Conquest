@@ -27,7 +27,6 @@ namespace Conquest.Projectiles.Melee
             Projectile.alpha = 0;
             Projectile.width = 50;
             Projectile.height = 40;
-
             Projectile.hide = true;
             Projectile.ownerHitCheck = true;
             Projectile.DamageType = DamageClass.Melee;
@@ -58,44 +57,36 @@ namespace Conquest.Projectiles.Melee
 
         }
 
-        public float movementFactor // Change this value to alter how fast the spear moves
+        public float movementFactor
         {
             get => Projectile.ai[0];
             set => Projectile.ai[0] = value;
         }
         public override void AI()
         {
-            //  Lighting.AddLight(Projectile.Center, new Vector3(1f, 1f, 1f));
-
-
-            // Since we access the owner player instance so much, it's useful to create a helper local variable for this
-            // Sadly, Projectile/ModProjectile does not have its own
             Player projOwner = Main.player[Projectile.owner];
-            // Here we set some of the projectile's owner properties, such as held item and itemtime, along with projectile direction and position based on the player
             Vector2 ownerMountedCenter = projOwner.RotatedRelativePoint(projOwner.MountedCenter, true);
             Projectile.direction = projOwner.direction;
             projOwner.heldProj = Projectile.whoAmI;
             projOwner.itemTime = projOwner.itemAnimation;
             Projectile.position.X = ownerMountedCenter.X - Projectile.width / 2;
             Projectile.position.Y = ownerMountedCenter.Y - Projectile.height / 2;
-            // As long as the player isn't frozen, the spear can move
             if (!projOwner.frozen)
             {
-                if (movementFactor == 0f) // When initially thrown out, the ai0 will be 0f
+                if (movementFactor == 0f) 
                 {
-                    movementFactor = 14f; // Make sure the spear moves forward when initially thrown out
-                    Projectile.netUpdate = true; // Make sure to netUpdate this spear
+                    movementFactor = 14f; 
+                    Projectile.netUpdate = true; 
                 }
-                if (projOwner.itemAnimation < projOwner.itemAnimationMax / 3) // Somewhere along the item animation, make sure the spear moves back
+                if (projOwner.itemAnimation < projOwner.itemAnimationMax / 3) 
                 {
                     movementFactor -= 0f;
                 }
-                else // Otherwise, increase the movement factor
+                else 
                 {
                     movementFactor += 0.7f;
                 }
             }
-
             if (Projectile.frame >= 5)
             {
                 Projectile.alpha += 25;
@@ -104,7 +95,6 @@ namespace Conquest.Projectiles.Melee
             {
                 Projectile.Kill();
             }
-
             if (++Projectile.frameCounter >= 3)
             {
                 Projectile.frameCounter = 0;
@@ -118,21 +108,13 @@ namespace Conquest.Projectiles.Melee
                 }
 
             }
-
-
             if (projOwner.itemAnimation == 0)
             {
 
             }
-
             Projectile.spriteDirection = Projectile.direction = (Projectile.velocity.X > 0).ToDirectionInt();
             Projectile.rotation = Projectile.velocity.ToRotation() + (Projectile.spriteDirection == 1 ? 0f : MathHelper.Pi);
-
-
         }
-
-
-        // Some advanced drawing because the texture image isn't centered or symetrical.
         public override bool PreDraw(ref Color lightColor)
         {
             SpriteEffects spriteEffects = SpriteEffects.None;
@@ -151,7 +133,6 @@ namespace Conquest.Projectiles.Melee
             Main.spriteBatch.Draw(texture,
             Projectile.Center - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY),
             sourceRectangle, drawColor, Projectile.rotation, origin, Projectile.scale, spriteEffects, 0f);
-
             return false;
         }
     }

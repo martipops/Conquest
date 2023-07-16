@@ -17,6 +17,7 @@ IZ (Items)
 Dyl (Items, Projectiles)
 Composers
 Spadey (Boss Themes)
+! Sagittarius Aystar
 Ideas
 Ezra (Weapons)
 Other (MIT Licensed Mods, or GPL 3.0 Licensed mods or permission)

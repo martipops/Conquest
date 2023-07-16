@@ -137,7 +137,7 @@ namespace Conquest.NPCs.Town
                 .Add<CalobogusAle>()
                 .Add<ShotRevolver>()
                 .Add<Murica>(Condition.Hardmode);
-
+                
             npcShop.Register();
         }
         public override ITownNPCProfile TownNPCProfile()

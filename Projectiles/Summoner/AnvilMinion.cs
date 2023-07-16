@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
@@ -73,7 +74,19 @@ namespace Conquest.Projectiles.Summoner
             }
             return true;
         }
+        SoundStyle HitNormal = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Anvil_Hit_I")
+        {
+            Volume = 0.9f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
 
+        };
+        SoundStyle HitCrit = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Anvil_Hit_II")
+        {
+            Volume = 0.9f,
+            PitchVariance = 0.2f,
+            MaxInstances = 3,
+        };
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
@@ -81,6 +94,11 @@ namespace Conquest.Projectiles.Summoner
             //screenshake could also be here
             dropping = 0;
             timer = 0;
+            if (hit.Crit)
+            {
+                SoundEngine.PlaySound(HitCrit);
+            }
+            else SoundEngine.PlaySound(HitNormal);
         }
         public override void AI()
         {

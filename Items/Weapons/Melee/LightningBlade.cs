@@ -58,7 +58,7 @@ namespace Conquest.Items.Weapons.Melee
 
             return null;
         }
-      
+       
         public override void AddRecipes()
         {
             CreateRecipe()

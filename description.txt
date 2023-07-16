@@ -1,5 +1,5 @@
 The mod currently adds;
-- 110+ Items
+- 150+ Items
 - 1 Town Npc
 - 3 Bosses
 - 8 Enemies
@@ -7,5 +7,15 @@ The mod currently adds;
 - 2 Dungeons
 - Permanent Potion System
 - New special type of accessories, Artiacts
-- Dungeons that acts as lairs for bosses
+- World Map used to enter dungeons
 - Custom World Gen (Underground Desert)
+- Several Shimmer Exclusive items
+- This mod allows minions to crit 
+
+Talent Tree: Accessed through the Eight Trigrams Mirror item your character spawns with, a new way to progress in which you select skills that improve your character.
+World Map: Accessed through the World Map item your character spawns with, using it will open a UI which can be used to select dungeons which offer unique loot called Artifacts and to Fight the Mods Bosses.
+Permanent Potions: Crafted by using 30 of the original potions, Can be toggled to give the effect to your player, and does not need to be in your inventory after you toggle them.
+Artifacts: Special accessories that you can only have 1 of. These alter the game in some way or provide unique effects to your player.
+
+We are looking for spriters, programmers and help with balancing!
+Join the discord! https://discord.gg/dNunYXmRbn

@@ -451,7 +451,6 @@ namespace Conquest.Assets.Common
 
                 }
             }
-
             if (Player.HeldItem.type != ModContent.ItemType<PainTrain>() && Player.HasBuff(ModContent.BuffType<Steamy>()))
             {
                 Player.ClearBuff(ModContent.BuffType<Steamy>());
@@ -656,8 +655,10 @@ namespace Conquest.Assets.Common
             }
             rez = false;
         }
+       
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
+            
             if (ElectroCrystal && Main.rand.NextBool(8))
             {
                 target.AddBuff(ModContent.BuffType<Electrified2>(), 120);
