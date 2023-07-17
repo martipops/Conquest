@@ -1031,13 +1031,18 @@ Items: {
 	}
 
 	AnvilStaff: {
-		DisplayName: Anvil Staff
+		DisplayName: Book of Anvils
 		Tooltip: ""
 	}
 
 	FreshFork: {
 		DisplayName: Fresh Fork
 		Tooltip: Has a chance to heal based on the amount of damage done
+	}
+
+	Test: {
+		DisplayName: Test
+		Tooltip: ""
 	}
 }
 
@@ -1147,7 +1152,7 @@ Buffs: {
 		Description: You are unable to unleash your armaments legendary ability
 	}
 
-	BrokenBones: {
+	Bones: {
 		DisplayName: Broken Bones
 		Description: Mods.Conquest.Buffs.BrokenBones.Description
 	}
@@ -1160,6 +1165,11 @@ Buffs: {
 			No Life Regen
 			+50% Damage
 			'''
+	}
+
+	BrokenBones: {
+		DisplayName: Broken Bones
+		Description: Mods.Conquest.Buffs.BrokenBones.Description
 	}
 
 	Cursed: {

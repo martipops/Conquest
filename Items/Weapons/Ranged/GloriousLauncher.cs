@@ -4,6 +4,8 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Conquest.Projectiles.Ranged;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 
 namespace Conquest.Items.Weapons.Ranged
 {
@@ -36,7 +38,7 @@ namespace Conquest.Items.Weapons.Ranged
         {
             return new Vector2(10, -4);
         }
-
+      
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 25f;

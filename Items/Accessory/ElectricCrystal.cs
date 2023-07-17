@@ -14,7 +14,7 @@ namespace Conquest.Items.Accessory
         {
             // DisplayName.SetDefault("Electro Crystal");
             // Tooltip.SetDefault("Weapons have a chance to inflict electrified against enemies");
-            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 6));
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 11));
             ItemID.Sets.AnimatesAsSoul[Item.type] = true;
         }
 

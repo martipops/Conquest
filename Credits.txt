@@ -29,6 +29,7 @@ Gabehaswon (Spirit Mod) - Boss spawning from tile, see Queenlarva.cs
 Scalar (Starlight River) - Base Spear Projectile
 Gabehaswon (Spirit Mod) - Projectiles raining from the sky, see Anubis.cs
 Stormytuna - Boomerang Related Code
+Storymtuna - Glow mask stuff
 Stormytuna (Canisters Mod) - Explosive related code
 Stormytuna (Canisters Mod) - Lightning Code
 Storymtuna - Making Minions Crit

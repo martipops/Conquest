@@ -99,7 +99,7 @@ namespace Conquest.Assets.GUI.Chart
         }
         private void FlowerField(UIMouseEvent evt, UIElement listeningElement)
         {
-            SetRectangle(GrandChart.infoImg, left: 1084f, top: 520f, width: 160f, height: 240f);
+            SetRectangle(GrandChart.infoImg, left: 980f, top: 240, width: 160f, height: 240f);
             if (NPC.downedBoss3)
             {
                 txt1.SetText("\n          Flower Field\n\n       Left click to enter");
@@ -117,7 +117,7 @@ namespace Conquest.Assets.GUI.Chart
         }
         private void FlowerFieldOnClick(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (NPC.downedBoss3)
+            if (NPC.downedBoss3 && GSB == true)
             {
                 if (SubworldSystem.Current != null)
                 {
@@ -157,7 +157,7 @@ namespace Conquest.Assets.GUI.Chart
 
         private void EtButton2_OnClick(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (NPC.downedPlantBoss)
+            if (NPC.downedPlantBoss && GSB == true)
             {
                 if (SubworldSystem.Current != null)
                 {
