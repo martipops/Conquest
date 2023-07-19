@@ -19,7 +19,8 @@ namespace Conquest.Items.Accessory
     {
         public override void SetStaticDefaults()
         {
-
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 5));
+            ItemID.Sets.AnimatesAsSoul[Item.type] = true;
             // Tooltip.SetDefault("Grants a double jump");
         }
 

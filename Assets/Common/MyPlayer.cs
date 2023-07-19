@@ -86,6 +86,7 @@ namespace Conquest.Assets.Common
         public int JusticeDamage;
         public int TimesHit;
         public bool America;
+   
         public override void ResetEffects()
         {
             Diplopia = false;
@@ -109,6 +110,7 @@ namespace Conquest.Assets.Common
             CloseCall = false;
             America = false;
             Justice = false;
+
             if (Player.GetModPlayer<MyPlayer>().blocking == true)
             {
                 if (++Player.GetModPlayer<MyPlayer>().blockCounter >= 30)

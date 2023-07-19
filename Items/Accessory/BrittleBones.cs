@@ -21,7 +21,8 @@ namespace Conquest.Items.Accessory
         {
             // Tooltip.SetDefault("Everything hurts\nGoing under 100 health causes your bones to break\nWhen your bones are broken you gain 0 defense, 0 life regneration, and +50% more damage\nGoing over 100 health removes the changed stats");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 9));
+            ItemID.Sets.AnimatesAsSoul[Item.type] = true;
         }
 
         public override void SetDefaults()
