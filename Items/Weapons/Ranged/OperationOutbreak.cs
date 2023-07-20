@@ -13,6 +13,7 @@ namespace Conquest.Items.Weapons.Ranged
 {
     public class OperationOutbreak : ModItem
     {
+        // test
         public override void SetDefaults()
         {
             // Common Properties
