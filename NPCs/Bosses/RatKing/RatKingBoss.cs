@@ -5,6 +5,7 @@ using Conquest.Items.Weapons.Magic;
 using Conquest.Items.Weapons.Melee;
 using Conquest.Items.Weapons.Ranged;
 using Conquest.NPCs.Bosses.Anubis;
+using Conquest.NPCs.Miniboss.Bruiser;
 using Conquest.Projectiles.Hostile;
 using Conquest.Projectiles.Melee;
 using Microsoft.Xna.Framework;
@@ -17,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -25,6 +27,7 @@ using Terraria.UI;
 
 namespace Conquest.NPCs.Bosses.RatKing
 {
+    [AutoloadBossHead]
     internal class RatKingBoss : ModNPC
     {
         public override void SetStaticDefaults()
@@ -35,8 +38,8 @@ namespace Conquest.NPCs.Bosses.RatKing
         {
             NPC.width = 88;
             NPC.height = 158;
-            NPC.damage = 75;
-            NPC.defense = 15;
+            NPC.damage = 65;
+            NPC.defense = 50;
             NPC.lifeMax = 200000;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
@@ -101,6 +104,12 @@ namespace Conquest.NPCs.Bosses.RatKing
                 }
             }
         }
+        public override void OnSpawn(IEntitySource source)
+        {
+            var the = NPC.GetSource_FromAI();
+            Vector2 spawnpos = NPC.Center + new Vector2(0f, (float)NPC.height / 2f);
+            NPC.NewNPC(the, (int)spawnpos.X, (int)spawnpos.Y, ModContent.NPCType<Mouse>());
+        }
         private void Attack1()
         {
             Player target = Main.player[NPC.target];
@@ -138,7 +147,7 @@ namespace Conquest.NPCs.Bosses.RatKing
                 float speed = 30f;
                 int type = ModContent.ProjectileType<RatKingMoonSlash>();
                 int damage = NPC.damage;
-                Projectile.NewProjectile(source, position, direction * speed, type, damage, 0f, Main.myPlayer);
+                Projectile.NewProjectile(source, position, direction * speed, type, damage / 3, 0f, Main.myPlayer);
             }
             if(AI_Timer >= 41)
             {
@@ -168,7 +177,7 @@ namespace Conquest.NPCs.Bosses.RatKing
                 float speed = 25f;
                 int type = ModContent.ProjectileType<RatKingMoonSlash2>();
                 int damage = NPC.damage;
-                Projectile.NewProjectile(source, position, direction * speed, type, damage, 0f, Main.myPlayer);
+                Projectile.NewProjectile(source, position, direction * speed, type, damage / 2, 0f, Main.myPlayer);
 
                 AI_Timer = 0;
                 AI_State = (float)ActionState.Idle;
@@ -188,7 +197,7 @@ namespace Conquest.NPCs.Bosses.RatKing
             {
                 float speed = 90f;
                 int type = ModContent.ProjectileType<RatKingBeam>();
-                int damage = NPC.damage / 2;
+                int damage = NPC.damage / 4;
                 var entitySource = NPC.GetSource_FromAI();
                 for (int ir = 0; ir < 5; ir++)
                 {

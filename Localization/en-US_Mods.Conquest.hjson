@@ -1284,6 +1284,11 @@ Buffs: {
 		DisplayName: Anvil Buff
 		Description: Mods.Conquest.Buffs.AnvilBuff.Description
 	}
+
+	RatKingsCurse: {
+		DisplayName: Rat Kings Curse
+		Description: You are unable to fly.
+	}
 }
 
 Keybinds: {
@@ -1345,6 +1350,7 @@ NPCs: {
 	}
 
 	RatKingBoss.DisplayName: Rat King Boss
+	Mouse.DisplayName: Rat Prince
 }
 
 Biomes: {

@@ -28,6 +28,7 @@ using Conquest.Items.Weapons.Ranged;
 using Conquest.Projectiles.Melee;
 using Conquest.Projectiles;
 using Conquest.Projectiles.Ranged;
+using Conquest.NPCs.Bosses.RatKing;
 
 namespace Conquest.Assets.Common
 {
@@ -152,7 +153,17 @@ namespace Conquest.Assets.Common
             {
                 EightTrigrams.tMaxLoad = 24;
             }
-
+            if (NPC.AnyNPCs(ModContent.NPCType<RatKingBoss>()))
+            {
+                if (!Player.HasBuff<RatKingsCurse>())
+                {
+                    Player.AddBuff(ModContent.BuffType<RatKingsCurse>(), 999);
+                }
+            }
+            if (Player.HasBuff<RatKingsCurse>() && !NPC.AnyNPCs(ModContent.NPCType<RatKingBoss>()))
+            {
+                Player.ClearBuff(ModContent.BuffType<RatKingsCurse>());
+            }
         }
 
         public override void PostUpdateEquips()
@@ -902,7 +913,7 @@ namespace Conquest.Assets.Common
             {
                 target.AddBuff(BuffID.Midas, 60 * 5);
             }
-            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
+            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0 && proj.DamageType == DamageClass.Melee)
             {
                 Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 50;
                 if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
