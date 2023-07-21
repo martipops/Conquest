@@ -1148,6 +1148,10 @@ Projectiles: {
 	RatKingMeteor.DisplayName: Rat King Meteor
 	RatKingMoonSlash.DisplayName: Rat King Moon Slash
 	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
+	BallOfLight.DisplayName: Ball Of Light
+	Cheese.DisplayName: Cheese
+	CheeseRelease.DisplayName: Cheese Release
+	Cheese2.DisplayName: Cheese2
 }
 
 Buffs: {

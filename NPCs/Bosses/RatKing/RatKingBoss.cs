@@ -40,7 +40,7 @@ namespace Conquest.NPCs.Bosses.RatKing
             NPC.height = 158;
             NPC.damage = 65;
             NPC.defense = 50;
-            NPC.lifeMax = 200000;
+            NPC.lifeMax = 400000;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0f;

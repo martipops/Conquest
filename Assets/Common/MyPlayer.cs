@@ -941,20 +941,7 @@ namespace Conquest.Assets.Common
                 }
             }
             Vector2 perturbedSpeed = new Vector2(0, -6).RotatedByRandom(MathHelper.ToRadians(360));
-            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && target.life <= 0 && proj.type != ModContent.ProjectileType<LightningGunProj3>())
-            {
-                Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
-            }
-            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && proj.type != ModContent.ProjectileType<LightningGunProj3>())
-            {
-                fired++;
-                if (fired == 3)
-                {
-                    Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
-                    fired = 0;
-
-                }
-            }
+           
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {

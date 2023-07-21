@@ -10,8 +10,13 @@
   <ItemGroup>
     <None Remove="Buffs\RatKingsCurse.png" />
     <None Remove="Localization\en-US_Mods.Conquest.hjson" />
+    <None Remove="NPCs\Bosses\RatKing\BallOfLight.png" />
+    <None Remove="NPCs\Bosses\RatKing\Cheese.png" />
+    <None Remove="NPCs\Bosses\RatKing\Cheese2.png" />
+    <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="Tiles\DirtyCrown.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
