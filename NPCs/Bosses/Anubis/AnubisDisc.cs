@@ -53,6 +53,10 @@ namespace Conquest.NPCs.Bosses.Anubis
             }
             return false;
         }
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
         public override void Kill(int timeLeft)
         {
             var settings = new ParticleOrchestraSettings

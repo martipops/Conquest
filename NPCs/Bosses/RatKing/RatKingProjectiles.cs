@@ -63,7 +63,10 @@ namespace Conquest.NPCs.Bosses.RatKing
         {
             return false;
         }
-
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
     }
     public class RatKingMoonSlash : ModProjectile
     {
@@ -107,7 +110,10 @@ namespace Conquest.NPCs.Bosses.RatKing
 
             }
         }
-
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
         public override bool PreDraw(ref Color lightColor)
         {
             Main.instance.LoadProjectile(Projectile.type);
@@ -147,7 +153,10 @@ namespace Conquest.NPCs.Bosses.RatKing
             Projectile.tileCollide = false;
 
         }
-
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
         public bool FadedIn
         {
             get => Projectile.localAI[0] == 1f;
@@ -170,7 +179,7 @@ namespace Conquest.NPCs.Bosses.RatKing
 
             }
         }
-
+        
         public override bool PreDraw(ref Color lightColor)
         {
             Main.instance.LoadProjectile(Projectile.type);

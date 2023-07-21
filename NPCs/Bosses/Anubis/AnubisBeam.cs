@@ -42,6 +42,9 @@ namespace Conquest.NPCs.Bosses.Anubis
 
             return false;
         }
-
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
     }
 }

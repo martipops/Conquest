@@ -37,6 +37,7 @@ namespace Conquest.Assets.Common
                 projectile.GetGlobalProjectile<MyProjectile>().manaOnKill = true;
             }
         }
+        
         public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
             Player player = Main.player[projectile.owner];

@@ -29,6 +29,9 @@ namespace Conquest.NPCs.Bosses.Anubis
         {
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.LastPrism, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f);
         }
-
+        public override bool? CanCutTiles()
+        {
+            return false;
+        }
     }
 }
