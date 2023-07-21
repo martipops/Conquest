@@ -1144,6 +1144,10 @@ Projectiles: {
 	Fireinthehole.DisplayName: Fireinthehole
 	Flashbang.DisplayName: Flashbang
 	FlashbangLight.DisplayName: Flashbang Light
+	RatKingBeam.DisplayName: Rat King Beam
+	RatKingMeteor.DisplayName: Rat King Meteor
+	RatKingMoonSlash.DisplayName: Rat King Moon Slash
+	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
 }
 
 Buffs: {
@@ -1310,7 +1314,7 @@ NPCs: {
 		}
 	}
 
-	DandukeBoss.DisplayName: Danduke Boss
+	DandukeBoss.DisplayName: Danduke
 	Deathstalker.DisplayName: Deathstalker
 	GiantMusnail.DisplayName: Giant Musnail
 	Ghostling.DisplayName: Ghostling
@@ -1339,6 +1343,8 @@ NPCs: {
 			Princess_LovesNPC: I like {NPCName}.
 		}
 	}
+
+	RatKingBoss.DisplayName: Rat King Boss
 }
 
 Biomes: {

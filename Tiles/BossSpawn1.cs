@@ -14,6 +14,7 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Microsoft.Xna.Framework;
 using Conquest.NPCs.Miniboss.Bruiser;
+using Conquest.Assets.Common;
 
 namespace Conquest.Tiles
 {
@@ -98,17 +99,9 @@ namespace Conquest.Tiles
         {
             if (NPC.AnyNPCs(ModContent.NPCType<Bruiser>()))
                 return false;
-
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-            {
                 Main.NewText("The Bruiser has awoken!", 175, 75, 255);
                 int npcID = NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, ModContent.NPCType<Bruiser>());
                 Main.npc[npcID].netUpdate2 = true;
-                //  WorldGen.KillTile(i, j);
-
-
-            }
-            //this probably doesnt work in multiplayer
             return true;
         }
         public override void SpecialDraw(int i, int j, SpriteBatch spriteBatch)

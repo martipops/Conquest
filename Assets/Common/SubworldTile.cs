@@ -13,7 +13,7 @@ namespace Conquest.Assets.Common
     {
         public override bool CanKillTile(int i, int j, int type, ref bool blockDamaged)
         {
-            if (SubworldSystem.Current != null)
+            if (SubworldSystem.AnyActive<Conquest>())
             {
                 return false;
             }
@@ -22,7 +22,7 @@ namespace Conquest.Assets.Common
         }
         public override bool CanExplode(int i, int j, int type)
         {
-            if (SubworldSystem.Current != null)
+            if (SubworldSystem.AnyActive<Conquest>())
             {
                 return false;
             }

@@ -82,17 +82,9 @@ namespace Conquest.Tiles
         {
             if (NPC.AnyNPCs(ModContent.NPCType<Anubis>()))
                 return false;
-
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-            {
                 Main.NewText("Anubis has awoken!", 175, 75, 255);
                 int npcID = NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, ModContent.NPCType<Anubis>());
                 Main.npc[npcID].netUpdate2 = true;
-                //  WorldGen.KillTile(i, j);
-
-
-            }
-            //this probably doesnt work in multiplayer
             return true;
         }
 
