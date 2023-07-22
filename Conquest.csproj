@@ -16,6 +16,7 @@
     <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="Projectiles\Melee\ML.png" />
     <None Remove="Tiles\DirtyCrown.png" />
   </ItemGroup>
   <ItemGroup>

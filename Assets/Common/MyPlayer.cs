@@ -915,7 +915,7 @@ namespace Conquest.Assets.Common
             }
             if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0 && proj.DamageType == DamageClass.Melee)
             {
-                Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 50;
+                Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 100;
                 if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
                 {
                     Player.GetModPlayer<MyPlayer>().lostLifeRegen = 10;

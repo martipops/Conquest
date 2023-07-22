@@ -24,46 +24,36 @@ namespace Conquest.Items.Weapons.Melee
 
             Item.width = 68;
             Item.height = 68;
-            // Use Properties
-            Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useAnimation = 35;
-            Item.useTime = 35;
-            Item.noUseGraphic = true;
-            //Item.UseSound = SoundID.Item1;
-            Item.noMelee = true;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useAnimation = 20;
+            Item.useTime = 20;
+            Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
 
             //   Item.channel = true;
             Item.value = Item.sellPrice(platinum: 1);
-            Item.noMelee = true;
             // Weapon Properties
             Item.damage = 2100;
             Item.knockBack = 2f;
+            Item.shootsEveryUse = true;
+            Item.noMelee = true;
             Item.DamageType = DamageClass.Melee;
             // Projectile Properties
             Item.shoot = ModContent.ProjectileType<ML>();
             Item.shootSpeed = 5f;
 
         }
-        
-        public int attackType = 0; 
-        public int comboExpireTimer = 0; 
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            // Using the shoot function, we override the swing projectile to set ai[0] (which attack it is)
-            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, Main.myPlayer, attackType);
+            float adjustedItemScale = player.GetAdjustedItemScale(Item); // Get the melee scale of the player and item.
+            Projectile.NewProjectile(source, player.MountedCenter, new Vector2(player.direction, 0f), type, damage, knockback, player.whoAmI, player.direction * player.gravDir, player.itemAnimationMax, adjustedItemScale);
+            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI); // Sync the changes in multiplayer.
             if (player.HasBuff<MoonlightBlessing>())
             {
-                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<MoonlightSlash>(), damage, knockback, Main.myPlayer, attackType);
+                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<MoonlightSlash>(), damage, knockback, player.whoAmI);
             }
-            else if (!player.HasBuff<MoonlightBlessing>())
-            {
-            }
-            attackType = 0;
-
-
-            comboExpireTimer = 0; // Every time the weapon is used, we reset this so the combo does not expire
-            return false; // return false to prevent original projectile from being shot
+            return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }
         public override void AddRecipes()
         {

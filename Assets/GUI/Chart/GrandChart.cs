@@ -30,16 +30,47 @@ namespace Conquest.Assets.GUI.Chart
             uiElmt.Width.Set(width, 0f);
             uiElmt.Height.Set(height, 0f);
         }
+        private Vector2 offset;
+        private bool dragging;
+
+        public override void LeftMouseDown(UIMouseEvent evt)
+        {
+            base.LeftMouseDown(evt);
+            DragStart(evt);
+        }
+
+        public override void LeftMouseUp(UIMouseEvent evt)
+        {
+            base.LeftMouseUp(evt);
+            DragEnd(evt);
+        }
+
+        private void DragStart(UIMouseEvent evt)
+        {
+            offset = new Vector2(evt.MousePosition.X - Left.Pixels, evt.MousePosition.Y - Top.Pixels);
+            dragging = true;
+        }
+
+        private void DragEnd(UIMouseEvent evt)
+        {
+            Vector2 endMousePosition = evt.MousePosition;
+            dragging = false;
+
+            Left.Set(endMousePosition.X - offset.X, 0f);
+            Top.Set(endMousePosition.Y - offset.Y, 0f);
+
+            Recalculate();
+        }
         public override void OnInitialize()
         {
             etElmt = new UIElement();
 
-            SetRectangle(etElmt, left: 320f, top: 0f, width: 1604f, height: 1008f);
+            SetRectangle(etElmt, left: 320f, top: 0f, width: 980f, height: 960f);
 
 
             etImg = new UIImage(ModContent.Request<Texture2D>("Conquest/Assets/GUI/Chart/Chart"));
 
-            SetRectangle(etImg, left: 320f, top: 0f, width: 384f, height: 384f);
+            SetRectangle(etImg, left: 0, top: 0f, width: 980f, height: 960f);
 
             Append(etElmt);
             etElmt.Append(etImg);
@@ -48,18 +79,17 @@ namespace Conquest.Assets.GUI.Chart
 
             ETButton playButton0 = new ETButton(etButton0, "Button0");
 
-            SetRectangle(playButton0, left: 400f, top: 80f, width: 84f, height: 84f);
+            SetRectangle(playButton0, left: 79f, top: 77f, width: 84f, height: 84f);
 
             playButton0.OnLeftClick += new MouseEvent(EtButton0_OnClick);
 
             etElmt.Append(playButton0);
 
-
             Asset<Texture2D> etButton2 = ModContent.Request<Texture2D>("Conquest/NPCs/Bosses/Anubis/Anubis_Head_Boss");
 
             ETButton playButton2 = new ETButton(etButton2, "Button2");
 
-            SetRectangle(playButton2, left: 1084f, top: 540f, width: 28f, height: 24f);
+            SetRectangle(playButton2, left: 755f, top: 537f, width: 22f, height: 26f);
 
             playButton2.OnLeftClick += new MouseEvent(EtButton2_OnClick);
             playButton2.OnMouseOver += new MouseEvent(Desert);
@@ -71,18 +101,18 @@ namespace Conquest.Assets.GUI.Chart
 
             ETButton playButton3 = new ETButton(etButton3, "Button3");
 
-            SetRectangle(playButton3, left: 540f, top: 240f, width: 28f, height: 24f);
+            SetRectangle(playButton3, left: 225f, top: 245f, width: 28f, height: 24f);
             playButton3.OnMouseOver += new MouseEvent(FlowerField);
             playButton3.OnMouseOut += new MouseEvent(FlowerField2);
             playButton3.OnLeftClick += new MouseEvent(FlowerFieldOnClick);
             etElmt.Append(playButton3);
-            
+
 
             Asset<Texture2D> etButton4 = ModContent.Request<Texture2D>("Conquest/Assets/GUI/Chart/RatkingIcon");
 
             ETButton playButton4 = new ETButton(etButton4, "Button4");
 
-            SetRectangle(playButton4, left: 745f, top: 845f, width: 28f, height: 24f);
+            SetRectangle(playButton4, left: 428f, top: 855f, width: 28f, height: 24f);
 
 
             etElmt.Append(playButton4);
@@ -91,15 +121,16 @@ namespace Conquest.Assets.GUI.Chart
 
             ETButton playButton5 = new ETButton(etButton5, "Button5");
 
-            SetRectangle(playButton5, left: 685f, top: 430f, width: 28f, height: 24f);
+            SetRectangle(playButton5, left: 355f, top: 460f, width: 46f, height: 42f);
 
 
             etElmt.Append(playButton5);
 
+
         }
         private void FlowerField(UIMouseEvent evt, UIElement listeningElement)
         {
-            SetRectangle(GrandChart.infoImg, left: 980f, top: 240, width: 160f, height: 240f);
+            SetRectangle(GrandChart.infoImg, left: 680f, top: 245, width: 160f, height: 240f);
             if (NPC.downedBoss3)
             {
                 txt1.SetText("\n          Flower Field\n\n       Left click to enter");
@@ -133,7 +164,7 @@ namespace Conquest.Assets.GUI.Chart
         }
         private void Desert(UIMouseEvent evt, UIElement listeningElement)
         {
-            SetRectangle(GrandChart.infoImg, left: 1084f, top: 520f, width: 160f, height: 240f);
+            SetRectangle(GrandChart.infoImg, left: 700f, top: 530f, width: 160f, height: 240f);
             if (NPC.downedPlantBoss)
             {
                 txt1.SetText("\n          Desert Temple\n\n       Left click to enter");
@@ -185,10 +216,26 @@ namespace Conquest.Assets.GUI.Chart
         {
             if (GSB != true)
                 return;
+            if (ContainsPoint(Main.MouseScreen))
+            {
+                Main.LocalPlayer.mouseInterface = true;
+            }
+
+            if (dragging)
+            {
+                Left.Set(Main.mouseX - offset.X, 0f); // Main.MouseScreen.X and Main.mouseX are the same
+                Top.Set(Main.mouseY - offset.Y, 0f);
+                Recalculate();
+            }
+
+            
+            if (GSB != true)
+                return;
             base.Update(gameTime);
         }
 
     }
+
     internal class GTButton : SoundlessButton
     {
         internal string etHv;
