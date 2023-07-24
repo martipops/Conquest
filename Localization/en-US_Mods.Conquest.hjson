@@ -1044,6 +1044,11 @@ Items: {
 		DisplayName: Test
 		Tooltip: ""
 	}
+
+	ChainChomp: {
+		DisplayName: Chain Chomp
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1152,6 +1157,7 @@ Projectiles: {
 	Cheese.DisplayName: Cheese
 	CheeseRelease.DisplayName: Cheese Release
 	Cheese2.DisplayName: Cheese2
+	ChainChompFace.DisplayName: Chain Chomp Face
 }
 
 Buffs: {

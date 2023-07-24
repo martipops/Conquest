@@ -371,6 +371,7 @@ namespace Conquest.Assets.Common
             {
                 Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
 
+
                 Player.statLife = 1;
 
                 return true;
@@ -585,7 +586,6 @@ namespace Conquest.Assets.Common
             if (T8.p11On == true)
             {
                 Player.GetDamage(DamageClass.Melee) += 0.02f;
-                Player.statLifeMax2 += 20;
             }
             if (T6.p34On == true && Player.HeldItem.DamageType == DamageClass.Summon && Player.GetModPlayer<MyPlayer>().summonCD <= 0)
             {
@@ -612,7 +612,17 @@ namespace Conquest.Assets.Common
             }
 
         }
-
+        public override void PostUpdateMiscEffects()
+        {
+            if (T8.p11On == true)
+            {
+                Player.statLifeMax2 += 20;
+            }
+        }
+        public override void ModifyMaxStats(out StatModifier health, out StatModifier mana)
+        {
+            base.ModifyMaxStats(out health, out mana);
+        }
         public override void PreUpdateMovement()
         {
             if (canDoubleJump)

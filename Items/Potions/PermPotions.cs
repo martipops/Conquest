@@ -454,7 +454,8 @@ namespace Conquest.Items.Potions
                 Player.lifeRegen += 4;
             }
         }
-        public override void PostUpdateRunSpeeds()
+       
+        public override void PostUpdateMiscEffects()
         {
             if (PermSwift)
             {
@@ -462,6 +463,7 @@ namespace Conquest.Items.Potions
             }
         }
     }
+    
     public class PermanentObsidianSkinPotion : ModItem
     {
         public override string Texture => "Terraria/Images/Item_288";

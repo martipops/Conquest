@@ -6,7 +6,7 @@ The mod currently adds;
 - 1 Armor Set
 - 2 Dungeons
 - Permanent Potion System
-- New special type of accessories, Artiacts
+- New special type of accessories, Artifacts
 - World Map used to enter dungeons
 - Custom World Gen (Underground Desert)
 - Several Shimmer Exclusive items
