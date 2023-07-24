@@ -1054,6 +1054,11 @@ Items: {
 		DisplayName: Sword Of The Father
 		Tooltip: ""
 	}
+
+	CRTGun: {
+		DisplayName: Binary Blaster
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1164,6 +1169,7 @@ Projectiles: {
 	Cheese2.DisplayName: Cheese2
 	ChainChompFace.DisplayName: Chain Chomp Face
 	SOFT.DisplayName: S O F T
+	CRTBlast.DisplayName: C R T Blast
 }
 
 Buffs: {
@@ -1357,7 +1363,7 @@ NPCs: {
 
 	Cowboy: {
 		DisplayName: Cowboy
-
+		 
 		TownNPCMood: {
 			Content: I am content.
 			NoHome: I hate not having a home.

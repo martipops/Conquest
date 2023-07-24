@@ -17,6 +17,7 @@
     <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="Projectiles\Magic\CRTBlast.png" />
     <None Remove="Projectiles\Melee\ChainChompChain.png" />
     <None Remove="Projectiles\Melee\ChainChompFace.png" />
     <None Remove="Projectiles\Melee\ML.png" />
