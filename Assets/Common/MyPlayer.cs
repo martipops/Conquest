@@ -737,10 +737,7 @@ namespace Conquest.Assets.Common
                 Player.noFallDmg = true;
                 Player.accRunSpeed += Main.windSpeedCurrent * 10;
             }
-            else
-            {
-                Player.noFallDmg = false;
-            }
+          
         }
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
