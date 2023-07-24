@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using Conquest.Items.Weapons.Melee;
+using System.Security.Cryptography.X509Certificates;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Effects;
@@ -14,7 +15,6 @@ namespace Conquest.Buffs
         public override void SetStaticDefaults()
         {
             //DisplayName.SetDefault("Empowered");
-            //Description.SetDefault("You slowly lose health but gain damage");
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = false;
             Main.buffNoSave[Type] = true;
@@ -35,17 +35,16 @@ namespace Conquest.Buffs
     {
         // Flag checking when life regen debuff should be activated
         public bool lifeRegenDebuff;
-        private bool AmountHurt;
-
-        public override void ResetEffects()
-        {
-            lifeRegenDebuff = true;
-
-        }
-
         // Allows you to give the player a negative life regeneration based on its state (for example, the "On Fire!" debuff makes the player take damage-over-time)
         // This is typically done by setting player.lifeRegen to 0 if it is positive, setting player.lifeRegenTime to 0, and subtracting a number from player.lifeRegen
         // The player will take damage at a rate of half the number you subtract per second
+        public override void ResetEffects()
+        {
+            if (Main.LocalPlayer.HeldItem.ModItem is not SwordOfTheFather)
+            {
+                lifeRegenDebuff = false;
+            }
+        }
         public override void UpdateBadLifeRegen()
         {
             if (lifeRegenDebuff)

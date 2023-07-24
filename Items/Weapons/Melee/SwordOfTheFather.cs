@@ -10,6 +10,7 @@ using Terraria.ID;
 using Conquest.Buffs;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
+using Conquest.Assets.Common;
 
 namespace Conquest.Items.Weapons.Melee
 {
@@ -35,17 +36,14 @@ namespace Conquest.Items.Weapons.Melee
             Item.shootSpeed = 5f;
             Item.shoot = ModContent.ProjectileType<SOFT>();
         }
-
-        public override void UpdateInventory(Player player)
+        public override void HoldItem(Player player)
         {
-            {
-                player.AddBuff(ModContent.BuffType<Empowered>(), 60, true, false);
-
-            }  
+            EmpoweredPlayer modPlayer = player.GetModPlayer<EmpoweredPlayer>();
+            modPlayer.lifeRegenDebuff = true;
+            player.AddBuff(ModContent.BuffType<Empowered>(), 60, true, false);
         }
-
        
-    
+
 
 
 
