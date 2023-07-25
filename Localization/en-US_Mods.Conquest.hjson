@@ -1059,6 +1059,13 @@ Items: {
 		DisplayName: Binary Blaster
 		Tooltip: ""
 	}
+
+	DarkDawn: {
+		DarkDawnDeathMessage: Mods.Conquest.Items.DarkDawn.DarkDawnDeathMessage
+		DarkDawnDamage: Mods.Conquest.Items.DarkDawn.DarkDawnDamage
+		DisplayName: Dark Dawn
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1170,6 +1177,8 @@ Projectiles: {
 	ChainChompFace.DisplayName: Chain Chomp Face
 	SOFT.DisplayName: S O F T
 	CRTBlast.DisplayName: C R T Blast
+	DarkDawnProjEclipseFire.DisplayName: Dark Dawn Proj Eclipse Fire
+	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
 }
 
 Buffs: {
@@ -1316,6 +1325,11 @@ Buffs: {
 		DisplayName: Empowered
 		Description: Mods.Conquest.Buffs.Empowered.Description
 	}
+
+	EclipseFire: {
+		DisplayName: Eclipse Fire
+		Description: Mods.Conquest.Buffs.EclipseFire.Description
+	}
 }
 
 Keybinds: {
@@ -1363,7 +1377,7 @@ NPCs: {
 
 	Cowboy: {
 		DisplayName: Cowboy
-		 
+
 		TownNPCMood: {
 			Content: I am content.
 			NoHome: I hate not having a home.
@@ -1384,5 +1398,10 @@ Biomes: {
 	DesertTempleBiome: {
 		TownNPCDialogueName: the Desert Temple Biome
 		DisplayName: Desert Temple Biome
+	}
+
+	DarkDawnBiome: {
+		DisplayName: Dark Dawn Biome
+		TownNPCDialogueName: the Dark Dawn Biome
 	}
 }

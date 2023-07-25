@@ -8,6 +8,7 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Buffs\EclipseFire.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
     <None Remove="Items\Weapons\Melee\ChainChomp.png" />
     <None Remove="Localization\en-US_Mods.Conquest.hjson" />
@@ -17,6 +18,10 @@
     <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="Projectiles\DarkDawnProjectiles\blankPixel.png" />
+    <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjEclipseFire.png" />
+    <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjFuckingSun.png" />
+    <None Remove="Projectiles\DarkDawnProjectiles\Eclipse.png" />
     <None Remove="Projectiles\Magic\CRTBlast.png" />
     <None Remove="Projectiles\Melee\ChainChompChain.png" />
     <None Remove="Projectiles\Melee\ChainChompFace.png" />
