@@ -1061,10 +1061,24 @@ Items: {
 	}
 
 	DarkDawn: {
-		DarkDawnDeathMessage: Mods.Conquest.Items.DarkDawn.DarkDawnDeathMessage
-		DarkDawnDamage: Mods.Conquest.Items.DarkDawn.DarkDawnDamage
-		DisplayName: Dark Dawn
-		Tooltip: ""
+		DisplayName: The Dark Dawn
+		Tooltip:
+			'''
+			Manual: Hold [c/3fd1a0:Left Click] to enable [c/ff6a00:Solar Eclipse].
+			[c/ff6a00:Solar Eclipse:] Nearby enemies are receiving additional by [c/ff6a00:Eclipse Fire].
+			[c/ff6a00:Eclipse Fire:] While damaging, [c/ff6a00:Eclipse Fire] generates [c/ff6a00:Sun Energy].
+			[c/ff6a00:Sun Energy:] [c/3fd1a0:Right Click] to release your [c/ff6a00:Sun Energy]
+			and summon the [c/ff6a00:Falling Sun].
+			[c/ff6a00:Falling Sun:]Sun is falling slowly at your enemies, deals additional damage while hitting them. 
+			Keep Note: [c/ff6a00:Falling Sun] reduces its falling speed when touches the target.
+			Forbidden magic book that wreaks havoc everywhere.
+			It was lost in the ancient era.
+			When you holding the book, you hear the whispers, that says:
+			[c/ff6a00:You...Must...Destroy...DESTROY!]
+			'''
+		DarkDawnDamage: ""
+		DarkDawnMana: ""
+		DarkDawnDeathMessage: "[c/ff6a00:ANOTHER FOOL HAS BEEN ABSORBED]"
 	}
 }
 
@@ -1329,6 +1343,11 @@ Buffs: {
 	EclipseFire: {
 		DisplayName: Eclipse Fire
 		Description: Mods.Conquest.Buffs.EclipseFire.Description
+	}
+
+	PickUpFix: {
+		DisplayName: Pick Up Fix
+		Description: Mods.Conquest.Buffs.PickUpFix.Description
 	}
 }
 

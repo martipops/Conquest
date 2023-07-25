@@ -43,6 +43,7 @@ namespace Conquest.Items.Weapons.Magic {
         private float shaderSqt; // squared components value
         private double storedTime;
         private bool timeIsStored;
+        public static float castDelay; // how many time need to be gone, before using this item after holding a mouse left.
 
         public override void SetStaticDefaults() {
             DarkDawnDeathMessage = this.GetLocalization(nameof(DarkDawnDeathMessage));
@@ -85,125 +86,109 @@ namespace Conquest.Items.Weapons.Magic {
             var tileCoords = worldPosition.ToTileCoordinates();
             return Lighting.Brightness(tileCoords.X, tileCoords.Y);
         }
-        public override void HoldItem(Player player)
-        {
+        public override void HoldItem(Player player) {
+
             shaderSqt = shaderLerp * shaderLerp;
             dustColor = new Color(255, 106, 0);
 
             // shader lerps for waving/winking effects
-            if (shaderLerp < 1f)
-            {
-                shaderLerp += 0.04f;
-            }
-            else
-            {
-                shaderLerp = 0f;
-            }
-            if (localShaderFBlerp < 1f)
-            {
-                localShaderFBlerp += 0.04f;
-            }
-            else
-            {
-                localShaderFBlerp = 0.5f;
-            }
+            if (shaderLerp < 1f) shaderLerp += 0.04f;
+            else shaderLerp = 0f;
 
-            if (Main.mouseLeft && !player.dead)
-            {
+            if (localShaderFBlerp < 1f) localShaderFBlerp += 0.04f;
+            else localShaderFBlerp = 0.5f;
 
-                if (!timeIsStored)
-                {
-                    storedTime = Main.time;
-                    timeIsStored = true;
-                }
-                if (timeIsStored)
-                    Main.time = 1;
-                // Main.NewText(localShaderFBlerp);
+            if (Main.mouseLeft && !player.dead) {
 
-                isCasting = true;
+                castDelay++;
+                if(castDelay > 10) isCasting = true;
 
-                useTimeDelay++;
-                if (useTimeDelay >= 5)
-                {
-                    player.statMana -= 10;
-                    useTimeDelay = 0;
-                }
-                if (player.statMana <= 0)
-                {
-                    player.statMana = 0;
-                }
-
-                //calculating mana eating and consequences
-                if (player.statMana < 1)
-                {
-                    player.statLife -= 1;
-                    if (player.statLife <= 0)
-                    {
-                        player.KillMe(PlayerDeathReason.ByCustomReason(DarkDawnDeathMessage.Format()), 9999, 0);
-                        SoundEngine.PlaySound(hahaha);
+                if(isCasting) {
+                    if (!timeIsStored) {
+                        storedTime = Main.time;
+                        timeIsStored = true;
                     }
-                }
-                // shaders intensity
-                shaderDistIntensity = MathHelper.Lerp(15f, 40f, shaderSqt / (2.0f * (shaderSqt - shaderLerp) + 1.0f));
+                    if (timeIsStored) Main.time = 1;
 
-                if (!Filters.Scene["Distortion"].IsActive())
-                {
-                    Filters.Scene.Activate("Distortion");
-                    Filters.Scene.Activate("FlashLight");
-                }
-                Filters.Scene["Distortion"].GetShader().UseIntensity(shaderDistIntensity);
-                Filters.Scene["FlashLight"].GetShader().UseIntensity(20f + localShaderFBlerp);
+                    useTimeDelay++;
+                    
+                    if (useTimeDelay >= 5) {
 
-                // spawning projectiles
-                Projectile.NewProjectile(
-                    Entity.GetSource_FromThis(),
-                    player.Center, Vector2.Zero,
-                    ModContent.ProjectileType<DarkDawnProjEclipseFire>(),
-                    0, 0, player.whoAmI
-                );
-                if (sunEnergy >= 1200)
-                {
-                    if (Main.mouseRight)
-                    {
-                        sunEnergy = 0;
-                        Projectile.NewProjectile(
-                            Entity.GetSource_FromThis(),
-                            player.Center + new Vector2(0, -1000f), Vector2.Zero,
-                            ModContent.ProjectileType<DarkDawnProjFuckingSun>(),
-                            100, 0, player.whoAmI
-                        );
+                        player.statMana -= 10;
+                        useTimeDelay = 0;
                     }
-                    if (!sunIsReadyPlayed)
-                    {
-                        for (int k = 0; k < 100; k++)
-                        {
-                            Vector2 readyPos = Main.rand.NextVector2CircularEdge(player.width / 2, player.width / 2);
-                            Dust readyDust = Dust.NewDustPerfect(player.Center + readyPos, DustID.RainbowMk2, readyPos, 255, dustColor, 2f);
-                            readyDust.noGravity = true;
-                            readyDust.fadeIn = 0f;
+                    if (player.statMana <= 0) player.statMana = 0;
+
+                    //calculating mana eating and consequences
+                    if (player.statMana < 1) {
+
+                        player.statLife -= 1;
+                        if (player.statLife <= 0) {
+
+                            player.KillMe(PlayerDeathReason.ByCustomReason(DarkDawnDeathMessage.Format()), 9999, 0);
+                            SoundEngine.PlaySound(hahaha);
                         }
-                        SoundEngine.PlaySound(sunIsReady);
-                        sunIsReadyPlayed = true;
                     }
-                }
-                else
-                {
-                    sunIsReadyPlayed = false;
-                }
-            }
-            else
-            { // !Main.mouseLeft
+                    // shaders intensity
+                    shaderDistIntensity = MathHelper.Lerp(15f, 40f, shaderSqt / (2.0f * (shaderSqt - shaderLerp) + 1.0f));
 
-                if (timeIsStored)
-                {
+                    if (!Filters.Scene["Distortion"].IsActive()) {
+
+                        Filters.Scene.Activate("Distortion");
+                        Filters.Scene.Activate("FlashLight");
+                    }
+                    Filters.Scene["Distortion"].GetShader().UseIntensity(shaderDistIntensity);
+                    Filters.Scene["FlashLight"].GetShader().UseIntensity(20f + localShaderFBlerp);
+
+                    // spawning projectiles
+                    Projectile.NewProjectile(
+                        Entity.GetSource_FromThis(),
+                        player.Center, Vector2.Zero,
+                        ModContent.ProjectileType<DarkDawnProjEclipseFire>(),
+                        0, 0, player.whoAmI
+                    );
+                    if (sunEnergy >= 1200) {
+
+                        if (Main.mouseRight) {
+
+                            sunEnergy = 0;
+                            Projectile.NewProjectile(
+                                Entity.GetSource_FromThis(),
+                                player.Center + new Vector2(0, -1000f), Vector2.Zero,
+                                ModContent.ProjectileType<DarkDawnProjFuckingSun>(),
+                                100, 0, player.whoAmI
+                            );
+                        }
+                        if (!sunIsReadyPlayed) {
+
+                            for (int k = 0; k < 100; k++) {
+
+                                Vector2 readyPos = Main.rand.NextVector2CircularEdge(player.width / 2, player.width / 2);
+                                Dust readyDust = Dust.NewDustPerfect(player.Center + readyPos, DustID.RainbowMk2, readyPos, 255, dustColor, 2f);
+                                readyDust.noGravity = true;
+                                readyDust.fadeIn = 0f;
+                            }
+                            SoundEngine.PlaySound(sunIsReady);
+                            sunIsReadyPlayed = true;
+                        }
+                    }
+                    else sunIsReadyPlayed = false;
+                } 
+            }
+            else { // !Main.mouseLeft
+
+                castDelay = 0;
+                isCasting = false;
+
+                if (timeIsStored) {
+
                     Main.time = storedTime;
                     timeIsStored = false;
                 }
 
-                isCasting = false;
                 //disabling a shaders
-                if (Filters.Scene["Distortion"].IsActive())
-                {
+                if (Filters.Scene["Distortion"].IsActive()) {
+
                     Filters.Scene.Deactivate("Distortion");
                     Filters.Scene.Deactivate("FlashLight");
                 }
@@ -271,8 +256,9 @@ namespace Conquest.Items.Weapons.Magic {
 
         public override void PostUpdate() {
 
-            if(Main.LocalPlayer.HeldItem.ModItem is not DarkDawn || Main.LocalPlayer.dead) {
+            if(Main.LocalPlayer.HeldItem.ModItem is not DarkDawn || Main.LocalPlayer.dead || !DarkDawn.isCasting) {
                 if(Main.mouseLeft && FadeInOut.leftClicked) {
+
                     FadeInOut.playInOut = true;
                     Main.mouseLeft = false;
                     FadeInOut.leftClicked = false;
@@ -285,28 +271,28 @@ namespace Conquest.Items.Weapons.Magic {
             DarkDawn.infT += 0.15f;
             cosValue += 50;
             if(cameraShaking) {
-                if(shakingValue < 1) {
-                    shakingValue += 0.05f;
-                }
+
+                if(shakingValue < 1) shakingValue += 0.05f;
             }
             else {
-                if(shakingValue > 0) {
-                    shakingValue -= 0.05f;
-                }
+
+                if(shakingValue > 0) shakingValue -= 0.05f;
             }
             if (Main.LocalPlayer.velocity != Vector2.Zero) {
-                if(DarkDawn.dustSize > 0)
-                    DarkDawn.dustSize -= 0.05f;
+
+                if(DarkDawn.dustSize > 0) DarkDawn.dustSize -= 0.05f;
             }
             else {
-                if(DarkDawn.dustSize < 1f) {
-                    DarkDawn.dustSize += 0.05f;
-                }
+
+                if(DarkDawn.dustSize < 1f) DarkDawn.dustSize += 0.05f;
             }
         }
         public override void ModifyScreenPosition() {
             
+            if (Main.LocalPlayer.dead) return;
+            
             sqt = lerpValue * lerpValue;
+            
             Main.screenPosition = Vector2.Lerp(
                 Main.screenPosition,
                 Main.MouseWorld - new Vector2(Main.screenWidth/2, Main.screenHeight/2) + // zoom parameters
@@ -316,14 +302,16 @@ namespace Conquest.Items.Weapons.Magic {
                 ),
                 sqt / (2.0f * (sqt - lerpValue) + 1.0f));
             if (DarkDawn.isCasting) {
+
                 delay = 0;
-                if (lerpValue < 1)
-                    lerpValue += 0.03f;
-                DarkDawn.isCasting = false;
+                if (lerpValue < 1) lerpValue += 0.03f;
             }
             else {
+
                 delay++;
+
                 if (delay > 10) {
+
                     if (Math.Sqrt(lerpValue) > 0)
                     lerpValue -= 0.03f;
                 }
@@ -334,6 +322,7 @@ namespace Conquest.Items.Weapons.Magic {
     // loading custom music into biome
     public sealed class ManualMusicReg : ILoadable {
 		public void Load(Mod mod) {
+
 			MusicLoader.AddMusic(mod, "Assets/Music/DarkDawnOst");
 		}
 		public void Unload() { }
@@ -342,6 +331,7 @@ namespace Conquest.Items.Weapons.Magic {
     // setting dark color as bg to the biome (caves)
     public class DarkDawnUndergroundBackground : ModUndergroundBackgroundStyle {
         public override void FillTextureArray(int[] textureSlots) {
+
 			textureSlots[0] = BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/DarkDawnBackground");
         }
     }
@@ -349,7 +339,7 @@ namespace Conquest.Items.Weapons.Magic {
     // setting dark color as bg to the biome (surface)
     public class DarkDawnSurfaceBackground : ModSurfaceBackgroundStyle {
 		public override void ModifyFarFades(float[] fades, float transitionSpeed) {
-            // why i can't del it.... ty tML.
+            // why i can't del it.... ty tML. ASHFSAHFHWEF STILL NOT FIXED BROOOO
 		}
 		public override int ChooseCloseTexture(ref float scale, ref double parallax, ref float a, ref float b) {
             scale *= 100;
@@ -369,11 +359,12 @@ namespace Conquest.Items.Weapons.Magic {
 
             bool b2 = Math.Abs(player.position.ToTileCoordinates().X - Main.maxTilesX) < Main.maxTilesX;
 
-            if (player.HeldItem.ModItem is DarkDawn && Main.mouseLeft && player.active) {
+            if (player.active && DarkDawn.isCasting) {
+
                 return true && b2;
             }
-
             else {
+
                 return false;
             }           
         }
@@ -412,6 +403,7 @@ namespace Conquest.Items.Weapons.Magic {
 
 		// this function is for better rectangle setting; simple and useful
 		private void SetRectangle(UIElement uiElement, float left, float top, float width, float height) {
+            
 			uiElement.Left.Set(left, 0f);
 			uiElement.Top.Set(top, 0f);
 			uiElement.Width.Set(width, 0f);
@@ -420,9 +412,11 @@ namespace Conquest.Items.Weapons.Magic {
 
         // drawing a ui
 		public override void Draw(SpriteBatch spriteBatch) {
+
 			base.Draw(spriteBatch);
 		}
 		protected override void DrawSelf(SpriteBatch spriteBatch) {
+
 			base.DrawSelf(spriteBatch);
 		}
 
@@ -430,6 +424,7 @@ namespace Conquest.Items.Weapons.Magic {
         public void fadeInOut() {
 
             if(playInOut && !playIn && !playOut) {
+
                 SoundEngine.PlaySound(FadeSound);
                 playIn = true;
                 playInOut = false;
@@ -438,19 +433,23 @@ namespace Conquest.Items.Weapons.Magic {
                 fadeLerp+=0.2f;
             }
             if(fadeLerp >= 1f && !playOut) {
+
                 fadeLerp = 1f;
                 playIn = false;
                 inOutDelay++;
             }
             if(inOutDelay >= 60) {
+
                 SoundEngine.PlaySound(FadeSound);
                 playOut = true;
                 inOutDelay = 0;
             }
             if(playOut) {
+
                 fadeLerp-=0.2f;
             }
             if(fadeLerp <= 0f && !playIn) {
+
                 fadeLerp = 0f;
                 playOut = false;
             } 
@@ -465,11 +464,13 @@ namespace Conquest.Items.Weapons.Magic {
                 return;
 
             // this calling fadeinout when clicking or unclicking btn
-            if(!Main.mouseLeft && leftClicked) {
+            if(leftClicked && !DarkDawn.isCasting) {
+
                 leftClicked = false;
                 playInOut = true;
             }
-            if(Main.mouseLeft && !leftClicked) {
+            if(!leftClicked && DarkDawn.isCasting) {
+
                 leftClicked = true;
                 playInOut = true;
             }
@@ -483,27 +484,35 @@ namespace Conquest.Items.Weapons.Magic {
 		private UserInterface FadeInOutUserInterface;
 		internal FadeInOut FadeInOutUI;
 		public void ShowMyUI() {
+
 			FadeInOutUserInterface?.SetState(FadeInOutUI);
 		}
 		public void HideMyUI() {
+
 			FadeInOutUserInterface?.SetState(null);
 		}
 		public override void Load() {
+
 			if (!Main.dedServ) {
+
 				FadeInOutUI = new();
 				FadeInOutUserInterface = new();
 				FadeInOutUserInterface.SetState(FadeInOutUI);
 			}
 		}
 		public override void UpdateUI(GameTime gameTime) {
+
 			FadeInOutUserInterface?.Update(gameTime);
 		}
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers) {
+
 			int resourceBarIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Resource Bars"));
 			if (resourceBarIndex != 100) {
+
 				layers.Insert(resourceBarIndex, new LegacyGameInterfaceLayer(
 					"Conquest: fadeinouteffect",
 					delegate {
+
 						FadeInOutUserInterface.Draw(Main.spriteBatch, new GameTime());
 						return true;
 					},
