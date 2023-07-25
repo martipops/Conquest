@@ -85,7 +85,7 @@ namespace Conquest.Items.Weapons.Magic {
             var tileCoords = worldPosition.ToTileCoordinates();
             return Lighting.Brightness(tileCoords.X, tileCoords.Y);
         }
-        public override bool? UseItem(Player player)
+        public override void HoldItem(Player player)
         {
             shaderSqt = shaderLerp * shaderLerp;
             dustColor = new Color(255, 106, 0);
@@ -230,8 +230,8 @@ namespace Conquest.Items.Weapons.Magic {
                 );
                 inf2Dust.noGravity = true;
             }
-            return true;
         }
+       
    
         public override bool AltFunctionUse(Player player) {
             return true;
