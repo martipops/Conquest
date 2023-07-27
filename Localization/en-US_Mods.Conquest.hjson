@@ -1411,6 +1411,7 @@ NPCs: {
 
 	RatKingBoss.DisplayName: Rat King Boss
 	Mouse.DisplayName: Rat Prince
+	CRTZombie.DisplayName: C R T Zombie
 }
 
 Biomes: {

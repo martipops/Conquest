@@ -8,6 +8,8 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\GUI\ChartX.png" />
+    <None Remove="Assets\GUI\Chart\ChartX.png" />
     <None Remove="Buffs\EclipseFire.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
     <None Remove="Items\Weapons\Melee\ChainChomp.png" />
@@ -18,6 +20,7 @@
     <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="NPCs\Night\CRTZombie.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\blankPixel.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjEclipseFire.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjFuckingSun.png" />
