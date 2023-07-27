@@ -24,17 +24,17 @@ namespace Conquest.Items.Weapons.Magic
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 3));
 			Item.width = 26; 
             Item.height = 22;
-            Item.value = 100000;
+            Item.value = 1000;
             Item.noMelee = true;
             Item.rare = 6;
+            Item.mana = 10;
             Item.useTime = 60;
             Item.useAnimation = 0;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
-            Item.damage = 90;
+            Item.damage = 20;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Magic;
-            Item.shootSpeed = 15.1f;
 			Item.shoot = ModContent.ProjectileType<CRTBlast>();
 			Item.shootSpeed = 16;
 			Item.autoReuse = true;
@@ -49,7 +49,7 @@ namespace Conquest.Items.Weapons.Magic
 
                 newVelocity *= 2f - Main.rand.NextFloat(1f);
 
-                Projectile.NewProjectileDirect(source, position, newVelocity, type, 120, 0, player.whoAmI);
+                Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, 0, player.whoAmI);
             }
 			SoundEngine.PlaySound(RetroBlast, player.position);
             return false;

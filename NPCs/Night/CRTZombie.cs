@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Conquest.Items.Materials;
+using Conquest.Items.Weapons.Magic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
@@ -39,6 +42,11 @@ namespace Conquest.NPCs.Night
                 return SpawnCondition.OverworldNightMonster.Chance * 0.2f;
             }
             else return 0f;
+        }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CRTGun>(), 11));
+
         }
     }
 }
