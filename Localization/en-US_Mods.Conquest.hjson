@@ -1080,6 +1080,11 @@ Items: {
 		DarkDawnMana: ""
 		DarkDawnDeathMessage: "[c/ff6a00:ANOTHER FOOL HAS BEEN ABSORBED]"
 	}
+
+	LightningKnife: {
+		DisplayName: Foudre
+		Tooltip: Whats the matter?
+	}
 }
 
 Projectiles: {
@@ -1193,6 +1198,7 @@ Projectiles: {
 	CRTBlast.DisplayName: C R T Blast
 	DarkDawnProjEclipseFire.DisplayName: Dark Dawn Proj Eclipse Fire
 	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
+	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
 }
 
 Buffs: {
@@ -1337,7 +1343,7 @@ Buffs: {
 
 	Empowered: {
 		DisplayName: Empowered
-		Description: Mods.Conquest.Buffs.Empowered.Description
+		Description: Your sword is empowered, at a cost.
 	}
 
 	EclipseFire: {
@@ -1412,7 +1418,16 @@ NPCs: {
 	RatKingBoss.DisplayName: Rat King Boss
 	Mouse.DisplayName: Rat Prince
 	CRTZombie.DisplayName: C R T Zombie
+	Apep.DisplayName: Apep
+	ApepBodyBast.DisplayName: Apep Body Bast
+	ApepBodyFess.DisplayName: Apep Body Fess
+	ApepBodyGaunt.DisplayName: Apep Body Gaunt
+	ApepBodyRan.DisplayName: Apep Body Ran
+	ApepBodyRom.DisplayName: Apep Body Rom
+	ApepBodyStrom.DisplayName: Apep Body Strom
 }
+
+DamageClasses.FoudreDamageClass.DisplayName: melee/ranged Damage
 
 Biomes: {
 	DesertTempleBiome: {

@@ -11,7 +11,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
-namespace Conquest.NPCs.Night
+namespace Conquest.NPCs
 {
     public class CRTZombie : ModNPC
     {

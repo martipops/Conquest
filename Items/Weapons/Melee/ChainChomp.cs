@@ -27,7 +27,7 @@ namespace Conquest.Items.Weapons.Melee
         {
 			Item.width = 30;
             Item.height = 30;
-            Item.value = 100000;
+            Item.value = 10000;
             Item.noMelee = true;
             Item.rare = 6;
             Item.useTime = 15;
@@ -35,7 +35,7 @@ namespace Conquest.Items.Weapons.Melee
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.autoReuse = false;
             Item.noUseGraphic = true;
-            Item.damage = 90;
+            Item.damage = 120;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Melee;
             Item.shootSpeed = 15.1f;

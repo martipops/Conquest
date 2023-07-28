@@ -12,8 +12,8 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Conquest.NPCs.Jungle
-{
+namespace Conquest.NPCs 
+{ 
     public class FloralThreat : ModNPC
     {
         public override void SetStaticDefaults()

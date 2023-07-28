@@ -16,7 +16,7 @@ using Terraria.GameContent.Events;
 using Terraria.GameContent.ItemDropRules;
 using Conquest.Items.Weapons.Melee;
 
-namespace Conquest.NPCs.LanternNights
+namespace Conquest.NPCs.Miniboss.DragonWyvern
 {
     public class DragonHead : ModNPC
     {
@@ -24,7 +24,7 @@ namespace Conquest.NPCs.LanternNights
         {
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
-                CustomTexturePath = "Conquest/NPCs/LanternNights/Dragon",
+                CustomTexturePath = "Conquest/NPCs/Miniboss/DragonWyvern/Dragon",
                 Position = new Vector2(20f, 14f),
                 PortraitPositionXOverride = 30f,
                 PortraitPositionYOverride = -6f

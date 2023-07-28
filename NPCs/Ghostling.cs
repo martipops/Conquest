@@ -1,5 +1,4 @@
-﻿
-using Conquest.Items.Materials;
+﻿using Conquest.Items.Materials;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
-namespace Conquest.NPCs.Graveyard
+namespace Conquest.NPCs
 {
     public class Ghostling : ModNPC
     {

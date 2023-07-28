@@ -13,7 +13,7 @@ namespace Conquest.Items.Weapons.Magic
     {
         public override void SetDefaults()
         {
-            Item.damage = 90;
+            Item.damage = 190;
             Item.knockBack = 5;
             Item.mana = 20;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -26,7 +26,7 @@ namespace Conquest.Items.Weapons.Magic
             Item.autoReuse = false;
             Item.noUseGraphic = false;
             Item.noMelee = true;
-            Item.crit = 21;
+            Item.crit = 20;
             Item.rare = ItemRarityID.Orange;
 
             Item.value = 100000;

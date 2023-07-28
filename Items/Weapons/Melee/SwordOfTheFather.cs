@@ -29,8 +29,8 @@ namespace Conquest.Items.Weapons.Melee
 
             Item.autoReuse = true;
             Item.rare = ItemRarityID.Green;
-            Item.value = Item.buyPrice(gold: 5);
-            Item.damage = 76;
+            Item.value = Item.buyPrice(gold: 2);
+            Item.damage = 30;
             Item.knockBack = 2f;
             Item.DamageType = DamageClass.Melee;
             Item.shootSpeed = 5f;

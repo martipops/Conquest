@@ -9,7 +9,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Conquest.NPCs.Snow
+namespace Conquest.NPCs
 {
     public class IceHead : ModNPC
     {

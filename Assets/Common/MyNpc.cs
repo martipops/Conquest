@@ -1,5 +1,6 @@
 ﻿using Conquest.Items.Accessory;
 using Conquest.Items.Tools;
+using Conquest.Items.Weapons.Magic;
 using Conquest.Items.Weapons.Melee;
 using Microsoft.Xna.Framework;
 using System;
@@ -126,11 +127,15 @@ namespace Conquest.Assets.Common
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FriendshipBracelet>(), 30));
             }
+            if(npc.type == NPCID.RustyArmoredBonesFlail)
+            {
+              npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChainChomp>(), 10));
+            }
             if (npc.type == NPCID.Mothron)
             {
                 if (NPC.downedGolemBoss)
                 {
-                    // npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DarkDawn>(), 10));
+                    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DarkDawn>(), 10));
                 }
             }
         }

@@ -10,7 +10,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-namespace Conquest.NPCs.Desert
+namespace Conquest.NPCs
 {
     public class Deathstalker : ModNPC
     {
