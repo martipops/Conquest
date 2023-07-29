@@ -1044,6 +1044,52 @@ Items: {
 		DisplayName: Test
 		Tooltip: ""
 	}
+
+	ChainChomp: {
+		DisplayName: Chain Chomp
+		Tooltip: ""
+	}
+
+	SwordOfTheFather: {
+		DisplayName: Sword Of The Father
+		Tooltip: ""
+	}
+
+	CRTGun: {
+		DisplayName: Binary Blaster
+		Tooltip: ""
+	}
+
+	DarkDawn: {
+		DisplayName: The Dark Dawn
+		Tooltip:
+			'''
+			Manual: Hold [c/3fd1a0:Left Click] to enable [c/ff6a00:Solar Eclipse].
+			[c/ff6a00:Solar Eclipse:] Nearby enemies are receiving additional by [c/ff6a00:Eclipse Fire].
+			[c/ff6a00:Eclipse Fire:] While damaging, [c/ff6a00:Eclipse Fire] generates [c/ff6a00:Sun Energy].
+			[c/ff6a00:Sun Energy:] [c/3fd1a0:Right Click] to release your [c/ff6a00:Sun Energy]
+			and summon the [c/ff6a00:Falling Sun].
+			[c/ff6a00:Falling Sun:]Sun is falling slowly at your enemies, deals additional damage while hitting them. 
+			Keep Note: [c/ff6a00:Falling Sun] reduces its falling speed when touches the target.
+			Forbidden magic book that wreaks havoc everywhere.
+			It was lost in the ancient era.
+			When you holding the book, you hear the whispers, that says:
+			[c/ff6a00:You...Must...Destroy...DESTROY!]
+			'''
+		DarkDawnDamage: ""
+		DarkDawnMana: ""
+		DarkDawnDeathMessage: "[c/ff6a00:ANOTHER FOOL HAS BEEN ABSORBED]"
+	}
+
+	LightningKnife: {
+		DisplayName: Foudre
+		Tooltip: Whats the matter?
+	}
+
+	DevilsDare: {
+		DisplayName: Devils Dare
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1148,6 +1194,17 @@ Projectiles: {
 	RatKingMeteor.DisplayName: Rat King Meteor
 	RatKingMoonSlash.DisplayName: Rat King Moon Slash
 	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
+	BallOfLight.DisplayName: Ball Of Light
+	Cheese.DisplayName: Cheese
+	CheeseRelease.DisplayName: Cheese Release
+	Cheese2.DisplayName: Cheese2
+	ChainChompFace.DisplayName: Chain Chomp Face
+	SOFT.DisplayName: S O F T
+	CRTBlast.DisplayName: C R T Blast
+	DarkDawnProjEclipseFire.DisplayName: Dark Dawn Proj Eclipse Fire
+	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
+	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
+	DevilsFlame.DisplayName: Devils Flame
 }
 
 Buffs: {
@@ -1289,6 +1346,21 @@ Buffs: {
 		DisplayName: Rat Kings Curse
 		Description: You are unable to fly.
 	}
+
+	Empowered: {
+		DisplayName: Empowered
+		Description: Your sword is empowered, at a cost.
+	}
+
+	EclipseFire: {
+		DisplayName: Eclipse Fire
+		Description: Mods.Conquest.Buffs.EclipseFire.Description
+	}
+
+	PickUpFix: {
+		DisplayName: Pick Up Fix
+		Description: Mods.Conquest.Buffs.PickUpFix.Description
+	}
 }
 
 Keybinds: {
@@ -1351,11 +1423,26 @@ NPCs: {
 
 	RatKingBoss.DisplayName: Rat King Boss
 	Mouse.DisplayName: Rat Prince
+	CRTZombie.DisplayName: C R T Zombie
+	Apep.DisplayName: Apep
+	ApepBodyBast.DisplayName: Apep Body Bast
+	ApepBodyFess.DisplayName: Apep Body Fess
+	ApepBodyGaunt.DisplayName: Apep Body Gaunt
+	ApepBodyRan.DisplayName: Apep Body Ran
+	ApepBodyRom.DisplayName: Apep Body Rom
+	ApepBodyStrom.DisplayName: Apep Body Strom
 }
+
+DamageClasses.FoudreDamageClass.DisplayName: melee/ranged Damage
 
 Biomes: {
 	DesertTempleBiome: {
 		TownNPCDialogueName: the Desert Temple Biome
 		DisplayName: Desert Temple Biome
+	}
+
+	DarkDawnBiome: {
+		DisplayName: Dark Dawn Biome
+		TownNPCDialogueName: the Dark Dawn Biome
 	}
 }

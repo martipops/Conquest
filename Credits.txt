@@ -2,6 +2,8 @@
 Hayden (Me) - Mostly Everything
 VictorTekelili - (Weapons,Projectiles,Bosses,UI,Items)
 Supychan (Weapons,Projectiles,NPC'S)
+Valentine Kobold (Weapons,Projectiles)
+Sylvr (Weapons, Projectiles)
 Sprites
 Logar (Items)
 The Possum (UI, Items)

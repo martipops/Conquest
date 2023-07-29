@@ -371,6 +371,7 @@ namespace Conquest.Assets.Common
             {
                 Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
 
+
                 Player.statLife = 1;
 
                 return true;
@@ -585,7 +586,6 @@ namespace Conquest.Assets.Common
             if (T8.p11On == true)
             {
                 Player.GetDamage(DamageClass.Melee) += 0.02f;
-                Player.statLifeMax2 += 20;
             }
             if (T6.p34On == true && Player.HeldItem.DamageType == DamageClass.Summon && Player.GetModPlayer<MyPlayer>().summonCD <= 0)
             {
@@ -612,7 +612,17 @@ namespace Conquest.Assets.Common
             }
 
         }
-
+        public override void PostUpdateMiscEffects()
+        {
+            if (T8.p11On == true)
+            {
+                Player.statLifeMax2 += 20;
+            }
+        }
+        public override void ModifyMaxStats(out StatModifier health, out StatModifier mana)
+        {
+            base.ModifyMaxStats(out health, out mana);
+        }
         public override void PreUpdateMovement()
         {
             if (canDoubleJump)
@@ -727,10 +737,7 @@ namespace Conquest.Assets.Common
                 Player.noFallDmg = true;
                 Player.accRunSpeed += Main.windSpeedCurrent * 10;
             }
-            else
-            {
-                Player.noFallDmg = false;
-            }
+          
         }
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
@@ -915,7 +922,7 @@ namespace Conquest.Assets.Common
             }
             if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0 && proj.DamageType == DamageClass.Melee)
             {
-                Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 50;
+                Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 100;
                 if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
                 {
                     Player.GetModPlayer<MyPlayer>().lostLifeRegen = 10;
@@ -941,20 +948,7 @@ namespace Conquest.Assets.Common
                 }
             }
             Vector2 perturbedSpeed = new Vector2(0, -6).RotatedByRandom(MathHelper.ToRadians(360));
-            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && target.life <= 0 && proj.type != ModContent.ProjectileType<LightningGunProj3>())
-            {
-                Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
-            }
-            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && proj.type != ModContent.ProjectileType<LightningGunProj3>())
-            {
-                fired++;
-                if (fired == 3)
-                {
-                    Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
-                    fired = 0;
-
-                }
-            }
+           
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
