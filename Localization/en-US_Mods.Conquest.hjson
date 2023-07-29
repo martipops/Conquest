@@ -274,7 +274,7 @@ Items: {
 	}
 
 	OperationOutbreak: {
-		Tooltip: Releases high damaging nanites on killing an enemy
+		Tooltip: Fires high energy lasers, accelerating into a beam
 		DisplayName: Outbreak Prime
 	}
 
@@ -1148,6 +1148,10 @@ Projectiles: {
 	RatKingMeteor.DisplayName: Rat King Meteor
 	RatKingMoonSlash.DisplayName: Rat King Moon Slash
 	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
+	OperationOutbreakHeld.DisplayName: Operation Outbreak Held
+	PrimeBeam.DisplayName: Prime Beam
+	Beam.DisplayName: Beam
+	Air.DisplayName: Air
 }
 
 Buffs: {
@@ -1184,6 +1188,11 @@ Buffs: {
 	Electrified2: {
 		DisplayName: Electrified
 		Description: bzzzz
+	}
+
+	Electrified: {
+		DisplayName: Electrified
+		Description: Mods.Conquest.Buffs.Electrified.Description
 	}
 
 	HunnySickness: {
@@ -1283,6 +1292,11 @@ Buffs: {
 	AnvilBuff: {
 		DisplayName: Anvil Buff
 		Description: Mods.Conquest.Buffs.AnvilBuff.Description
+	}
+
+	Overheat: {
+		DisplayName: Overheated!
+		Description: Cannot use Outbreak Prime
 	}
 
 	RatKingsCurse: {
