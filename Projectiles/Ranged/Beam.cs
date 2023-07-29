@@ -119,12 +119,6 @@ namespace Conquest.Projectiles.Ranged
                 Dust dust = Main.dust[Dust.NewDust(position, 0, 0, DustID.YellowStarDust, dustVel.X, dustVel.Y)];
                 dust.noGravity = true;
                 dust.scale = 3f;
-                dust = Dust.NewDustDirect(Main.player[Projectile.owner].Center, 0, 0, DustID.Smoke,
-                    -t.X * setting, -t.Y * setting);
-                dust.fadeIn = 0f;
-                dust.noGravity = true;
-                dust.scale = 3f;
-                dust.color = Color.Cyan;
             }
         }
 
