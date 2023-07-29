@@ -12,6 +12,7 @@
     <None Remove="Assets\GUI\ChartX.png" />
     <None Remove="Assets\GUI\Chart\ChartX.png" />
     <None Remove="Buffs\EclipseFire.png" />
+    <None Remove="Buffs\Electrified.png" />
     <None Remove="Buffs\Overheat.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
     <None Remove="Items\Accessory\DevilsDare\DevilsDare.png" />

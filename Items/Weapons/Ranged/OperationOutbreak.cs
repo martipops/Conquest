@@ -16,14 +16,6 @@ namespace Conquest.Items.Weapons.Ranged
 
         public override void SetDefaults()
         {
-            // Common Properties
-            Item.width = 30;
-            Item.height = 30;
-            Item.rare = 10;
-            Item.value = Item.sellPrice(gold: 3);
-            Item.noMelee = true;
-            Item.crit = 10;
-            // Use Properties
             Item.useAnimation = 24;
             Item.useTime = 8;
             Item.reuseDelay = 28;
@@ -47,15 +39,6 @@ namespace Conquest.Items.Weapons.Ranged
             Item.value = Item.buyPrice(gold: 2, silver: 3);
             Item.noUseGraphic = true;
             Item.channel = true;
-
-            // Weapon Properties
-            Item.damage = 51;
-            Item.knockBack = 3f;
-            Item.DamageType = DamageClass.Ranged;
-            // Projectile Properties
-            Item.shoot = ProjectileID.Bullet;
-            Item.shootSpeed = 14f;
-            Item.useAmmo = AmmoID.Bullet;
         }
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
