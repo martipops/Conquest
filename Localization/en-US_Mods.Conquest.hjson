@@ -1085,6 +1085,11 @@ Items: {
 		DisplayName: Foudre
 		Tooltip: Whats the matter?
 	}
+
+	DevilsDare: {
+		DisplayName: Devils Dare
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1199,6 +1204,7 @@ Projectiles: {
 	DarkDawnProjEclipseFire.DisplayName: Dark Dawn Proj Eclipse Fire
 	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
 	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
+	DevilsFlame.DisplayName: Devils Flame
 }
 
 Buffs: {

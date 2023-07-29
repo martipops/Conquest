@@ -8,11 +8,16 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Gores\crtgore.png" />
     <None Remove="Assets\GUI\ChartX.png" />
     <None Remove="Assets\GUI\Chart\ChartX.png" />
     <None Remove="Buffs\EclipseFire.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
+    <None Remove="Items\Accessory\DevilsDare\DevilsDare.png" />
+    <None Remove="Items\Accessory\DevilsDare\DevilsDare_Face.png" />
+    <None Remove="Items\Accessory\DevilsDare\DevilsFlame.png" />
     <None Remove="Items\Weapons\Melee\ChainChomp.png" />
+    <None Remove="Items\Weapons\Melee\GracefulDahlia.png" />
     <None Remove="Items\Weapons\Melee\LightningKnife.png" />
     <None Remove="Localization\en-US_Mods.Conquest.hjson" />
     <None Remove="NPCs\Bosses\RatKing\BallOfLight.png" />

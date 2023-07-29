@@ -21,7 +21,6 @@ namespace Conquest.NPCs
         }
         public override void SetDefaults()
         {
-            NPC.noGravity = true;
             NPC.width = 34;
             NPC.height = 46;
             NPC.damage = 20;
@@ -42,6 +41,13 @@ namespace Conquest.NPCs
                 return SpawnCondition.OverworldNightMonster.Chance * 0.2f;
             }
             else return 0f;
+        }
+        public override void HitEffect(NPC.HitInfo hit)
+        {
+            if (NPC.life <= 0)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("crtgore").Type, 1f);
+            }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {

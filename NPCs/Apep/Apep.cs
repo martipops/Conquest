@@ -32,6 +32,7 @@ using static Terraria.ModLoader.ModNPC;
 
 namespace Conquest.NPCs.Apep
 {
+    [AutoloadBossHead]
 	public class ApepFX : GlobalNPC
 	{
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
@@ -77,7 +78,7 @@ namespace Conquest.NPCs.Apep
 			NPC.aiStyle = NPCAIStyleID.Worm;
             NPC.damage = 9999999;
             NPC.defense = 500;
-            NPC.lifeMax = 9999999;
+            NPC.lifeMax = 9999;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
 			NPC.dontTakeDamage = false;

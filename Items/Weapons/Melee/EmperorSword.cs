@@ -32,7 +32,7 @@ namespace Conquest.Items.Weapons.Melee
             Item.noMelee = true; 
 
             Item.rare = 3;
-            Item.value = Item.sellPrice(0, 0, 0, 10);
+            Item.value = Item.sellPrice(0, 0, 35, 0);
 
             Item.shoot = ModContent.ProjectileType<EmperorProj>(); // The projectile is what makes a shortsword work
             Item.shootSpeed = 2.1f; // This value bleeds into the behavior of the projectile as velocity, keep that in mind when tweaking values
