@@ -856,8 +856,9 @@ namespace Conquest.Assets.Common
                     Player.AddBuff(ModContent.BuffType<MoonlightBlessing>(), 720);
 
                 }
-                if (Player.HeldItem.type == ModContent.ItemType<Chikage>() && !Player.HasBuff(ModContent.BuffType<ArmamentCooldown>()))
+                if (Player.HeldItem.type == ModContent.ItemType<Chikage>() && !Player.dead && !stop && !Player.HasBuff(ModContent.BuffType<ArmamentCooldown>()))
                 {
+                    stop = true;
                     Player.AddBuff(ModContent.BuffType<ChikageBuff>(), 800);
                     Player.AddBuff(ModContent.BuffType<ArmamentCooldown>(), 3600);
                     Player.Hurt(PlayerDeathReason.ByCustomReason((Player.name + "Got to cocky")), AmountHurt, 1, false, false, 1, false, 100);

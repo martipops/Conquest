@@ -1218,8 +1218,8 @@ Projectiles: {
 
 Buffs: {
 	ArmamentCooldown: {
-		DisplayName: Armament Cooldown
-		Description: You are unable to unleash your armaments legendary ability
+		DisplayName: Ability Cooldown
+		Description: You are unable to unleash your weapons ability
 	}
 
 	Bones: {
