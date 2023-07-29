@@ -13,7 +13,10 @@ namespace Conquest.Items.Weapons.Ranged
     public class OperationOutbreak : ModItem
     {
         // test
-
+        public override void SetStaticDefaults()
+        {
+            ItemID.Sets.SkipsInitialUseSound[Item.type] = true;
+        }
         public override void SetDefaults()
         {
             Item.useAnimation = 24;
