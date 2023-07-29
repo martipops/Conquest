@@ -216,7 +216,7 @@ Items: {
 	}
 
 	Armored: {
-		DisplayName: Armored
+		DisplayName: Laser Pistol
 		Tooltip: ""
 	}
 
@@ -1090,6 +1090,11 @@ Items: {
 		DisplayName: Devils Dare
 		Tooltip: ""
 	}
+
+	GracefulDahlia: {
+		Tooltip: ""
+		DisplayName: Graceful Dahlia
+	}
 }
 
 Projectiles: {
@@ -1205,6 +1210,7 @@ Projectiles: {
 	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
 	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
 	DevilsFlame.DisplayName: Devils Flame
+	GracefulDahliaProj.DisplayName: Graceful Dahlia Proj
 }
 
 Buffs: {

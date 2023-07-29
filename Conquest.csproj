@@ -34,6 +34,7 @@
     <None Remove="Projectiles\Magic\CRTBlast.png" />
     <None Remove="Projectiles\Melee\ChainChompChain.png" />
     <None Remove="Projectiles\Melee\ChainChompFace.png" />
+    <None Remove="Projectiles\Melee\GracefulDahliaProj.png" />
     <None Remove="Projectiles\Melee\ML.png" />
     <None Remove="Tiles\DirtyCrown.png" />
   </ItemGroup>
