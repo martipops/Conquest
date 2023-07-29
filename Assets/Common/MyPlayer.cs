@@ -35,6 +35,8 @@ namespace Conquest.Assets.Common
 
     public class MyPlayer : ModPlayer
     {
+        public int OutbreakShake = 0;
+        public int BeamActive = 0;
         public int summonCD = 0;
         public bool immune = false;
         public int immuneTime = 0;
@@ -418,6 +420,12 @@ namespace Conquest.Assets.Common
 
                 ScreenShake *= 0.9f;
             }
+
+            if (OutbreakShake > 0)
+            {
+                Main.screenPosition += new Vector2(Main.rand.Next(-1, 2), Main.rand.Next(-1, 2));
+                OutbreakShake--;
+            }
         }
 
 
@@ -710,6 +718,17 @@ namespace Conquest.Assets.Common
 
         public override void PostUpdate()
         {
+            if (OutbreakShake > 0)
+            {
+                OutbreakShake--;
+            }
+
+            if (Player.HasBuff(ModContent.BuffType<Overheat>()))
+            {
+                BeamActive = 0;
+            }
+
+
             if (Player.HasBuff(ModContent.BuffType<Steamy>()))
             {
                 Player.statDefense /= 2;

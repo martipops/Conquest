@@ -23,6 +23,11 @@ Items: {
 		Tooltip: ""
 	}
 
+	OperationOutbreak: {
+		Tooltip: Fires high energy lasers, accelerating into a beam
+		DisplayName: Outbreak Prime
+	}
+
 	SoulCloth: {
 		DisplayName: Soul Cloth
 		Tooltip: ""
@@ -1194,6 +1199,9 @@ Projectiles: {
 	RatKingMeteor.DisplayName: Rat King Meteor
 	RatKingMoonSlash.DisplayName: Rat King Moon Slash
 	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
+	OperationOutbreakHeld.DisplayName: Operation Outbreak Held
+	PrimeBeam.DisplayName: Prime Beam
+	Beam.DisplayName: Beam
 	BallOfLight.DisplayName: Ball Of Light
 	Cheese.DisplayName: Cheese
 	CheeseRelease.DisplayName: Cheese Release
@@ -1247,6 +1255,17 @@ Buffs: {
 		DisplayName: Hunny Sickness
 		Description: Description of all time
 	}
+
+	Electrified: {
+		DisplayName: Electrified
+		Description: Mods.Conquest.Buffs.Electrified.Description
+	}
+
+	Overheat: {
+		DisplayName: Overheated!
+		Description: Cannot use Outbreak Prime
+	}
+
 
 	Immune: {
 		DisplayName: Immune
