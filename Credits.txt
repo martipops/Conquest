@@ -4,6 +4,7 @@ VictorTekelili - (Weapons,Projectiles,Bosses,UI,Items)
 Supychan (Weapons,Projectiles,NPC'S)
 Valentine Kobold (Weapons,Projectiles)
 Sylvr (Weapons, Projectiles)
+Quarzz (Weapons, Projectiles)
 Sprites
 Logar (Items)
 The Possum (UI, Items)
@@ -24,7 +25,7 @@ Ideas
 Ezra (Weapons)
 Other (MIT Licensed Mods, or GPL 3.0 Licensed mods or permission)
 VolcanicMG - All of the Diplopia Code
-PaperLuigi - Trail Code
+PaperLuigi - Trail Code 
 PaperLuigi - Projectiles Coming From the side, see Anubis.cs
 Consolaria (Wyvern Code)
 Gabehaswon (Spirit Mod) - Boss spawning from tile, see Queenlarva.cs

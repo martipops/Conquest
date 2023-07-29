@@ -24,7 +24,7 @@ Items: {
 	}
 
 	OperationOutbreak: {
-		Tooltip: Releases high damaging nanites on killing an enemy
+		Tooltip: Fires high energy lasers, accelerating into a beam
 		DisplayName: Outbreak Prime
 	}
 

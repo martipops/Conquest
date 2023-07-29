@@ -12,16 +12,22 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Terraria.Audio;
 using Conquest.Buffs;
+using Conquest.Assets.Common;
 
 namespace Conquest.Projectiles.Ranged
 {
     public class PrimeBeam : ModProjectile
     {
         int timer;
+        public override void SetStaticDefaults()
+        {
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 50; 
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 3;
+        }
         public override void SetDefaults()
         {
-            Projectile.width = 32;
-            Projectile.height = 32;
+            Projectile.width = 10;
+            Projectile.height = 42;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.penetrate = 1;
@@ -41,6 +47,12 @@ namespace Conquest.Projectiles.Ranged
         public override void OnSpawn(IEntitySource source)
         {
             timer = 9;
+        }
+        public override bool PreDraw(ref Color lightColor)
+        {
+            default(Effects.OutbreakTrail).Draw(Projectile);
+
+            return true;
         }
 
         public override void AI()
