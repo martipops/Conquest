@@ -8,11 +8,6 @@ using Conquest.Projectiles.Ranged;
 using Terraria.DataStructures;
 using Conquest.Assets.Common.Sfx;
 using Conquest.Buffs;
-using Microsoft.CodeAnalysis.Host.Mef;
-using Conquest.Assets.Common;
-using static Terraria.ModLoader.PlayerDrawLayer;
-using System.Collections.Generic;
-using Terraria.Enums;
 
 namespace Conquest.Projectiles.HeldProjectiles
 {
