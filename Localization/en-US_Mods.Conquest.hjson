@@ -24,7 +24,7 @@ Items: {
 	}
 
 	OperationOutbreak: {
-		Tooltip: Fires high energy lasers, accelerating into a beam
+		Tooltip: Releases high damaging nanites on killing an enemy
 		DisplayName: Outbreak Prime
 	}
 
@@ -276,11 +276,6 @@ Items: {
 	OccularRepeater: {
 		DisplayName: Occular Repeater
 		Tooltip: Converts wooden arrows to eye balls which stop moving after a short time and bounce off of enemies
-	}
-
-	OperationOutbreak: {
-		Tooltip: Releases high damaging nanites on killing an enemy
-		DisplayName: Outbreak Prime
 	}
 
 	PainTrain: {
@@ -1265,7 +1260,6 @@ Buffs: {
 		DisplayName: Overheated!
 		Description: Cannot use Outbreak Prime
 	}
-
 
 	Immune: {
 		DisplayName: Immune
