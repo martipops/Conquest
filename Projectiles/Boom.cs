@@ -16,6 +16,7 @@ namespace Conquest.Projectiles
 {
     internal class Boom : ModProjectile
     {
+        // huuuuhhh
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("爆炸");

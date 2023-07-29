@@ -12,6 +12,7 @@
     <None Remove="Assets\GUI\ChartX.png" />
     <None Remove="Assets\GUI\Chart\ChartX.png" />
     <None Remove="Buffs\EclipseFire.png" />
+    <None Remove="Buffs\Overheat.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
     <None Remove="Items\Accessory\DevilsDare\DevilsDare.png" />
     <None Remove="Items\Accessory\DevilsDare\DevilsDare_Face.png" />
@@ -30,12 +31,15 @@
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjEclipseFire.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjFuckingSun.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\Eclipse.png" />
+    <None Remove="Projectiles\HeldProjectiles\OperationOutbreakHeld.png" />
     <None Remove="Projectiles\LightningKnifeProjectile.png" />
     <None Remove="Projectiles\Magic\CRTBlast.png" />
     <None Remove="Projectiles\Melee\ChainChompChain.png" />
     <None Remove="Projectiles\Melee\ChainChompFace.png" />
     <None Remove="Projectiles\Melee\GracefulDahliaProj.png" />
     <None Remove="Projectiles\Melee\ML.png" />
+    <None Remove="Projectiles\Ranged\Beam.png" />
+    <None Remove="Projectiles\Ranged\PrimeBeam.png" />
     <None Remove="Tiles\DirtyCrown.png" />
   </ItemGroup>
   <ItemGroup>
