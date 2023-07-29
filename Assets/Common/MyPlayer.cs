@@ -35,8 +35,6 @@ namespace Conquest.Assets.Common
 
     public class MyPlayer : ModPlayer
     {
-        public int OutbreakShake = 0;
-        public int BeamActive = 0;
         public int summonCD = 0;
         public bool immune = false;
         public int immuneTime = 0;
@@ -419,12 +417,6 @@ namespace Conquest.Assets.Common
 
                 ScreenShake *= 0.9f;
             }
-            if (OutbreakShake > 0)
-            {
-                Main.screenPosition += new Vector2(Main.rand.Next(-1, 2), Main.rand.Next(-1, 2));
-                OutbreakShake--;
-            }
-            
         }
 
 
@@ -676,10 +668,10 @@ namespace Conquest.Assets.Common
             }
             rez = false;
         }
-
+       
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-
+            
             if (ElectroCrystal && Main.rand.NextBool(8))
             {
                 target.AddBuff(ModContent.BuffType<Electrified2>(), 120);
@@ -706,19 +698,8 @@ namespace Conquest.Assets.Common
             }
         }
 
-
         public override void PostUpdate()
         {
-            if (OutbreakShake > 0)
-            {
-                OutbreakShake--;
-            }
-
-            if (Player.HasBuff(ModContent.BuffType<Overheat>()))
-            {
-                BeamActive = 0;
-            }
-
             if (Player.HasBuff(ModContent.BuffType<Steamy>()))
             {
                 Player.statDefense /= 2;
@@ -960,7 +941,7 @@ namespace Conquest.Assets.Common
                 }
             }
             Vector2 perturbedSpeed = new Vector2(0, -6).RotatedByRandom(MathHelper.ToRadians(360));
-            /*if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && target.life <= 0 && proj.type != ModContent.ProjectileType<LightningGunProj3>())
+            if (Player.HeldItem.type == ModContent.ItemType<OperationOutbreak>() && target.life <= 0 && proj.type != ModContent.ProjectileType<LightningGunProj3>())
             {
                 Projectile.NewProjectile(proj.GetSource_FromAI(), new Vector2(proj.Center.X, proj.Center.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<LightningGunProj3>(), proj.damage * 4, 0, proj.owner);
             }
@@ -973,7 +954,7 @@ namespace Conquest.Assets.Common
                     fired = 0;
 
                 }
-            }*/
+            }
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
