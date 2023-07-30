@@ -1095,6 +1095,26 @@ Items: {
 		Tooltip: ""
 		DisplayName: Graceful Dahlia
 	}
+
+	DevCoat: {
+		DisplayName: Mysterious Coat
+		Tooltip: ""
+	}
+
+	DevContainer: {
+		DisplayName: Mysterious Box
+		Tooltip: "Whats inside?"
+	}
+
+	DevCowl: {
+		DisplayName: Mysterious Cowl
+		Tooltip: ""
+	}
+
+	DevKilt: {
+		DisplayName: Mysterious Kilt
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

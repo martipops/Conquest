@@ -1,23 +1,12 @@
-﻿
-using Microsoft.Xna.Framework;
-using Mono.Cecil;
+﻿using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.Graphics.Effects;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Physics;
-using static Humanizer.In;
-using static Terraria.ModLoader.PlayerDrawLayer;
-using static tModPorter.ProgressUpdate;
 using Terraria.ModLoader.IO;
 using Conquest.Assets.Common;
 using Conquest.Assets.GUI;
@@ -89,7 +78,6 @@ namespace Conquest.Assets.Common
         public int JusticeDamage;
         public int TimesHit;
         public bool America;
-   
         public override void ResetEffects()
         {
             Diplopia = false;
@@ -770,8 +758,6 @@ namespace Conquest.Assets.Common
         bool stop;
         public override void PreUpdate()
         {
-            //needed for propely timeWarp work
-
             if (stop)
             {
                 timer++;
