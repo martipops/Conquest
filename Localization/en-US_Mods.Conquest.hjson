@@ -1103,7 +1103,7 @@ Items: {
 
 	DevContainer: {
 		DisplayName: Mysterious Box
-		Tooltip: "Whats inside?"
+		Tooltip: Whats inside?
 	}
 
 	DevCowl: {
@@ -1113,6 +1113,11 @@ Items: {
 
 	DevKilt: {
 		DisplayName: Mysterious Kilt
+		Tooltip: ""
+	}
+
+	BunnyBlaster: {
+		DisplayName: Magicians Top Hat
 		Tooltip: ""
 	}
 }
@@ -1234,6 +1239,7 @@ Projectiles: {
 	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
 	DevilsFlame.DisplayName: Devils Flame
 	GracefulDahliaProj.DisplayName: Graceful Dahlia Proj
+	BunnyBomb.DisplayName: Bunny Bomb
 }
 
 Buffs: {
