@@ -82,6 +82,34 @@ namespace Conquest.NPCs.Miniboss.Bruiser
             NPC.scale = 1.5f;
             NPC.noTileCollide = false;
         }
+
+          public override void HitEffect(NPC.HitInfo hit)
+        {
+            if (Main.netMode == NetmodeID.Server)
+            {
+
+                return;
+            }
+
+            if (NPC.life <= 0)
+            {
+                int headGoreType = Mod.Find<ModGore>("Bruiser_Head").Type;
+                int armGoreType = Mod.Find<ModGore>("Bruiser_Arm").Type;
+                int spikeGoreType = Mod.Find<ModGore>("Bruiser_Spike").Type;
+
+                var entitySource = NPC.GetSource_Death();
+
+                for (int i = 0; i < 1; i++)
+                {
+                    Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7)), headGoreType);
+                    Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7)), armGoreType);
+                    Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7)), spikeGoreType);
+                }
+
+                SoundEngine.PlaySound(SoundID.NPCDeath1, NPC.Center);
+            }
+        }
+
         public ref float AI_State => ref NPC.ai[0];
         public ref float AI_Timer => ref NPC.ai[1];
         private void Notice()
