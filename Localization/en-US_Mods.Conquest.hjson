@@ -467,7 +467,7 @@ Items: {
 	Glass: {
 		Tooltip:
 			'''
-			Removed player immunity frames
+			Removes player immunity frames
 			Increases All Damage by 100%
 			'''
 		DisplayName: Glass
@@ -1118,6 +1118,46 @@ Items: {
 
 	BunnyBlaster: {
 		DisplayName: Magicians Top Hat
+		Tooltip: ""
+	}
+
+	JermaSword: {
+		DisplayName: Jerma Sword
+		Tooltip: ""
+	}
+
+	ArachnoidMask: {
+		DisplayName: Assassin Mask
+		Tooltip: ""
+	}
+
+	ArachnoidPants: {
+		DisplayName: Assassin Pants
+		Tooltip: ""
+	}
+
+	ArachnoidSuit: {
+		DisplayName: Assassin Suit
+		Tooltip: ""
+	}
+
+	DwagonCosplayMask: {
+		DisplayName: Dwagon Cosplay Mask
+		Tooltip: ""
+	}
+
+	DwagonCosplayPants: {
+		DisplayName: Dwagon Cosplay Pants
+		Tooltip: ""
+	}
+
+	DwagonCosplaySuit: {
+		DisplayName: Dwagon Cosplay Suit
+		Tooltip: ""
+	}
+
+	PigMask: {
+		DisplayName: Pig Mask
 		Tooltip: ""
 	}
 }

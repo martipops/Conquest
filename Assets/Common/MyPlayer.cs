@@ -730,7 +730,6 @@ namespace Conquest.Assets.Common
             {
                 Player.immuneTime = Glasstime;
             }
-            Main.LocalPlayer.adjWater = false;
         }
         public override void PostUpdateRunSpeeds()
         {

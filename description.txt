@@ -10,7 +10,7 @@ The mod currently adds;
 - World Map used to enter dungeons
 - Custom World Gen (Underground Desert)
 - Several Shimmer Exclusive items
-- This mod allows minions to crit 
+- This mod allows minions to crit, for more vanilla changes see https://terrariamods.wiki.gg/wiki/Conquest/Vanilla_Changes
 
 Talent Tree: Accessed through the Eight Trigrams Mirror item your character spawns with, a new way to progress in which you select skills that improve your character.
 World Map: Accessed through the World Map item your character spawns with, using it will open a UI which can be used to select dungeons which offer unique loot called Artifacts and to Fight the Mods Bosses.

@@ -82,7 +82,8 @@ namespace Conquest.Items.Accessory.DevilsDare
 			Item.width = 25;
 			Item.height = 23;
 			Item.accessory = true;
-			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
+            Item.rare = ModContent.RarityType<ArtifactRarity>();
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 			ItemID.Sets.AnimatesAsSoul[Item.type] = true;
 		}
 		public override void UpdateAccessory(Player player, bool hideVisual) {
@@ -100,7 +101,7 @@ namespace Conquest.Items.Accessory.DevilsDare
 				Projectile.NewProjectile(source, player.position, (new Vector2(0,0)), type, 0, 0, player.whoAmI);
 			}
 			player.GetDamage(DamageClass.Generic) *= 10;
-			player.statLifeMax2 = devilsLife;
+            player.statLifeMax2 = 1;
 			player.aggro = 250;
 			player.GetModPlayer<DevilsDareEffects>().DevilsBuff = true;
 			if (!hideVisual) player.GetModPlayer<DevilsDareEffects>().DevilsVisuals = true;

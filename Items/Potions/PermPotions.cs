@@ -486,12 +486,12 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermObsidian)
             {
                 PermPotions.PermObsidian = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
             }
             else
             {
                 PermPotions.PermObsidian = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
             }
             return true;
         }
@@ -527,12 +527,12 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermRegen)
             {
                 PermPotions.PermRegen = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
             }
             else
             {
                 PermPotions.PermRegen = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
             }
             return true;
         }
@@ -568,12 +568,12 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermSwift)
             {
                 PermPotions.PermSwift = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
             }
             else
             {
                 PermPotions.PermSwift = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
             }
             return true;
         }
@@ -609,12 +609,12 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermGills)
             {
                 PermPotions.PermGills = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
             }
             else
             {
                 PermPotions.PermGills = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
             }
             return true;
         }
@@ -649,13 +649,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermIronskin)
             {
                 PermPotions.PermIronskin = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermIronskin = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -692,13 +692,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermManaRegen)
             {
                 PermPotions.PermManaRegen = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermManaRegen = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -735,13 +735,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermMagicPower)
             {
                 PermPotions.PermMagicPower = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermMagicPower = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -778,13 +778,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermFeather)
             {
                 PermPotions.PermFeather = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermFeather = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -821,13 +821,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermSpelunker)
             {
                 PermPotions.PermSpelunker = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermSpelunker = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -864,13 +864,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermInvis)
             {
                 PermPotions.PermInvis = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermInvis = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -907,13 +907,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermShine)
             {
                 PermPotions.PermShine = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermShine = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -950,13 +950,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermNightOwl)
             {
                 PermPotions.PermNightOwl = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermNightOwl = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -992,13 +992,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermBattle)
             {
                 PermPotions.PermBattle = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermBattle = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1034,13 +1034,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermThorns)
             {
                 PermPotions.PermThorns = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermThorns = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1076,13 +1076,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermWater)
             {
                 PermPotions.PermWater = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermWater = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1118,13 +1118,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermArchery)
             {
                 PermPotions.PermArchery = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermArchery = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1160,13 +1160,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermHunter)
             {
                 PermPotions.PermHunter = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermHunter = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1202,13 +1202,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermGrav)
             {
                 PermPotions.PermGrav = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermGrav = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1244,13 +1244,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermMining)
             {
                 PermPotions.PermMining = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermMining = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1286,13 +1286,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermHeart)
             {
                 PermPotions.PermHeart = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermHeart = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1328,13 +1328,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermCalm)
             {
                 PermPotions.PermCalm = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermCalm = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1370,13 +1370,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermBuilder)
             {
                 PermPotions.PermBuilder = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermBuilder = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1412,13 +1412,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermTitan)
             {
                 PermPotions.PermTitan = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermTitan = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1454,13 +1454,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermFlipper)
             {
                 PermPotions.PermFlipper = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermFlipper = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1496,13 +1496,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermSummoning)
             {
                 PermPotions.PermSummoning = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermSummoning = true;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             return true;
@@ -1538,13 +1538,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermDanger)
             {
                 PermPotions.PermDanger = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermDanger = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1580,13 +1580,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermAmmo)
             {
                 PermPotions.PermAmmo = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermAmmo = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1622,13 +1622,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermLifeforce)
             {
                 PermPotions.PermLifeforce = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermLifeforce = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1664,13 +1664,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermEndurance)
             {
                 PermPotions.PermEndurance = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermEndurance = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1705,13 +1705,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermRage)
             {
                 PermPotions.PermRage = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermRage = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1746,13 +1746,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermInferno)
             {
                 PermPotions.PermInferno = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermInferno = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1786,13 +1786,13 @@ namespace Conquest.Items.Potions
             if (PermPotions.PermAle)
             {
                 PermPotions.PermAle = false;
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
             }
             else
             {
                 PermPotions.PermAle = true;
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
             }
             return true;
@@ -1827,13 +1827,13 @@ namespace Conquest.Items.Potions
         {
             if (PermPotions.PermWrath)
             {
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
                 PermPotions.PermWrath = false;
             }
             else
             {
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
                 PermPotions.PermWrath = true;
             }
             return true;
@@ -1868,13 +1868,13 @@ namespace Conquest.Items.Potions
         {
             if (PermPotions.PermFish)
             {
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
                 PermPotions.PermFish = false;
             }
             else
             {
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
                 PermPotions.PermFish = true;
             }
@@ -1910,13 +1910,13 @@ namespace Conquest.Items.Potions
         {
             if (PermPotions.PermSonar)
             {
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
 
                 PermPotions.PermSonar = false;
             }
             else
             {
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
 
                 PermPotions.PermSonar = true;
             }
@@ -1952,12 +1952,12 @@ namespace Conquest.Items.Potions
         {
             if (PermPotions.PermCrate)
             {
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
                 PermPotions.PermCrate = false;
             }
             else
             {
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
                 PermPotions.PermCrate = true;
             }
             return true;
@@ -1992,12 +1992,12 @@ namespace Conquest.Items.Potions
         {
             if (PermPotions.PermWarmth)
             {
-                Main.NewText("Deactivated");
+                Main.NewText("Deactivated for " + player.name);
                 PermPotions.PermWarmth = false;
             }
             else
             {
-                Main.NewText("Activated");
+                Main.NewText("Activated for " + player.name);
                 PermPotions.PermWarmth = true;
             }
             return true;
