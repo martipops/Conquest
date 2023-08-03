@@ -1286,6 +1286,7 @@ Projectiles: {
 	GracefulDahliaProj.DisplayName: Graceful Dahlia Proj
 	BunnyBomb.DisplayName: Bunny Bomb
 	JermaSlash.DisplayName: Jerma Slash
+	Rose.DisplayName: Rose
 }
 
 Buffs: {
@@ -1510,6 +1511,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	RatKingBoss.DisplayName: Rat King Boss
@@ -1538,6 +1541,8 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 }
 

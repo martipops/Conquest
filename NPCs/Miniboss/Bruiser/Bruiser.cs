@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using Conquest.Assets.Systems;
 using Terraria.GameContent.ItemDropRules;
 using Conquest.Items.Weapons.Melee;
+using Terraria.Audio;
 
 namespace Conquest.NPCs.Miniboss.Bruiser
 {

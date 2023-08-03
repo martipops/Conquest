@@ -61,6 +61,7 @@
     <None Remove="Projectiles\Melee\ChainChompFace.png" />
     <None Remove="Projectiles\Melee\GracefulDahliaProj.png" />
     <None Remove="Projectiles\Melee\ML.png" />
+    <None Remove="Projectiles\Melee\Rose.png" />
     <None Remove="Projectiles\Ranged\Beam.png" />
     <None Remove="Projectiles\Ranged\PrimeBeam.png" />
     <None Remove="Tiles\DirtyCrown.png" />
