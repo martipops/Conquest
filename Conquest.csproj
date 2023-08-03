@@ -24,6 +24,10 @@
     <None Remove="Items\Vanity\Dragon\DwagonCosplayPants_Legs.png" />
     <None Remove="Items\Vanity\Dragon\DwagonCosplaySuit.png" />
     <None Remove="Items\Vanity\Dragon\DwagonCosplaySuit_Body.png" />
+    <None Remove="Items\Vanity\KoboldGem.png" />
+    <None Remove="Items\Vanity\KoboldGem_Body.png" />
+    <None Remove="Items\Vanity\KoboldGem_Head.png" />
+    <None Remove="Items\Vanity\KoboldGem_Legs.png" />
     <None Remove="Items\Vanity\PigMask.png" />
     <None Remove="Items\Vanity\PigMask_Head.png" />
     <None Remove="Items\Vanity\Spiderman\ArachnoidMask.png" />
@@ -34,6 +38,7 @@
     <None Remove="Items\Vanity\Spiderman\ArachnoidSuit_Body.png" />
     <None Remove="Items\Weapons\Melee\ChainChomp.png" />
     <None Remove="Items\Weapons\Melee\GracefulDahlia.png" />
+    <None Remove="Items\Weapons\Melee\JermaSlash.png" />
     <None Remove="Items\Weapons\Melee\LightningKnife.png" />
     <None Remove="Localization\en-US_Mods.Conquest.hjson" />
     <None Remove="NPCs\Bosses\RatKing\BallOfLight.png" />
@@ -42,6 +47,9 @@
     <None Remove="NPCs\Bosses\RatKing\CheeseRelease.png" />
     <None Remove="NPCs\Bosses\RatKing\Mouse.png" />
     <None Remove="NPCs\Bosses\RatKing\RatKingBoss_Head_Boss.png" />
+    <None Remove="NPCs\Town\KoboldMerchant.png" />
+    <None Remove="NPCs\Town\KoboldMerchant_Head.png" />
+    <None Remove="NPCs\Town\KoboldMerchant_Party.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\blankPixel.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjEclipseFire.png" />
     <None Remove="Projectiles\DarkDawnProjectiles\DarkDawnProjFuckingSun.png" />
