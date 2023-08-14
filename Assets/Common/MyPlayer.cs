@@ -69,15 +69,12 @@ namespace Conquest.Assets.Common
         public bool emerald = false;
         public bool CloseCall;
         public bool emeraldBoom = false;
-        public static float warpSelfAimDespawn = 60; // don't touch
-        public int TimeWarpSwitch = 0;
-        public static bool TimeWarpIsPossible;
-        public static int WarpEnergy = 300;
         public bool Glory;
         public bool Justice;
         public int JusticeDamage;
         public int TimesHit;
         public bool America;
+        
         public override void ResetEffects()
         {
             Diplopia = false;
@@ -518,10 +515,13 @@ namespace Conquest.Assets.Common
             }
             if (T3.p23On == true && Player.HeldItem.DamageType == DamageClass.Ranged)
             {
+                /*
                 if (Player.controlUseItem)
                 {
                     Player.HeldItem.GetGlobalItem<MyItem>();
                 }
+                */
+                /// what??????
             }
             if (item.useTime >= 35 && item.DamageType.CountsAsClass(DamageClass.Ranged) && T3.p26On)
             {

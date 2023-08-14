@@ -49,7 +49,7 @@ namespace Conquest.NPCs.Apep
 		static int head = NPCHeadLoader.GetBossHeadSlot($"{nameof(Conquest)}/NPCs/Apep/Apepicon");
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if ((SpawnCondition.Underworld.Chance > 0) && (NPC.CountNPCS(ModContent.NPCType<Apep>()) == 0)) return 0.01f;
+            if ((SpawnCondition.Underworld.Chance > 0) && (NPC.CountNPCS(ModContent.NPCType<Apep>()) == 0)) return 0.001f;
 			else return 0f;
 			
 		}

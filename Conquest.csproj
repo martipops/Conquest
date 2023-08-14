@@ -15,9 +15,6 @@
     <None Remove="Buffs\Electrified.png" />
     <None Remove="Buffs\Overheat.png" />
     <None Remove="Buffs\RatKingsCurse.png" />
-    <None Remove="Items\Accessory\DevilsDare\DevilsDare.png" />
-    <None Remove="Items\Accessory\DevilsDare\DevilsDare_Face.png" />
-    <None Remove="Items\Accessory\DevilsDare\DevilsFlame.png" />
     <None Remove="Items\Vanity\Dragon\DwagonCosplayMask.png" />
     <None Remove="Items\Vanity\Dragon\DwagonCosplayMask_Head.png" />
     <None Remove="Items\Vanity\Dragon\DwagonCosplayPants.png" />
