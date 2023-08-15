@@ -8,6 +8,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using Microsoft.Xna.Framework;
 
 namespace Conquest.Projectiles.Magic
 {
@@ -46,8 +47,15 @@ namespace Conquest.Projectiles.Magic
 
                 if (++Projectile.frame >= Main.projFrames[Projectile.type])
                 {
+                    for (int i = 0; i < 1; i++)
+                    {
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(),
+                        new Vector2(Projectile.Center.X, Projectile.Center.Y),
+                        Main.rand.NextVector2CircularEdge(6, 6),
+                        ModContent.ProjectileType<Ghosty2>(),
+                        Projectile.damage, 0, Projectile.owner);
+                    }
                     Projectile.Kill();
-
                 }
             }
 

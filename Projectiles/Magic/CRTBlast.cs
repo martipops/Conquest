@@ -8,6 +8,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Conquest.Projectiles.Magic;
+using Conquest.Buffs;
 
 namespace Conquest.Projectiles.Magic
 {
@@ -27,16 +28,25 @@ namespace Conquest.Projectiles.Magic
             Projectile.ignoreWater = true;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 1;
-			Projectile.aiStyle = 0;
-			Projectile.timeLeft = 30;
+			Projectile.timeLeft = 60;
+			Projectile.extraUpdates = 1;
+
+			Projectile.penetrate = 3;
+			Projectile.usesLocalNPCImmunity = true;
+			Projectile.localNPCHitCooldown = -1;
 		}
 		public override void AI()
 		{
-			Projectile.position += Projectile.velocity;
-			Projectile.velocity /= 1.4f;
+			Projectile.velocity /= 1.05f;
 			Projectile.rotation = 0;
 			if ((Main.rand.Next(3) > 1) || (Projectile.timeLeft == 300)) Projectile.frame = Main.rand.Next(2);
+			if (Projectile.timeLeft < 5) Projectile.alpha += 64;
 			base.AI();
 		}
-	}
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (target.type != NPCID.TargetDummy) target.AddBuff(ModContent.BuffType<Lag>(), Main.rand.Next(60, 181));
+        }
+    }
 }
