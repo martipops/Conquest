@@ -34,7 +34,8 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.consumable = true;
 			Item.width = 32;
 			Item.height = 24;
-			Item.rare = ItemRarityID.Pink;
+            Item.value = Item.buyPrice(gold: 10);
+            Item.rare = ItemRarityID.Pink;
 		}
 
 		public override bool CanRightClick() {
@@ -54,7 +55,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 26;
 			Item.height = 22;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -65,7 +66,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 36;
 			Item.height = 24;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -76,7 +77,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 26;
 			Item.height = 14;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}

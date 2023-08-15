@@ -27,6 +27,7 @@
     <None Remove="Items\Vanity\KoboldGem_Legs.png" />
     <None Remove="Items\Vanity\PigMask.png" />
     <None Remove="Items\Vanity\PigMask_Head.png" />
+    <None Remove="Items\Vanity\Spiderman\ArachnoidLunchbox.png" />
     <None Remove="Items\Vanity\Spiderman\ArachnoidMask.png" />
     <None Remove="Items\Vanity\Spiderman\ArachnoidMask_Head.png" />
     <None Remove="Items\Vanity\Spiderman\ArachnoidPants.png" />
