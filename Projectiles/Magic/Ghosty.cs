@@ -38,14 +38,20 @@ namespace Conquest.Projectiles.Magic
             float maxDetectRadius = 1500f;
             float projSpeed = 10f;
             NPC closestNPC = FindClosestNPC(maxDetectRadius);
+
+            if (!Main.dedServ)
+            {
+                Dust.NewDustDirect(Projectile.TopLeft, Projectile.width, Projectile.height,
+                                   DustID.SpectreStaff, Projectile.velocity.X / 2, Projectile.velocity.Y / 2).noGravity = true;
+            }
+
             if (closestNPC == null)
             {
                 Projectile.rotation = Projectile.velocity.ToRotation();
-                Projectile.Kill();
                 return;
             }
             else
-                Projectile.velocity = (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed;
+                Projectile.velocity = Vector2.Lerp(Projectile.velocity, (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed, 0.11f);
             Projectile.rotation = Projectile.velocity.ToRotation();
             if (++Projectile.frameCounter >= 5)
             {

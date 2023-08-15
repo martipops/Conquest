@@ -184,10 +184,7 @@ namespace Conquest.Assets.Common
 
                 private Color StripColors(float progressOnStrip)
                 {
-                    Color value = Main.hslToRgb(.225f, .39f, 0.7f);
-                    Color result = Color.Black;
-                    result.A = 0;
-                    return result;
+                return Color.Black;
                 }
 
                 private float StripWidth(float progressOnStrip)

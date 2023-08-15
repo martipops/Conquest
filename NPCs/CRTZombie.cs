@@ -1,5 +1,6 @@
 ﻿using Conquest.Items.Materials;
 using Conquest.Items.Weapons.Magic;
+using Conquest.Buffs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace Conquest.NPCs
 {
     public class CRTZombie : ModNPC
     {
+        // changed by Goose
+        // now a bit laggy
+        // Attacking the CRT Zombie lags the player
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
@@ -42,6 +46,23 @@ namespace Conquest.NPCs
             }
             else return 0f;
         }
+
+        public override void OnHitByItem(Player player, Item item, NPC.HitInfo hit, int damageDone)
+        {
+            player.AddBuff(ModContent.BuffType<Lag>(), 120);
+        }
+
+        public override void OnHitByProjectile(Projectile projectile, NPC.HitInfo hit, int damageDone)
+        {
+            Main.player[projectile.owner].AddBuff(ModContent.BuffType<Lag>(), 120);
+        }
+
+        public override void AI()
+        {
+            base.AI();
+            NPC.AddBuff(ModContent.BuffType<Lag>(), 60);
+        }
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)

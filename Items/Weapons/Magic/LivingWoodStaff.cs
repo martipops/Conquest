@@ -8,6 +8,10 @@ using Terraria.ModLoader;
 
 namespace Conquest.Items.Weapons.Magic
 {
+    // changed by Goose
+    // completely overhauled
+    // now fires a controllable leaf projection
+
     public class LivingWoodStaff : ModItem
     {
         public override void SetStaticDefaults()
@@ -26,27 +30,28 @@ namespace Conquest.Items.Weapons.Magic
             Item.noMelee = true;
             Item.rare = 1;
             // Use Properties
-            Item.useTime = 40;
-            Item.useAnimation = 40;
+            Item.useTime = 1;
+            Item.useAnimation = 30;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
             Item.UseSound = SoundID.Item43;
             Item.autoReuse = true;
             // Weapon Properties
-            Item.damage = 13;
-            Item.knockBack = 3f;
+            Item.damage = 6;
+            Item.knockBack = 1f;
             Item.DamageType = DamageClass.Magic;
-            Item.mana = 6;
+            Item.mana = 4;
             // Projectile Properties
-            Item.shoot = ModContent.ProjectileType<Staff2>();
-            Item.shootSpeed = 0f;
+            Item.shoot = ModContent.ProjectileType<NatureTentacle>();
+            Item.shootSpeed = 8f;
         }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            Projectile.NewProjectileDirect(source, Main.MouseWorld, velocity, type, damage, knockback, player.whoAmI);
-            return false;
 
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * Item.width * 2;
+            position += muzzleOffset;
         }
+
         public override void AddRecipes()
         {
             CreateRecipe()

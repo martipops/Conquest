@@ -39,14 +39,14 @@ namespace Conquest.Projectiles.Magic
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            default(Effects.WhiteTrail).Draw(Projectile);
+            default(Effects.PurpleTrail).Draw(Projectile);
 
             return true;
         }
         public override void AI()
         {
             float maxDetectRadius = 1000f; // The maximum radius at which a projectile can detect a target
-            float projSpeed = 5f; // The speed at which the projectile moves towards the target
+            float projSpeed = 7f; // The speed at which the projectile moves towards the target
             Projectile.rotation = Projectile.velocity.ToRotation();
             NPC closestNPC = FindClosestNPC(maxDetectRadius);
             if (closestNPC == null)
@@ -54,7 +54,7 @@ namespace Conquest.Projectiles.Magic
 
             // If found, change the velocity of the projectile and turn it in the direction of the target
             // Use the SafeNormalize extension method to avoid NaNs returned by Vector2.Normalize when the vector is zero
-            Projectile.velocity = (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed;
+            Projectile.velocity = Vector2.Lerp(Projectile.velocity, (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projSpeed, 0.11f);
         }
 
         public NPC FindClosestNPC(float maxDetectDistance)

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
+using Conquest.Projectiles.Magic;
 
 namespace Conquest.Items.Weapons.Magic
 {
@@ -38,8 +39,8 @@ namespace Conquest.Items.Weapons.Magic
             Item.DamageType = DamageClass.Magic;
             Item.mana = 13;
             // Projectile Properties
-            Item.shoot = ProjectileID.GreenLaser;
-            Item.shootSpeed = 12f;
+            Item.shoot = ModContent.ProjectileType<SpaceRay>();
+            Item.shootSpeed = 1f;
         }
         public override Vector2? HoldoutOffset()
         {

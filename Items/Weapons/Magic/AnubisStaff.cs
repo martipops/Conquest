@@ -46,33 +46,13 @@ namespace Conquest.Items.Weapons.Magic
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
-            float ceilingLimit = target.Y;
-            if (ceilingLimit > player.Center.Y - 200f)
+            position = player.Center + new Vector2(0, Main.screenHeight * 0.6f);
+            for (int i = 0; i < 5; i++)
             {
-                ceilingLimit = player.Center.Y - 200f;
-            }
-            // Loop these functions 3 times.
-            for (int i = 0; i < 3; i++)
-            {
-                position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
-                position.Y -= 100 * i;
-                Vector2 heading = target - position;
-
-                if (heading.Y < 0f)
-                {
-                    heading.Y *= -1f;
-                }
-
-                if (heading.Y < 20f)
-                {
-                    heading.Y = 20f;
-                }
-
-                heading.Normalize();
-                heading *= velocity.Length();
-                heading.Y += Main.rand.Next(-40, 41) * 0.02f;
-                Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+                Vector2 perturbedPos = position + new Vector2(player.direction * i * 40, 0) + Main.rand.NextVector2Circular(50, 50);
+                Vector2 perturbedVel = perturbedPos.DirectionTo(Main.MouseWorld + Main.rand.NextVector2Circular(100, 100))
+                    * velocity.Length() * Main.rand.NextFloat(0.85f, 1.5f);
+                Projectile.NewProjectileDirect(source, perturbedPos, perturbedVel, type, damage, knockback, player.whoAmI);
             }
 
             return false;

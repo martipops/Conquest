@@ -8,9 +8,14 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Conquest.Projectiles.Magic;
+using Conquest.Buffs;
+using Mono.Cecil;
 
 namespace Conquest.Items.Weapons.Magic
 {
+    // changed by Goose
+    // now fires a stream of 0's and 1's that lags targets
+    // using with Mana Sickness may lag the player
 	public class CRTGun	: ModItem
 	{
 		SoundStyle RetroBlast = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Retro_Blast")
@@ -28,32 +33,31 @@ namespace Conquest.Items.Weapons.Magic
             Item.noMelee = true;
             Item.rare = 6;
             Item.mana = 15;
-            Item.useTime = 60;
-            Item.useAnimation = 60;
+            Item.useTime = 5;
+            Item.useAnimation = 20;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
-            Item.damage = 20;
+            Item.damage = 3;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Magic;
 			Item.shoot = ModContent.ProjectileType<CRTBlast>();
 			Item.shootSpeed = 16;
 			Item.autoReuse = true;
+
+            Item.UseSound = RetroBlast;
 		}
-		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-			int NumProjectiles = 8 + Main.rand.Next(8); // 3, 4, or 5 shots
-
-            for (int i = 0; i < NumProjectiles; i++)
+            for (int i = 0; i < 3; i++)
             {
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(45));
-
-                newVelocity *= 2f - Main.rand.NextFloat(1f);
-
-                Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, 0, player.whoAmI);
+                Projectile.NewProjectileDirect(player.GetSource_ItemUse(player.HeldItem),
+                    position + Main.rand.NextVector2Circular(8, 8), velocity.RotatedByRandom(MathHelper.ToRadians(5)),
+                    type, damage, 0, player.whoAmI);
             }
-			SoundEngine.PlaySound(RetroBlast, player.position);
-            return false;
-
+            if (player.HasBuff(BuffID.ManaSickness) && Main.rand.NextBool(10))
+            {
+                player.AddBuff(ModContent.BuffType<Lag>(), 60);
+            }
         }
-	}
+    }
 }
