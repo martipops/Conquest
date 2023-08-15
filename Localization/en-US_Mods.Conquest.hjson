@@ -1065,7 +1065,7 @@ Items: {
 		Tooltip:
 			'''
 			Manual: Hold [c/3fd1a0:Left Click] to enable [c/ff6a00:Solar Eclipse].
-			[c/ff6a00:Solar Eclipse:] Nearby enemies are receiving additional by [c/ff6a00:Eclipse Fire].
+			[c/ff6a00:Solar Eclipse:] Nearby enemies receive additional [c/ff6a00:Eclipse Fire].
 			[c/ff6a00:Eclipse Fire:] While damaging, [c/ff6a00:Eclipse Fire] generates [c/ff6a00:Sun Energy].
 			[c/ff6a00:Sun Energy:] [c/3fd1a0:Right Click] to release your [c/ff6a00:Sun Energy]
 			and summon the [c/ff6a00:Falling Sun].
