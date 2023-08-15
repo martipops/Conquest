@@ -25,29 +25,34 @@ namespace Conquest.NPCs.Town
 
     public class Cowboy : ModNPC
     {
+        private static Profiles.StackedNPCProfile NPCProfile;
 
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Cowboy");
             Main.npcFrameCount[Type] = 21;
             NPCID.Sets.ExtraFramesCount[Type] = 9;
-           
-            NPCID.Sets.HatOffsetY[Type] = 4; 
+
+            NPCID.Sets.HatOffsetY[Type] = 4;
 
             // Influences how the NPC looks in the Bestiary
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
-                Velocity = 1f, 
-                Direction = 1 
-                          
+                Velocity = 1f,
+                Direction = 1
+
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
-           
+
+            NPCProfile = new Profiles.StackedNPCProfile(
+                new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party")
+            );
+
         }
         public override void SetDefaults()
         {
-            NPC.townNPC = true; 
-            NPC.friendly = true; 
+            NPC.townNPC = true;
+            NPC.friendly = true;
             NPC.width = 18;
             NPC.height = 40;
             NPC.aiStyle = 7;
@@ -63,14 +68,14 @@ namespace Conquest.NPCs.Town
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Desert,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Desert,
 
-				new FlavorTextBestiaryInfoElement("Yeehaw"),
+                new FlavorTextBestiaryInfoElement("Yeehaw"),
 
-				
+
             });
         }
-      
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             int num = NPC.life > 0 ? 1 : 5;
@@ -80,7 +85,7 @@ namespace Conquest.NPCs.Town
                 Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.SteampunkSteam);
             }
         }
-     
+
         public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             return NPC.downedBoss1;
@@ -105,7 +110,7 @@ namespace Conquest.NPCs.Town
                 chat.Add(Language.GetTextValue("Not my kind of party."));
             }
             chat.Add(Language.GetTextValue("Howdy!"));
-         
+
 
 
 
@@ -137,38 +142,13 @@ namespace Conquest.NPCs.Town
                 .Add<CalobogusAle>()
                 .Add<ShotRevolver>()
                 .Add<Murica>(Condition.Hardmode);
-                
+
             npcShop.Register();
         }
         public override ITownNPCProfile TownNPCProfile()
         {
-            return new ExamplePersonProfile();
-       }
-
-
-    }
-    public class ExamplePersonProfile : ITownNPCProfile
-    {
-        public int RollVariation() => 0;
-        public string GetNameForVariant(NPC npc) => npc.getNewNPCName();
-
-        public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
-        {
-            if (npc.IsABestiaryIconDummy && !npc.ForcePartyHatOn)
-                return ModContent.Request<Texture2D>("Conquest/NPCs/Town/Cowboy");
-
-            if (npc.altTexture == 1)
-                return ModContent.Request<Texture2D>("Conquest/NPCs/Town/Cowboy_Party");
-
-            return ModContent.Request<Texture2D>("Conquest/NPCs/Town/Cowboy");
+            return NPCProfile;
         }
-
-        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot("Conquest/NPCs/Town/Cowboy_Head");
     }
 }
-
-
-
-
-
 

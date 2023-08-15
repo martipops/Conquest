@@ -24,6 +24,8 @@ namespace Conquest.NPCs.Town
     [AutoloadHead]
     public class KoboldMerchant : ModNPC
     {
+
+        private static Profiles.StackedNPCProfile NPCProfile;
         public override void SetStaticDefaults()
         {
 			Main.npcFrameCount[Type] = 25;
@@ -47,7 +49,11 @@ namespace Conquest.NPCs.Town
 			NPC.Happiness
 				.SetBiomeAffection<ForestBiome>(AffectionLevel.Love) // Example Person prefers the forest.
 				.SetNPCAffection(NPCID.Cyborg, AffectionLevel.Love);
-           
+
+            NPCProfile = new Profiles.StackedNPCProfile(
+                new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture + "_Party")
+            );
+
         }
 		int atkCool = 60;
         public override void SetDefaults()
@@ -206,27 +212,10 @@ namespace Conquest.NPCs.Town
         }
         public override ITownNPCProfile TownNPCProfile()
         {
-            return new KoboldProfile();
-       }
-
-
-    }
-    public class KoboldProfile : ITownNPCProfile
-    {
-        public int RollVariation() => 1;
-        public string GetNameForVariant(NPC npc) => "Lomi";
-
-        public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
-        {
-            if (npc.IsABestiaryIconDummy && !npc.ForcePartyHatOn)
-                return ModContent.Request<Texture2D>("Conquest/NPCs/Town/KoboldMerchant_Head");
-
-            if (npc.altTexture == 1)
-                return ModContent.Request<Texture2D>("Conquest/NPCs/Town/KoboldMerchant_Party");
-
-            return ModContent.Request<Texture2D>("Conquest/NPCs/Town/KoboldMerchant");
+            return NPCProfile;
         }
 
-        public int GetHeadTextureIndex(NPC npc) => ModContent.GetModHeadSlot("Conquest/NPCs/Town/KoboldMerchant_Head");
+
     }
+
 }
