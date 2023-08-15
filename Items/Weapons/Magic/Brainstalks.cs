@@ -35,7 +35,7 @@ namespace Conquest.Items.Weapons.Magic
             Item.UseSound = SoundID.NPCHit13;
             Item.autoReuse = true;
             // Weapon Properties
-            Item.damage = 32;
+            Item.damage = 13;
             Item.crit = 4;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Magic;
@@ -44,38 +44,32 @@ namespace Conquest.Items.Weapons.Magic
             Item.shoot = ModContent.ProjectileType<Brain>();
             Item.shootSpeed = 15f;
         }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Vector2 playerPos = player.RotatedRelativePoint(player.MountedCenter, true);
-            float speed = Item.shootSpeed;
-            float xPos = Main.mouseX + Main.screenPosition.X - playerPos.X;
-            float yPos = Main.mouseY + Main.screenPosition.Y - playerPos.Y;
-            float f = Main.rand.NextFloat() * ((float)Math.PI * 2f);
-            float sourceVariationLow = 20f;
-            float sourceVariationHigh = 60f;
-            Vector2 source1 = playerPos + f.ToRotationVector2() * MathHelper.Lerp(sourceVariationLow, sourceVariationHigh, Main.rand.NextFloat());
-            for (int i = 0; i < 50; i++)
+            float angle = Main.rand.NextFloat(MathF.PI * 2);
+            for (int i = 0; i < 5; i++)
             {
-                source1 = playerPos + f.ToRotationVector2() * MathHelper.Lerp(sourceVariationLow, sourceVariationHigh, Main.rand.NextFloat());
-                if (Collision.CanHit(playerPos, 0, 0, source1 + (source1 - playerPos).SafeNormalize(Vector2.UnitX) * 8f, 0, 0))
+                NPC target = null;
+                foreach (NPC npc in Main.npc)
                 {
-                    break;
+                    if (npc.active && !npc.friendly && !npc.dontTakeDamage && npc.Distance(Main.MouseWorld) < 60)
+                    {
+                        target = npc;
+                        break;
+                    }
                 }
-                f = Main.rand.NextFloat() * ((float)Math.PI * 2f);
+                Vector2 spawnPosition = Main.MouseWorld + new Vector2(400, 0).RotatedBy(angle);
+                for (int j = 0; j < 16; j++)
+                {
+                    Dust.NewDustDirect(Vector2.Lerp(position, spawnPosition, Main.rand.NextFloat()), 1, 1,
+                                                    DustID.LifeDrain).noGravity = true;
+                }
+                Vector2 spawnVelocity = spawnPosition.DirectionTo(Main.MouseWorld) * velocity.Length();
+                if (target != null) spawnVelocity += target.velocity;
+                Projectile.NewProjectileDirect(source, spawnPosition, spawnVelocity, type, damage, knockback, player.whoAmI);
+                angle += MathHelper.ToRadians(72);
             }
-            Vector2 newvelocity = Main.MouseWorld - source1;
-            Vector2 velocityVariation = new Vector2(xPos, yPos).SafeNormalize(Vector2.UnitY) * speed;
-            newvelocity = newvelocity.SafeNormalize(velocityVariation) * speed;
-            newvelocity = Vector2.Lerp(newvelocity, velocityVariation, 0.25f);
-            int Proj = Projectile.NewProjectile(source, source1, newvelocity, type, damage, knockback, player.whoAmI, 0f, Main.rand.Next(3));
-            Projectile obj = Main.projectile[Proj];
-            for (int i = 0; i < 100; i++)
-            {
-                Vector2 outerdustring = Main.rand.NextVector2CircularEdge(0.2f, 0.2f);
-                Dust Dusty = Dust.NewDustPerfect(obj.position, DustID.Firework_Red, outerdustring * 5, Scale: 0.5f);
-                Dusty.noGravity = true;
-            }
-
             return false;
         }
     }
