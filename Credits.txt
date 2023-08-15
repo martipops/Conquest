@@ -5,6 +5,7 @@ Supychan (Weapons,Projectiles,NPC'S)
 Valentine Kobold (Weapons,Projectiles)
 Sylvr (Weapons, Projectiles)
 martipops (Bug fixes)
+Goose (Weapons, Projectiles)
 Quarzz (Weapons, Projectiles)
 Sprites
 Logar (Items)
