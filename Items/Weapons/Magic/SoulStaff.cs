@@ -27,27 +27,27 @@ namespace Conquest.Items.Weapons.Magic
             Item.noMelee = true;
             Item.rare = 1;
             // Use Properties
-            Item.useTime = 20;
+            Item.useTime = 1;
             Item.useAnimation = 20;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
             Item.UseSound = SoundID.Item43;
             Item.autoReuse = true;
             // Weapon Properties
-            Item.damage = 20;
-            Item.knockBack = 3f;
+            Item.damage = 10;
+            Item.knockBack = 2f;
             Item.DamageType = DamageClass.Magic;
-            Item.mana = 6;
+            Item.mana = 4;
             // Projectile Properties
-            Item.shoot = ModContent.ProjectileType<Staff1>();
-            Item.shootSpeed = 0f;
+            Item.shoot = ModContent.ProjectileType<SoulTentacle>();
+            Item.shootSpeed = 12f;
         }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            Projectile.NewProjectileDirect(source, Main.MouseWorld, velocity, type, damage, knockback, player.whoAmI);
-            return false;
-
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * Item.width * 2;
+            position += muzzleOffset;
         }
+
         public override void AddRecipes()
         {
             CreateRecipe()
