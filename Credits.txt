@@ -4,6 +4,7 @@ VictorTekelili - (Weapons,Projectiles,Bosses,UI,Items)
 Supychan (Weapons,Projectiles,NPC'S)
 Valentine Kobold (Weapons,Projectiles)
 Sylvr (Weapons, Projectiles)
+martipops (Bug fixes)
 Quarzz (Weapons, Projectiles)
 Sprites
 Logar (Items)
