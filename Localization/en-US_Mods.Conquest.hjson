@@ -1165,6 +1165,11 @@ Items: {
 		DisplayName: Kobold Gem
 		Tooltip: ""
 	}
+
+	ArachnoidLunchbox: {
+		DisplayName: Arachnoid Lunchbox
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
