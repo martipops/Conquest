@@ -54,7 +54,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 26;
 			Item.height = 22;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -65,7 +65,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 36;
 			Item.height = 24;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -76,7 +76,7 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.width = 26;
 			Item.height = 14;
 			Item.vanity = true;
-			Item.value = 150000;
+			Item.value = 0;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
