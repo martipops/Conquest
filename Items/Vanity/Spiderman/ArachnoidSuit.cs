@@ -18,6 +18,8 @@ namespace Conquest.Items.Vanity.Spiderman
             Item.consumable = true;
             Item.width = 32;
             Item.height = 24;
+            Item.value = Item.buyPrice(gold: 1);
+
             Item.rare = ItemRarityID.Pink;
         }
 
@@ -41,7 +43,6 @@ namespace Conquest.Items.Vanity.Spiderman
 			Item.width = 26;
 			Item.height = 22;
 			Item.vanity = true;
-			Item.value = 150000;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -52,7 +53,6 @@ namespace Conquest.Items.Vanity.Spiderman
 			Item.width = 26;
 			Item.height = 22;
 			Item.vanity = true;
-			Item.value = 150000;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}
@@ -63,7 +63,6 @@ namespace Conquest.Items.Vanity.Spiderman
 			Item.width = 26;
 			Item.height = 22;
 			Item.vanity = true;
-			Item.value = 150000;
 			Item.rare = ItemRarityID.Pink;
 		}
 	}

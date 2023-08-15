@@ -17,6 +17,7 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Conquest.Items.Vanity.DevCoat;
 using Conquest.Items.Vanity.Kobold;
+using Conquest.Items.Vanity.Spiderman;
 
 namespace Conquest.NPCs.Town
 {
@@ -197,8 +198,10 @@ namespace Conquest.NPCs.Town
         {
             var npcShop = new NPCShop(Type, ShopName)
                 .Add<DevContainer>()
-                .Add<KoboldGem>();
-                
+                .Add<KoboldGem>()
+                .Add<ArachnoidLunchbox>();
+
+
             npcShop.Register();
         }
         public override ITownNPCProfile TownNPCProfile()

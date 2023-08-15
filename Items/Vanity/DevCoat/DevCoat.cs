@@ -34,7 +34,8 @@ namespace Conquest.Items.Vanity.DevCoat
 			Item.consumable = true;
 			Item.width = 32;
 			Item.height = 24;
-			Item.rare = ItemRarityID.Pink;
+            Item.value = Item.buyPrice(gold: 10);
+            Item.rare = ItemRarityID.Pink;
 		}
 
 		public override bool CanRightClick() {
