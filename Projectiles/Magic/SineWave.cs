@@ -11,6 +11,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.DataStructures;
 using Conquest.Dusts;
+using Conquest.Assets.Common;
 
 namespace Conquest.Projectiles.Magic
 {
@@ -29,7 +30,8 @@ namespace Conquest.Projectiles.Magic
 
         public override void SetStaticDefaults()
         {
-
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 50;    //The length of old position to be recorded
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 3;
             Main.projFrames[Type] = 3;
         }
         public override void SetDefaults()
@@ -128,9 +130,6 @@ namespace Conquest.Projectiles.Magic
                 Projectile.rotation = 0;
             }
 
-            // Spawn dusts
-            Dust.NewDustPerfect(Projectile.Center, DustID.SteampunkSteam, Velocity: Vector2.Zero, newColor: drawColor, Scale: 0.5f);
-
             sineTimer++;
         }
 
@@ -150,17 +149,9 @@ namespace Conquest.Projectiles.Magic
             }
         }
 
-
-
-
-
-
-
-
-
-
         public override bool PreDraw(ref Color lightColor)
         {
+            /*
             Texture2D texture = TextureAssets.Projectile[Type].Value;
             Vector2 rotationOrigin;
             Rectangle frame = texture.Frame(1, 3, 0, Projectile.frame);
@@ -179,10 +170,13 @@ namespace Conquest.Projectiles.Magic
                 rotation = Projectile.rotation;
                 effects = SpriteEffects.None;
             }
+            */
+            if (drawColor == Color.Black) default(Effects.BlackTrail).Draw(Projectile);
+            else default(Effects.WhiteTrail).Draw(Projectile);
 
-            Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition, frame, Projectile.GetAlpha(lightColor), rotation, rotationOrigin, Projectile.scale, effects, 0);
+            // Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition, frame, Projectile.GetAlpha(lightColor), rotation, rotationOrigin, Projectile.scale, effects, 0);
 
-            return false;
+            return true;
         }
     }
 }
