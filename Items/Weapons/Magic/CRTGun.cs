@@ -27,9 +27,9 @@ namespace Conquest.Items.Weapons.Magic
             Item.value = 1000;
             Item.noMelee = true;
             Item.rare = 6;
-            Item.mana = 10;
+            Item.mana = 15;
             Item.useTime = 60;
-            Item.useAnimation = 0;
+            Item.useAnimation = 60;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = false;
             Item.damage = 20;
