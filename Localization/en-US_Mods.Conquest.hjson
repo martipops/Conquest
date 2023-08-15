@@ -9,7 +9,7 @@ Items: {
 	}
 
 	AnubisHammer: {
-		DisplayName: Anubis Hammer
+		DisplayName: Ancient Hammer
 		Tooltip: ""
 	}
 
@@ -156,7 +156,7 @@ Items: {
 	}
 
 	AnubisStaff: {
-		DisplayName: Anubis Staff
+		DisplayName: Ancient Staff
 		Tooltip: ""
 	}
 
@@ -216,7 +216,7 @@ Items: {
 	}
 
 	AnubisCannon: {
-		DisplayName: Anubis Cannon
+		DisplayName: Ancient Cannon
 		Tooltip: ""
 	}
 
@@ -1292,6 +1292,9 @@ Projectiles: {
 	BunnyBomb.DisplayName: Bunny Bomb
 	JermaSlash.DisplayName: Jerma Slash
 	Rose.DisplayName: Rose
+	NatureTentacle.DisplayName: Nature Tentacle
+	SoulTentacle.DisplayName: Soul Tentacle
+	SpaceRay.DisplayName: Space Ray
 }
 
 Buffs: {
@@ -1457,6 +1460,11 @@ Buffs: {
 	PickUpFix: {
 		DisplayName: Pick Up Fix
 		Description: Mods.Conquest.Buffs.PickUpFix.Description
+	}
+
+	Lag: {
+		DisplayName: Lag
+		Description: Mods.Conquest.Buffs.Lag.Description
 	}
 }
 
