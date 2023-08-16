@@ -20,7 +20,7 @@ namespace Conquest.Items.Weapons.Melee
 		SoundStyle SwingBark = new SoundStyle($"{nameof(Conquest)}/Assets/Sounds/Swing_Bark")
         {
             Volume = 0.9f,
-            PitchVariance = 0.2f,
+            PitchVariance = 0f,
             MaxInstances = 3,
         };
 		public override void SetDefaults()
