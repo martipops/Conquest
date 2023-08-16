@@ -289,7 +289,7 @@ Items: {
 	}
 
 	ShotRevolver: {
-		DisplayName: Shot Revolver
+		DisplayName: Cowboy Slinger
 		Tooltip: ""
 	}
 
@@ -1472,6 +1472,7 @@ Keybinds: {
 	"Legendary Armament Activation.DisplayName": Legendary  Armament  Activation
 	"Hunny Pot Activation.DisplayName": Hunny  Pot  Activation
 	"Cursed Trident Activation.DisplayName": Cursed  Trident  Activation
+	"Reload Weapon.DisplayName": Reload  Weapon
 }
 
 Tiles.QueenLarva2.MapEntry: Queen Larva2
