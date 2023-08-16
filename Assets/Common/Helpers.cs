@@ -109,8 +109,14 @@ namespace Conquest.Assets.Common
             /// <summary>How many radians the boomerang will rotate per frame. Default = 0.4f</summary>
             public float Rotation { get; set; } = 0.4f;
 
+            /// <summary>Whether or not the boomerang will display rotation. Default = true</summary>
+            public bool DoRotation { get; set; } = true;
+
             /// <summary>Whether or not the boomerang will turn around when it reaches its max TravelOutFrames. Default = true</summary>
             public bool DoTurn { get; set; } = true;
+
+            /// <summary>Whether or not the boomerang will bounce off of an enemy on hit. Default = true</summary>
+            public bool BounceOnHit { get; set; } = true;
 
             public Player Owner { get => Main.player[Projectile.owner]; }
 
@@ -126,7 +132,7 @@ namespace Conquest.Assets.Common
                 }
 
                 // Spinny :D
-                Projectile.rotation += Rotation * Projectile.direction;
+                if (DoRotation) Projectile.rotation += Rotation * Projectile.direction;
 
                 // AI state 1 - travelling away from player 
                 if (Projectile.ai[0] == 0f)
@@ -217,7 +223,7 @@ namespace Conquest.Assets.Common
                     Projectile.ai[0] = 1f;
                     Projectile.ai[1] = 0f;
                     Projectile.netUpdate = true;
-                    Projectile.velocity = -Projectile.velocity;
+                    if (BounceOnHit) Projectile.velocity = -Projectile.velocity;
                 }
             }
             public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)

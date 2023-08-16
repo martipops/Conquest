@@ -19,9 +19,9 @@ namespace Conquest.Items.Weapons.Melee
         public override void SetDefaults()
         {
             // Common Properties
-            Item.width = 24;
-            Item.height = 24;
-            Item.rare = 10;
+            Item.width = 25;
+            Item.height = 16;
+            Item.rare = ItemRarityID.Yellow;
             Item.value = Item.sellPrice(gold: 2);
             // Use Properties
             Item.useTime = 25;
@@ -34,7 +34,7 @@ namespace Conquest.Items.Weapons.Melee
             Item.noMelee = true;
             Item.noUseGraphic = true;
             // Weapon Properties
-            Item.damage = 99;
+            Item.damage = 44;
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Melee;
             // Projectile Properties
@@ -44,10 +44,10 @@ namespace Conquest.Items.Weapons.Melee
         public override void AddRecipes()
         {
             CreateRecipe()
-           .AddIngredient(ItemID.FragmentSolar, 11)
+           .AddIngredient(ItemID.Ectoplasm, 11)
             .AddIngredient(ItemID.BeeWax, 15)
-            .AddIngredient(ItemID.WoodYoyo, 1)
-           .AddTile(TileID.LunarCraftingStation)
+            .AddIngredient(ItemID.HiveFive, 1)
+           .AddTile(TileID.MythrilAnvil)
            .Register();
         }
     }

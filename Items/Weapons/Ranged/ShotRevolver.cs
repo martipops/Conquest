@@ -37,7 +37,7 @@ namespace Conquest.Items.Weapons.Ranged
             Item.knockBack = 3f;
             Item.DamageType = DamageClass.Ranged;
             // Projectile Properties
-            Item.shoot = ModContent.ProjectileType<CowboyGun>();
+            Item.shoot = ModContent.ProjectileType<CowboyGun2>();
             Item.shootSpeed = 10f;
         }
 

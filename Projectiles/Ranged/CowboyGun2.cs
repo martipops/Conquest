@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
+using static Terraria.ModLoader.PlayerDrawLayer;
 
 
 namespace Conquest.Projectiles.Ranged
@@ -12,6 +13,9 @@ namespace Conquest.Projectiles.Ranged
     {
         int timer;
         int fired;
+
+        float rotationRate;
+
         public override void SetDefaults()
         {
             Projectile.width = 46; // The width of projectile hitbox
@@ -23,13 +27,98 @@ namespace Conquest.Projectiles.Ranged
             Projectile.hostile = false; // Can the projectile deal damage to the player?
             Projectile.ignoreWater = false; // Does the projectile's speed be influenced by water?
             Projectile.tileCollide = true; // Can the projectile collide with tiles?
-            Projectile.timeLeft = 60; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+            Projectile.timeLeft = 120; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+
+            Projectile.penetrate = 999;
         }
 
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+                Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
+
+            // If the projectile hits the left or right side of the tile, reverse the X velocity
+            if (Math.Abs(Projectile.velocity.X - oldVelocity.X) > float.Epsilon)
+            {
+                Projectile.velocity.X = -oldVelocity.X * 0.9f;
+            }
+
+            // If the projectile hits the top or bottom side of the tile, reverse the Y velocity
+            if (Math.Abs(Projectile.velocity.Y - oldVelocity.Y) > float.Epsilon)
+            {
+                Projectile.velocity.Y = -oldVelocity.Y * 0.9f;
+            }
+            return false;
+        }
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (MathF.Abs(Projectile.position.X - target.position.X) < target.width * 0.6f)
+            {
+                Projectile.velocity.X *= -0.9f;
+            }
+            if (MathF.Abs(Projectile.position.Y - target.position.Y) < target.height * 0.6f)
+            {
+                Projectile.velocity.X *= 0.9f;
+            }
+        }
 
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
+
+            rotationRate = ((1f / 169f) * (Projectile.ai[0] - 60) * (Projectile.ai[0] - 60));
+            Projectile.rotation += 2 * MathHelper.ToRadians(rotationRate);
+            /*
+            if (Projectile.ai[0] > 30 && Projectile.ai[0] < 60)
+            {
+                NPC target = null;
+                foreach (NPC npc in Main.npc)
+                {
+                    if (npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
+                    {
+                        target = npc;
+                        break;
+                    }
+                }
+                if (target != null)
+                {
+                    float targetRotation = Projectile.DirectionTo(target.Center).ToRotation();
+                    Projectile.rotation = MathHelper.Lerp(Projectile.rotation, targetRotation, 0.11f);
+                }
+            }
+            else
+            {
+                Projectile.rotation += 2 * MathHelper.ToRadians(rotationRate);
+                while (Projectile.rotation > MathF.PI * 2) rotationRate -= MathF.PI * 2;
+            }*/
+
+            if (Projectile.ai[0] == 60)
+            {
+                NPC target = null;
+                foreach (NPC npc in Main.npc)
+                {
+                    if (npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
+                    {
+                        target = npc;
+                        break;
+                    }
+                }
+                if (target != null)
+                {
+                    Vector2 position = Projectile.Center;
+                    float speed = 20f;
+                    Vector2 direction = Projectile.Center.DirectionTo(target.Center);
+                    Vector2 velocity = (direction * speed) + target.velocity;
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), position, velocity, ProjectileID.Bullet, Projectile.damage, 0f, owner.whoAmI, fired = 1);
+                    SoundEngine.PlaySound(SoundID.Item11, Projectile.Center);
+                }
+            }
+
+            Projectile.ai[0]++;
+
+            Projectile.velocity.Y += 0.13f;
+
+            /*
             SearchForTargets(owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter);
             if (foundTarget)
             {
@@ -58,6 +147,7 @@ namespace Conquest.Projectiles.Ranged
             {
 
             }
+            */
         }
 
         public override void Kill(int timeLeft)
@@ -67,11 +157,11 @@ namespace Conquest.Projectiles.Ranged
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SteampunkSteam);
             }
         }
-        private void SearchForTargets(Player owner, out bool foundTarget, out float distanceFromTarget, out Vector2 targetCenter)
+        private void SearchForTargets(Player owner, out bool foundTarget, out float distanceFromTarget, out NPC target)
         {
             // Starting search distance
             distanceFromTarget = 700f;
-            targetCenter = Projectile.position;
+            target = null;
             foundTarget = false;
 
             // This code is required if your minion weapon has the targeting feature
@@ -84,7 +174,7 @@ namespace Conquest.Projectiles.Ranged
                 if (between < 2000f)
                 {
                     distanceFromTarget = between;
-                    targetCenter = npc.Center;
+                    target = npc;
                     foundTarget = true;
                 }
             }
@@ -99,7 +189,7 @@ namespace Conquest.Projectiles.Ranged
                     if (npc.CanBeChasedBy())
                     {
                         float between = Vector2.Distance(npc.Center, Projectile.Center);
-                        bool closest = Vector2.Distance(Projectile.Center, targetCenter) > between;
+                        bool closest = Vector2.Distance(Projectile.Center, target.Center) > between;
                         bool inRange = between < distanceFromTarget;
                         bool lineOfSight = Collision.CanHitLine(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height);
                         // Additional check for this specific minion behavior, otherwise it will stop attacking once it dashed through an enemy while flying though tiles afterwards
@@ -109,7 +199,7 @@ namespace Conquest.Projectiles.Ranged
                         if ((closest && inRange || !foundTarget) && (lineOfSight || closeThroughWall))
                         {
                             distanceFromTarget = between;
-                            targetCenter = npc.Center;
+                            target = npc;
                             foundTarget = true;
                         }
                     }

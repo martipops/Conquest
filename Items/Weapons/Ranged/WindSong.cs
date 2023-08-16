@@ -26,8 +26,9 @@ namespace Conquest.Items.Weapons.Ranged
             Item.damage = 24;
             Item.knockBack = 3;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useTime = 25;
-            Item.useAnimation = 25;
+            Item.useTime = 3;
+            Item.useAnimation = 3;
+            Item.reuseDelay = 17;
             Item.width = 34;
             Item.height = 82;
             Item.UseSound = SoundID.Item5;
@@ -41,22 +42,24 @@ namespace Conquest.Items.Weapons.Ranged
             Item.value = 75000;
 
             Item.useAmmo = AmmoID.Arrow;
-            Item.shoot = Item.useAmmo;
-            Item.shootSpeed = 15;
+            Item.shoot = ModContent.ProjectileType<WindArrow>();
+            Item.shootSpeed = 48;
 
         }
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            Vector2 newVelocity1 = velocity.RotatedByRandom(MathHelper.ToRadians(30));
-            Vector2 newVelocity2 = velocity.RotatedByRandom(MathHelper.ToRadians(30));
+            type = ModContent.ProjectileType<WindArrow>();
+            float screenDiagonal = MathF.Sqrt((Main.screenWidth * Main.screenWidth) + (Main.screenHeight * Main.screenHeight));
+            position += player.Center.DirectionFrom(Main.MouseWorld) * screenDiagonal * 0.6f;
+            position += Main.rand.NextVector2Circular(100, 100);
+            velocity = position.DirectionTo(Main.MouseWorld) * Item.shootSpeed * Main.rand.NextFloat(0.85f, 1.15f);
 
-            if (Main.rand.NextBool())
+            for (int i = 0; i < 4; i++)
             {
-                Projectile.NewProjectileDirect(source, position, newVelocity1, ModContent.ProjectileType<WindArrow>(), damage / 2, knockback, player.whoAmI);
-                Projectile.NewProjectileDirect(source, position, newVelocity2, ModContent.ProjectileType<WindArrow>(), damage / 2, knockback, player.whoAmI);
+                Vector2 perturbedPos = position + Main.rand.NextVector2Circular(100, 100);
+                Vector2 perturbedVel = perturbedPos.DirectionTo(Main.MouseWorld) * Item.shootSpeed * Main.rand.NextFloat(0.85f, 1.15f);
+                Projectile.NewProjectileDirect(player.GetSource_ItemUse(Item), perturbedPos, perturbedVel, type, damage / 2, 0, player.whoAmI);
             }
-
-            return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }
     }
 }

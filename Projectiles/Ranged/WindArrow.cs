@@ -11,6 +11,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Conquest.Dusts;
+using Conquest.Assets.Common;
 
 namespace Conquest.Projectiles.Ranged
 {
@@ -18,25 +19,30 @@ namespace Conquest.Projectiles.Ranged
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("细箭");
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 50;    //The length of old position to be recorded
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 3;
         }
         public override void SetDefaults()
         {
-            Projectile.width = 32;
+            Projectile.width = 42;
             Projectile.height = 10;
+            Projectile.aiStyle = 1;
             Projectile.friendly = true;
-            Projectile.hostile = false;
+            Projectile.DamageType = DamageClass.Magic;
             Projectile.penetrate = 1;
-            Projectile.timeLeft = 300;
-            Projectile.alpha = 127;
-            Projectile.light = 0;
+            Projectile.timeLeft = 900;
+            Projectile.alpha = 255;
+            Projectile.light = 0.5f;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
+            Projectile.extraUpdates = 1;
+            AIType = ProjectileID.Bullet;
         }
-        public override void AI()
+        public override bool PreDraw(ref Color lightColor)
         {
-            Dust.NewDust(Projectile.Center, 1, 1, ModContent.DustType<Wind>(), Projectile.velocity.X / 100, Projectile.velocity.Y / 100, 0, default, 1);
-            Projectile.rotation = Projectile.velocity.ToRotation();
+            default(Effects.WhiteTrail).Draw(Projectile);
+
+            return false;
         }
     }
 }

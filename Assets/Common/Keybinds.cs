@@ -12,6 +12,7 @@ namespace Conquest.Assets.Common
         public static ModKeybind CursedTrident { get; private set; }
         public static ModKeybind HunnyPot { get; private set; }
         public static ModKeybind Legendary { get; private set; }
+        public static ModKeybind Reload { get; private set; }
 
 
         public override void Load()
@@ -19,12 +20,14 @@ namespace Conquest.Assets.Common
             CursedTrident = KeybindLoader.RegisterKeybind(Mod, "Cursed Trident Activation", "P");
             HunnyPot = KeybindLoader.RegisterKeybind(Mod, "Hunny Pot Activation", "J");
             Legendary = KeybindLoader.RegisterKeybind(Mod, "Legendary Armament Activation", "K");
+            Reload = KeybindLoader.RegisterKeybind(Mod, "Reload Weapon", "R");
         }
         public override void Unload()
         {
             CursedTrident = null;
             HunnyPot = null;
             Legendary = null;
+            Reload = null;
         }
     }
 }
