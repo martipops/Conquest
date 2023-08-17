@@ -14,6 +14,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 
 using Conquest.Dusts;
+using Conquest.Assets.Common;
 
 namespace Conquest.Projectiles.Ranged
 {
@@ -33,7 +34,8 @@ namespace Conquest.Projectiles.Ranged
 
         public override void SetStaticDefaults()
         {
-
+            ProjectileID.Sets.TrailingMode[Type] = 2;
+            ProjectileID.Sets.TrailCacheLength[Type] = 30;
             Main.projFrames[Type] = 3;
         }
         public override void SetDefaults()
@@ -135,7 +137,7 @@ namespace Conquest.Projectiles.Ranged
             }
 
             // Spawn dusts
-            Dust.NewDustPerfect(Projectile.Center, DustID.SteampunkSteam, Velocity: Vector2.Zero, newColor: drawColor, Scale: 0.7f);
+            //Dust.NewDustPerfect(Projectile.Center, DustID.SteampunkSteam, Velocity: Vector2.Zero, newColor: drawColor, Scale: 0.7f);
 
             sineTimer++;
         }
@@ -158,26 +160,14 @@ namespace Conquest.Projectiles.Ranged
 
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
-            Vector2 rotationOrigin;
-            Rectangle frame = texture.Frame(1, 3, 0, Projectile.frame);
-            float rotation;
-            SpriteEffects effects;
-
-            if (Projectile.direction == -1)
+            if (drawColor == Color.DarkGoldenrod)
             {
-                rotationOrigin = new Vector2(5, 5);
-                rotation = Projectile.rotation + MathHelper.Pi;
-                effects = SpriteEffects.FlipHorizontally;
+                default(Effects.GoldTrail).Draw(Projectile);
             }
             else
             {
-                rotationOrigin = new Vector2(13, 5);
-                rotation = Projectile.rotation;
-                effects = SpriteEffects.None;
+                default(Effects.BlackTrail).Draw(Projectile);
             }
-
-            Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition, frame, Projectile.GetAlpha(lightColor), rotation, rotationOrigin, Projectile.scale, effects, 0);
 
             return false;
         }

@@ -62,42 +62,44 @@ namespace Conquest.Projectiles.Ranged
             }
         }
 
+        public float EaseLerp(float x)
+        {
+            return ((-1f / 3600f) * (x - 60f) * (x - 60f)) + 1;
+        }
+
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
 
+            if (Projectile.ai[0] == 0) Projectile.rotation = Main.rand.NextFloat(2 * MathF.PI);
+
             rotationRate = ((1f / 169f) * (Projectile.ai[0] - 60) * (Projectile.ai[0] - 60));
-            Projectile.rotation += 2 * MathHelper.ToRadians(rotationRate);
-            /*
-            if (Projectile.ai[0] > 30 && Projectile.ai[0] < 60)
+            float rotationValue1 = Projectile.rotation + (2 * MathHelper.ToRadians(rotationRate));
+
+            NPC rTarget = null;
+            foreach (NPC npc in Main.npc)
             {
-                NPC target = null;
-                foreach (NPC npc in Main.npc)
+                if (!npc.friendly && npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
                 {
-                    if (npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
-                    {
-                        target = npc;
-                        break;
-                    }
-                }
-                if (target != null)
-                {
-                    float targetRotation = Projectile.DirectionTo(target.Center).ToRotation();
-                    Projectile.rotation = MathHelper.Lerp(Projectile.rotation, targetRotation, 0.11f);
+                    rTarget = npc;
+                    break;
                 }
             }
-            else
+
+            if (rTarget != null)
             {
-                Projectile.rotation += 2 * MathHelper.ToRadians(rotationRate);
-                while (Projectile.rotation > MathF.PI * 2) rotationRate -= MathF.PI * 2;
-            }*/
+                float rotationValue2 = Projectile.DirectionTo(rTarget.Center).ToRotation();
+                Projectile.rotation = MathHelper.Lerp(rotationValue1, rotationValue2, EaseLerp(Projectile.ai[0]));
+            }
+            else Projectile.rotation = rotationValue1;
+
 
             if (Projectile.ai[0] == 60)
             {
                 NPC target = null;
                 foreach (NPC npc in Main.npc)
                 {
-                    if (npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
+                    if (!npc.friendly && npc.active && npc.Distance(Projectile.position) < 600 && !npc.dontTakeDamage && npc.type != NPCID.TargetDummy)
                     {
                         target = npc;
                         break;

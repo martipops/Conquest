@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.Audio;
 using Terraria.ModLoader;
 
 using Microsoft.Xna.Framework;
@@ -14,19 +15,23 @@ namespace Conquest.Projectiles.Summoner
 {
     internal class EmeraldWall : ModProjectile
     {
+        public bool imploding = false;
+
         public override void SetStaticDefaults()
         {
-            Main.projFrames[Projectile.type] = 6;
-
+            ProjectileID.Sets.TrailingMode[Type] = 2;
+            ProjectileID.Sets.TrailCacheLength[Type] = 50;
         }
 
         public override void SetDefaults()
         {
-            Projectile.width = 122;
-            Projectile.height = 154;
+            Projectile.width = 6;
+            Projectile.height = 6;
             Projectile.DamageType = DamageClass.Summon;
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
+            Projectile.minion = true;
+            Projectile.minionSlots = 1f;
         }
 
         private int timer = 0;
@@ -34,68 +39,84 @@ namespace Conquest.Projectiles.Summoner
         public override void AI()
         {
             Player player = Main.player[Projectile.owner];
+            player.GetModPlayer<MyPlayer>().emerald = true;
 
             timer++;
-            if (timer < 5)
+
+            Vector2 offset = new Vector2(100, 0).RotatedBy(MathHelper.ToRadians(5 * timer));
+
+            Projectile.rotation = Projectile.velocity.ToRotation();
+            
+            if (timer >= 300 || player.GetModPlayer<MyPlayer>().emeraldBoom && !imploding)
             {
-                Projectile.frame = 0;
-            }
-            if (timer >= 5 && timer < 10)
-            {
-                Projectile.frame = 1;
-            }
-            if (timer >= 10 && timer < 15)
-            {
-                Projectile.frame = 2;
-            }
-            if (timer >= 15)
-            {
-                Projectile.frame = 3;
+                imploding = true;
+                SoundEngine.PlaySound(SoundID.Item8, Projectile.position);
             }
 
-            if (player.Center.Distance(Projectile.Center) <= 75)
+            if (imploding)
             {
-                player.GetModPlayer<MyPlayer>().emerald = true;
+                ImplodingBehaviour();
             }
-            else if (player.Center.Distance(Projectile.Center) > 75)
+            else
             {
-                player.GetModPlayer<MyPlayer>().emerald = false;
-            }
-
-            if (timer >= 480 || player.GetModPlayer<MyPlayer>().emeraldBoom)
-            {
-                Boom();
+                Projectile.velocity = Vector2.Lerp(Projectile.velocity, Projectile.DirectionTo(player.Center + offset) * 18, 0.33f);
             }
         }
 
-        public void Boom()
+        public void ImplodingBehaviour()
         {
-            killTimer++;
-            if (killTimer < 5)
+            Player player = Main.player[Projectile.owner];
+            Projectile.velocity = Vector2.Lerp(Projectile.velocity, Projectile.DirectionTo(player.Center) * 18, 0.11f);
+            if (Projectile.Distance(player.Center) < 15)
             {
-                Projectile.frame = 4;
-            }
-            if (killTimer >= 5)
-            {
-                Projectile.frame = 5;
-            }
-            if (killTimer >= 10)
-            {
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
                 Projectile.Kill();
             }
         }
+
         public override void Kill(int timeLeft)
         {
+            SoundEngine.PlaySound(SoundID.Shatter);
             Player player = Main.player[Projectile.owner];
-            player.GetModPlayer<MyPlayer>().emeraldCD = 480;
+            NPC victim = FindClosestNPC();
+            for (int i = 0; i < 7; i++)
+            {
+                Projectile p = Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center, new Vector2(Main.rand.Next(-20, 20), Main.rand.Next(-20, 20)), ModContent.ProjectileType<EmeraldWallSharp>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+                p.ai[1] = victim.whoAmI;
+            }
+            player.GetModPlayer<MyPlayer>().emerald = false;
+            player.GetModPlayer<MyPlayer>().emeraldCD += 40 * (4 - player.ownedProjectileCounts[Type]);
+        }
+
+        public override bool PreDraw(ref Color lightColor)
+        {
+            default(Effects.EmeraldTrailSmall).Draw(Projectile);
+            return false;
+        }
+
+        public NPC? FindClosestNPC(float maxDetectDistance = 675)
+        {
+            NPC closestNPC = null;
+
+            float sqrMaxDetectDistance = maxDetectDistance * maxDetectDistance;
+
+            // Loop through all NPCs(max always 200)
+            for (int k = 0; k < Main.maxNPCs; k++)
+            {
+                NPC target = Main.npc[k];
+
+                if (target.CanBeChasedBy())
+                {
+                    float sqrDistanceToTarget = Vector2.DistanceSquared(target.Center, Projectile.Center);
+
+                    if (sqrDistanceToTarget < sqrMaxDetectDistance)
+                    {
+                        sqrMaxDetectDistance = sqrDistanceToTarget;
+                        closestNPC = target;
+                    }
+                }
+            }
+
+            return closestNPC;
         }
     }
 }
