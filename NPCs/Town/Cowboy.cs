@@ -141,6 +141,9 @@ namespace Conquest.NPCs.Town
                 .Add<Moonshine>()
                 .Add<CalobogusAle>()
                 .Add<ShotRevolver>()
+                .Add<TommyGun>()
+                .Add<Model94>()
+                .Add<AK47u>()
                 .Add<Murica>(Condition.Hardmode);
 
             npcShop.Register();
