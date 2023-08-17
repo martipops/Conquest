@@ -313,6 +313,10 @@ Items: {
 		DisplayName: M1A1 Thompson
 		Tooltip: ""
 	}
+	Model94: {
+		DisplayName: Winchester M94
+		Tooltip: ""
+	}
 
 	TortoiseCannon: {
 		DisplayName: Tortoise Cannon
