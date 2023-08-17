@@ -31,7 +31,7 @@ namespace Conquest.Items.Weapons.Ranged
             Item.width = 30;
             Item.height = 30;
             Item.rare = 1;
-            Item.value = Item.buyPrice(gold: 65);
+            Item.value = Item.buyPrice(gold: 25);
             Item.noMelee = true;
             // Use Properties
             Item.useTime = 5;
