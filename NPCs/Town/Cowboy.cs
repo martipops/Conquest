@@ -142,6 +142,7 @@ namespace Conquest.NPCs.Town
                 .Add<CalobogusAle>()
                 .Add<ShotRevolver>()
                 .Add<TommyGun>()
+                .Add<Model94>()
                 .Add<AK47u>()
                 .Add<Murica>(Condition.Hardmode);
 
