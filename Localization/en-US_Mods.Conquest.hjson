@@ -10,10 +10,7 @@ Items: {
 
 	AnubisHammer: {
 		DisplayName: Ancient Hammer
-		Tooltip:
-			'''
-			Throws enchanted hammers that fire shadows at nearby enemies
-			'''
+		Tooltip: Throws enchanted hammers that fire shadows at nearby enemies
 	}
 
 	DeathstalkerShell: {
@@ -150,7 +147,7 @@ Items: {
 
 	TheSwarm: {
 		DisplayName: The Swarm
-		Tooltip: "Spews wasps on-hit"
+		Tooltip: Spews wasps on-hit
 	}
 
 	ItemTransfer1: {
@@ -160,22 +157,22 @@ Items: {
 
 	AnubisStaff: {
 		DisplayName: Ancient Staff
-		Tooltip: "Calls energy from below to strike foes"
+		Tooltip: Calls energy from below to strike foes
 	}
 
 	BombingStaff: {
 		DisplayName: Bombing Staff
-		Tooltip: "Lays traps that explode, dealing massive damage to enemies and yourself"
+		Tooltip: Lays traps that explode, dealing massive damage to enemies and yourself
 	}
 
 	Brainstalks: {
 		DisplayName: Brainstalks
-		Tooltip: "Conjures pentagons of brains which predict enemy movement"
+		Tooltip: Conjures pentagons of brains which predict enemy movement
 	}
 
 	Duality: {
 		DisplayName: Duality
-		Tooltip: "Casts two alternating orbs"
+		Tooltip: Casts two alternating orbs
 	}
 
 	Exoplasm: {
@@ -185,7 +182,7 @@ Items: {
 
 	GloriousScepter: {
 		DisplayName: Glorious Scepter
-		Tooltip: "Conjures runes which follow enemies"
+		Tooltip: Conjures runes which follow enemies
 	}
 
 	LivingWoodStaff: {
@@ -229,7 +226,7 @@ Items: {
 
 	Armored: {
 		DisplayName: Laser Pistol
-		Tooltip: 
+		Tooltip:
 			'''
 			Charges energy over time
 			Right-click at full energy to launch a rocket
@@ -238,12 +235,12 @@ Items: {
 
 	Breakneck: {
 		DisplayName: Breakneck
-		Tooltip: "Killing enemies increases the firerate"
+		Tooltip: Killing enemies increases the firerate
 	}
 
 	DesertDandelion: {
 		DisplayName: Desert Dandelion
-		Tooltip: "Shoots dandelion spores that explode after a while"
+		Tooltip: Shoots dandelion spores that explode after a while
 	}
 
 	Dynasty: {
@@ -313,6 +310,7 @@ Items: {
 		DisplayName: M1A1 Thompson
 		Tooltip: ""
 	}
+
 	Model94: {
 		DisplayName: Winchester M94
 		Tooltip: ""
@@ -320,12 +318,12 @@ Items: {
 
 	TortoiseCannon: {
 		DisplayName: Tortoise Cannon
-		Tooltip: "Charges up tortoises"
+		Tooltip: Charges up tortoises
 	}
 
 	WindSong: {
 		DisplayName: Wind Song
-		Tooltip: "Fires enchanted air bolts from behind the player"
+		Tooltip: Fires enchanted air bolts from behind the player
 	}
 
 	EmeraldSlate: {
@@ -340,12 +338,12 @@ Items: {
 
 	JellyUmbrella: {
 		DisplayName: Jelly Umbrella
-		Tooltip: "Summons an electric spirit jelly to fight for you"
+		Tooltip: Summons an electric spirit jelly to fight for you
 	}
 
 	RatInterphone: {
 		DisplayName: Rat Interphone
-		Tooltip: "Summons Shook to fight for you"
+		Tooltip: Summons Shook to fight for you
 	}
 
 	SusStaff: {
@@ -1076,7 +1074,7 @@ Items: {
 
 	CRTGun: {
 		DisplayName: Binary Blaster
-		Tooltip: 
+		Tooltip:
 			'''
 			Fires a stream of zeroes and ones that overloads struck enemies, causing them to lag
 			Overuse has a tendency to cause lag on the user's end

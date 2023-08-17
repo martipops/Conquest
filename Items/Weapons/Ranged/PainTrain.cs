@@ -1,4 +1,5 @@
 ﻿
+using Conquest.Buffs;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -7,6 +8,8 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Conquest.Buffs;
+using Conquest.Projectiles.Ranged;
 
 
 namespace Conquest.Items.Weapons.Ranged
@@ -41,6 +44,15 @@ namespace Conquest.Items.Weapons.Ranged
             Item.shoot = ProjectileID.Bullet;
             Item.shootSpeed = 10f;
             Item.useAmmo = AmmoID.Bullet;
+        }
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            if (player.HasBuff(ModContent.BuffType<Steamy>()))
+            {
+                velocity = velocity.RotatedBy(MathHelper.ToRadians(Main.rand.NextFloat(-10f, 10f)));
+                velocity *= 2;
+                //type = ModContent.ProjectileType<FireBullet>();
+            }
         }
         public override Vector2? HoldoutOffset()
         {
