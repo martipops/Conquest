@@ -9,8 +9,11 @@ Items: {
 	}
 
 	AnubisHammer: {
-		DisplayName: Anubis Hammer
-		Tooltip: ""
+		DisplayName: Ancient Hammer
+		Tooltip:
+			'''
+			Throws enchanted hammers that fire shadows at nearby enemies
+			'''
 	}
 
 	DeathstalkerShell: {
@@ -80,7 +83,7 @@ Items: {
 
 	LightningBlade: {
 		DisplayName: Lightning Blade
-		Tooltip: Fires a lightning bolt on impact with an enemy or a tile, spreads electricty to all surrounding enemies
+		Tooltip: Fires a lightning bolt on impact with an enemy or a tile, spreading electricty to all surrounding enemies
 	}
 
 	LightningSpear: {
@@ -102,8 +105,8 @@ Items: {
 		DisplayName: Moonlight Greatsword
 		Tooltip:
 			'''
-			Press "Weapon Ability Hotkey" to acquire Moonlights Blessing!
-			While affected by Moonlights blessing, the Moonlight Greatsword gains increased stats and fires projectiles
+			Press "Weapon Ability Hotkey" to acquire Moonlight's Blessing!
+			While affected by Moonlight's Blessing, the Moonlight Greatsword gains increased stats and fires projectiles
 			'''
 	}
 
@@ -147,7 +150,7 @@ Items: {
 
 	TheSwarm: {
 		DisplayName: The Swarm
-		Tooltip: ""
+		Tooltip: "Spews wasps on-hit"
 	}
 
 	ItemTransfer1: {
@@ -156,23 +159,23 @@ Items: {
 	}
 
 	AnubisStaff: {
-		DisplayName: Anubis Staff
-		Tooltip: ""
+		DisplayName: Ancient Staff
+		Tooltip: "Calls energy from below to strike foes"
 	}
 
 	BombingStaff: {
 		DisplayName: Bombing Staff
-		Tooltip: ""
+		Tooltip: "Lays traps that explode, dealing massive damage to enemies and yourself"
 	}
 
 	Brainstalks: {
 		DisplayName: Brainstalks
-		Tooltip: ""
+		Tooltip: "Conjures pentagons of brains which predict enemy movement"
 	}
 
 	Duality: {
 		DisplayName: Duality
-		Tooltip: ""
+		Tooltip: "Casts two alternating orbs"
 	}
 
 	Exoplasm: {
@@ -182,7 +185,7 @@ Items: {
 
 	GloriousScepter: {
 		DisplayName: Glorious Scepter
-		Tooltip: ""
+		Tooltip: "Conjures runes which follow enemies"
 	}
 
 	LivingWoodStaff: {
@@ -192,7 +195,11 @@ Items: {
 
 	Purgatory: {
 		DisplayName: Purgatory
-		Tooltip: Fires homing ghosts. Killing enemies with these ghosts causes an explosion.
+		Tooltip:
+			'''
+			Fires homing ghosts
+			Killing enemies with ghosts causes explosions
+			'''
 	}
 
 	SoulStaff: {
@@ -211,28 +218,32 @@ Items: {
 	}
 
 	AK47u: {
-		DisplayName: A K47u
+		DisplayName: AK47u
 		Tooltip: ""
 	}
 
 	AnubisCannon: {
-		DisplayName: Anubis Cannon
+		DisplayName: Ancient Cannon
 		Tooltip: ""
 	}
 
 	Armored: {
 		DisplayName: Laser Pistol
-		Tooltip: ""
+		Tooltip: 
+			'''
+			Charges energy over time
+			Right-click at full energy to launch a rocket
+			'''
 	}
 
 	Breakneck: {
 		DisplayName: Breakneck
-		Tooltip: ""
+		Tooltip: "Killing enemies increases the firerate"
 	}
 
 	DesertDandelion: {
 		DisplayName: Desert Dandelion
-		Tooltip: ""
+		Tooltip: "Shoots dandelion spores that explode after a while"
 	}
 
 	Dynasty: {
@@ -247,14 +258,15 @@ Items: {
 
 	Infinity: {
 		DisplayName: Infinity
-		Tooltip: Doesn't Consume Ammo
+		Tooltip: Cannot consume ammo
 	}
 
 	Kohm: {
 		DisplayName: Kohm
 		Tooltip:
 			'''
-			Fire rate increases up to 80% while using this weapon, bonus is lost when you stop firing
+			Firerate increases up to 80% while using the weapon
+			The firerate bonus is lost when you stop firing
 			66% Chance to not consume ammo
 			'''
 	}
@@ -280,7 +292,7 @@ Items: {
 
 	PainTrain: {
 		DisplayName: Pain Train
-		Tooltip: Press "Weapon Ability Hotkey" to release steam, which increases fire rate but lowers defense
+		Tooltip: Press "Weapon Ability Hotkey" to release steam, which overclocks the gun but lowers defense
 	}
 
 	PortableCannon: {
@@ -289,53 +301,56 @@ Items: {
 	}
 
 	ShotRevolver: {
-		DisplayName: Shot Revolver
-		Tooltip: ""
-	}
-
-	SoulStrike: {
-		DisplayName: Soul Strike
-		Tooltip: ""
+		DisplayName: Cowboy Slinger
+		Tooltip:
+			'''
+			Throws guns that shoot at enemies
+			'When you're out of options...'
+			'''
 	}
 
 	TommyGun: {
-		DisplayName: Tommy Gun
+		DisplayName: M1A1 Thompson
 		Tooltip: ""
 	}
 
 	TortoiseCannon: {
 		DisplayName: Tortoise Cannon
-		Tooltip: ""
+		Tooltip: "Charges up tortoises"
 	}
 
 	WindSong: {
 		DisplayName: Wind Song
-		Tooltip: ""
+		Tooltip: "Fires enchanted air bolts from behind the player"
 	}
 
 	EmeraldSlate: {
 		DisplayName: Emerald Slate
 		Tooltip:
 			'''
-			Summon an Emerald Barrier to protect you
-			The Barrier will shield you for 1 attack, after it will explode into glass shards
-			8 Second Cooldown
+			Summon an Emerald Shield to protect you
+			The shield will block you for 1 attack, exploding into energy shards
+			8 second cooldown
 			'''
 	}
 
 	JellyUmbrella: {
 		DisplayName: Jelly Umbrella
-		Tooltip: ""
+		Tooltip: "Summons an electric spirit jelly to fight for you"
 	}
 
 	RatInterphone: {
 		DisplayName: Rat Interphone
-		Tooltip: ""
+		Tooltip: "Summons Shook to fight for you"
 	}
 
 	SusStaff: {
 		DisplayName: Sus Staff
-		Tooltip: ""
+		Tooltip:
+			'''
+			Summons a Servant of Cthulhu to fight for you
+			'BOOM BOOM. Ding ding ding ding ding ding ding. Ding-ding-ding.'
+			'''
 	}
 
 	Amalgam: {
@@ -365,7 +380,7 @@ Items: {
 		Tooltip:
 			'''
 			Bumblecore
-			Shooting occasionally spawns additional bees.
+			Occasionally spawns bees.
 			'''
 	}
 
@@ -382,14 +397,14 @@ Items: {
 		DisplayName: Diplopia
 		Tooltip:
 			'''
-			Your seeing double!
+			You're seeing double!
 			Ore drops are now doubled!
 			'''
 	}
 
 	ElectricCrystal: {
 		DisplayName: Electro Crystal
-		Tooltip: Weapons have a chance to inflict electrified against enemies
+		Tooltip: Weapons have a chance to inflict Electrified against enemies
 	}
 
 	FriendshipBracelet: {
@@ -422,7 +437,7 @@ Items: {
 		Tooltip:
 			'''
 			!BUGGED CURRENNTLY!
-			: +50% damage against bosses, -50% against everything else... unless your a vampire
+			: +50% damage against bosses, -50% against everything else... unless you're a vampire
 			'''
 	}
 
@@ -510,7 +525,7 @@ Items: {
 		Tooltip:
 			'''
 			Armor of Solaire of Astora, Knight of Sunlight
-			+10% Melee Crit Chance
+			+10% melee crit chance
 			'''
 	}
 
@@ -519,7 +534,7 @@ Items: {
 		Tooltip:
 			'''
 			Leggings of Solaire of Astora, Knight of Sunlight
-			+10% Melee Speed
+			+10% melee speed
 			'''
 	}
 
@@ -528,23 +543,23 @@ Items: {
 		Tooltip:
 			'''
 			Helm of Solaire of Astora, Knight of Sunlight
-			+4% Melee Damage
+			+4% melee damage
 			'''
 	}
 
 	OnionKnightArmor: {
 		DisplayName: Onion Knight Armor
-		Tooltip: 10% Increased melee damage
+		Tooltip: 10% increased melee damage
 	}
 
 	OnionKnightHelm: {
 		DisplayName: Onion Knight Helm
-		Tooltip: 6% Increased melee damage and crit chance
+		Tooltip: 6% increased melee damage and crit chance
 	}
 
 	OnionKnightLeggings: {
 		DisplayName: Onion Knight Leggings
-		Tooltip: 10% Increased melee damage
+		Tooltip: 10% increased melee damage
 	}
 
 	DandukeMask: {
@@ -911,7 +926,7 @@ Items: {
 
 	CalobogusAle: {
 		DisplayName: Calobogus Ale
-		Tooltip: You feel tipsy, and satisfied?
+		Tooltip: You feel tipsy, and satisfied
 	}
 
 	Fireball: {
@@ -931,12 +946,12 @@ Items: {
 
 	RyeWhiskey: {
 		DisplayName: Rye Whiskey
-		Tooltip: Increases summon damage by 10%, but your grounded
+		Tooltip: Increases summon damage by 10%, but you're grounded
 	}
 
 	WildWestCocktail: {
 		DisplayName: Wild West Cocktail
-		Tooltip: Increases ranged damage by 10%, but your less resistant
+		Tooltip: Increases ranged damage by 10%, but you're less resistant
 	}
 
 	CharcoalPineResin: {
@@ -978,22 +993,22 @@ Items: {
 	}
 
 	EnchantedSandstoneItem: {
-		DisplayName: Enchanted Sandstone Item
+		DisplayName: Enchanted Sandstone
 		Tooltip: ""
 	}
 
 	EnchantedSandstoneWallItem: {
-		DisplayName: Enchanted Sandstone Wall Item
+		DisplayName: Enchanted Sandstone Wall
 		Tooltip: ""
 	}
 
 	QueenRelicItem: {
-		DisplayName: Queen Relic Item
+		DisplayName: Queen Relic
 		Tooltip: ""
 	}
 
 	QueenTrophyItem: {
-		DisplayName: Queen Trophy Item
+		DisplayName: Queen Trophy
 		Tooltip: ""
 	}
 
@@ -1027,7 +1042,7 @@ Items: {
 
 	Chikage: {
 		DisplayName: Chikage
-		Tooltip: Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost to this weapons stats
+		Tooltip: Press "Weapon Ability Hotkey" to stab yourself and gain a massive boost
 	}
 
 	AnvilStaff: {
@@ -1057,23 +1072,26 @@ Items: {
 
 	CRTGun: {
 		DisplayName: Binary Blaster
-		Tooltip: ""
+		Tooltip: 
+			'''
+			Fires a stream of zeroes and ones that overloads struck enemies, causing them to lag
+			Overuse has a tendency to cause lag on the user's end
+			'''
 	}
 
 	DarkDawn: {
 		DisplayName: The Dark Dawn
 		Tooltip:
 			'''
-			Manual: Hold [c/3fd1a0:Left Click] to enable [c/ff6a00:Solar Eclipse].
-			[c/ff6a00:Solar Eclipse:] Nearby enemies are receiving additional by [c/ff6a00:Eclipse Fire].
-			[c/ff6a00:Eclipse Fire:] While damaging, [c/ff6a00:Eclipse Fire] generates [c/ff6a00:Sun Energy].
-			[c/ff6a00:Sun Energy:] [c/3fd1a0:Right Click] to release your [c/ff6a00:Sun Energy]
+			Manual: Hold [c/3fd1a0:Left Click] to enable the [c/ff6a00:Solar Eclipse].
+			[c/ff6a00:Solar Eclipse:] Nearby enemies are inflicted with [c/ff6a00:Eclipse Fire].
+			[c/ff6a00:Eclipse Fire:] While damaging, [c/ff6a00:Eclipse Fire] generates [c/ff6a00:Solar Energy].
+			[c/ff6a00:Solar Energy:] [c/3fd1a0:Right Click] to release your [c/ff6a00:Solar Energy]
 			and summon the [c/ff6a00:Falling Sun].
-			[c/ff6a00:Falling Sun:]Sun is falling slowly at your enemies, deals additional damage while hitting them. 
-			Keep Note: [c/ff6a00:Falling Sun] reduces its falling speed when touches the target.
-			Forbidden magic book that wreaks havoc everywhere.
-			It was lost in the ancient era.
-			When you holding the book, you hear the whispers, that says:
+			[c/ff6a00:Falling Sun:] Falls slowly at your enemies, dealing damage while hitting them. 
+			Keep Note: [c/ff6a00:Falling Sun] reduces its falling speed when hitting a target.
+			A forbidden magic book that wreaks havoc everywhere, it was lost in an ancient era.
+			When holding the book, you hear the whispers:
 			[c/ff6a00:You...Must...Destroy...DESTROY!]
 			'''
 		DarkDawnDamage: ""
@@ -1274,16 +1292,16 @@ Projectiles: {
 	RatKingMeteor.DisplayName: Rat King Meteor
 	RatKingMoonSlash.DisplayName: Rat King Moon Slash
 	RatKingMoonSlash2.DisplayName: Rat King Moon Slash2
-	OperationOutbreakHeld.DisplayName: Operation Outbreak Held
-	PrimeBeam.DisplayName: Prime Beam
+	OperationOutbreakHeld.DisplayName: Outbreak Prime
+	PrimeBeam.DisplayName: Outbreak Prime
 	Beam.DisplayName: Beam
 	BallOfLight.DisplayName: Ball Of Light
 	Cheese.DisplayName: Cheese
 	CheeseRelease.DisplayName: Cheese Release
 	Cheese2.DisplayName: Cheese2
 	ChainChompFace.DisplayName: Chain Chomp Face
-	SOFT.DisplayName: S O F T
-	CRTBlast.DisplayName: C R T Blast
+	SOFT.DisplayName: Sword of the Father
+	CRTBlast.DisplayName: CRT Blast
 	DarkDawnProjEclipseFire.DisplayName: Dark Dawn Proj Eclipse Fire
 	DarkDawnProjFuckingSun.DisplayName: Dark Dawn Proj Fucking Sun
 	LightningKnifeProjectile.DisplayName: Lightning Knife Projectile
@@ -1292,12 +1310,15 @@ Projectiles: {
 	BunnyBomb.DisplayName: Bunny Bomb
 	JermaSlash.DisplayName: Jerma Slash
 	Rose.DisplayName: Rose
+	NatureTentacle.DisplayName: Nature Tentacle
+	SoulTentacle.DisplayName: Soul Tentacle
+	SpaceRay.DisplayName: Space Ray
 }
 
 Buffs: {
 	ArmamentCooldown: {
 		DisplayName: Ability Cooldown
-		Description: You are unable to unleash your weapons ability
+		Description: You are unable to unleash your weapon's ability
 	}
 
 	Bones: {
@@ -1354,8 +1375,8 @@ Buffs: {
 		DisplayName: Conductor
 		Description:
 			'''
-			While holding pain train, increased fire rate and crit chance but halved defense
-			This buff will be removed if your not holding pain train
+			Overclocks the Pain Train at the cost of defense
+			This buff will be removed if you're not holding the Pain Train
 			'''
 	}
 
@@ -1458,12 +1479,18 @@ Buffs: {
 		DisplayName: Pick Up Fix
 		Description: Mods.Conquest.Buffs.PickUpFix.Description
 	}
+
+	Lag: {
+		DisplayName: Lag
+		Description: You are lagging out!
+	}
 }
 
 Keybinds: {
 	"Legendary Armament Activation.DisplayName": Legendary  Armament  Activation
 	"Hunny Pot Activation.DisplayName": Hunny  Pot  Activation
 	"Cursed Trident Activation.DisplayName": Cursed  Trident  Activation
+	"Reload Weapon.DisplayName": Reload  Weapon
 }
 
 Tiles.QueenLarva2.MapEntry: Queen Larva2
@@ -1522,7 +1549,7 @@ NPCs: {
 
 	RatKingBoss.DisplayName: Rat King Boss
 	Mouse.DisplayName: Rat Prince
-	CRTZombie.DisplayName: C R T Zombie
+	CRTZombie.DisplayName: CRT Zombie
 	Apep.DisplayName: Apep
 	ApepBodyBast.DisplayName: Apep Body Bast
 	ApepBodyFess.DisplayName: Apep Body Fess
