@@ -11,11 +11,9 @@ using Terraria.ModLoader.Utilities;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
-using Conquest;
 using Conquest;
 using Mono.Cecil;
 using System.Security.Cryptography.X509Certificates;
@@ -49,7 +47,7 @@ namespace Conquest.NPCs.Apep
 		static int head = NPCHeadLoader.GetBossHeadSlot($"{nameof(Conquest)}/NPCs/Apep/Apepicon");
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if ((SpawnCondition.Underworld.Chance > 0) && Main.zenithWorld && (NPC.CountNPCS(ModContent.NPCType<Apep>()) == 0)) return 0.001f;
+            if ((SpawnCondition.Underworld.Chance > 0) && (NPC.CountNPCS(ModContent.NPCType<Apep>()) == 0)) return 0.001f;
 			else return 0f;
 			
 		}

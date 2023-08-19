@@ -11,7 +11,7 @@ using Terraria;
 
 namespace Conquest.Assets.GUI
 {
-    public class SoundlessButton : UIElement
+    public class SoundlessButton : CQUIElement
     {
         private Asset<Texture2D> _texture;
 
@@ -21,43 +21,33 @@ namespace Conquest.Assets.GUI
 
         private Asset<Texture2D> _borderTexture;
 
-        public SoundlessButton(Asset<Texture2D> texture)
-        {
+        public bool hoverOverride = false;
+
+        public SoundlessButton(Asset<Texture2D> texture) =>
             _texture = texture;
+
+        public void SetHoverImage(Asset<Texture2D> texture) =>
+            _borderTexture = texture;
+
+        public void BindTextureSize() {
             Width.Set(_texture.Width(), 0f);
             Height.Set(_texture.Height(), 0f);
         }
-
-        public void SetHoverImage(Asset<Texture2D> texture)
-        {
-            _borderTexture = texture;
-        }
-
         public void SetImage(Asset<Texture2D> texture)
         {
             _texture = texture;
-            Width.Set(_texture.Width(), 0f);
-            Height.Set(_texture.Height(), 0f);
+            BindTextureSize();
         }
 
         protected override void DrawSelf(SpriteBatch spriteBatch)
         {
+            base.DrawSelf(spriteBatch);
             CalculatedStyle dimensions = GetDimensions();
             spriteBatch.Draw(_texture.Value, dimensions.Position(), Color.White * (base.IsMouseHovering ? _visibilityActive : _visibilityInactive));
-            if (_borderTexture != null && base.IsMouseHovering)
+            if (_borderTexture != null && (IsMouseHovering || hoverOverride))
             {
                 spriteBatch.Draw(_borderTexture.Value, dimensions.Position(), Color.White);
             }
-        }
-
-        public override void MouseOver(UIMouseEvent evt)
-        {
-            base.MouseOver(evt);
-        }
-
-        public override void MouseOut(UIMouseEvent evt)
-        {
-            base.MouseOut(evt);
         }
 
         public void SetVisibility(float whenActive, float whenInactive)

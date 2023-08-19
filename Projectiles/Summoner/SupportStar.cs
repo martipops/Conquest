@@ -45,7 +45,7 @@ namespace Conquest.Projectiles.Summoner
                 player.ClearBuff(ModContent.BuffType<StarSpirit>());
 
             }
-            if(T1.p7On != true)
+            if(ETData.etPoints[0][6].unlocked != true)
             {
                 Projectile.Kill();
             }
@@ -164,3 +164,4 @@ namespace Conquest.Projectiles.Summoner
     }
 
 }
+

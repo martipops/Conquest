@@ -52,7 +52,6 @@ namespace Conquest.Assets.GUI
             t1Img = new UIImage(ModContent.Request<Texture2D>("Conquest/Assets/GUI/T1"));
 
             SetRectangle(t1Img, left: 320f, top: 0f, width: 384f, height: 384f);
-
             Append(t1Elmt);
             t1Elmt.Append(t1Img);
 
@@ -543,48 +542,5 @@ namespace Conquest.Assets.GUI
         }
     }
 
-    internal class ETPoint : SoundlessButton
-    {
-        internal string etPHv;
-        public ETPoint(Asset<Texture2D> texture, string hoverText) : base(texture)
-        {
-            this.etPHv = hoverText;
-        }
-    }
-    class T1UISystem : ModSystem
-    {
-        private UserInterface t1Itfc;
 
-        internal T1 eT1;
-        public override void Load()
-        {
-            if (!Main.dedServ)
-            {
-                eT1 = new();
-                t1Itfc = new();
-                t1Itfc.SetState(eT1);
-            }
-        }
-        public override void UpdateUI(GameTime gameTime)
-        {
-            t1Itfc?.Update(gameTime);
-        }
-        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
-        {
-            int etIdx = layers.FindIndex(layer => layer.Name.Equals("Conquest: EightTrigrams")) + 1;
-            if (etIdx != -1)
-            {
-                layers.Insert(etIdx, new LegacyGameInterfaceLayer(
-                    "Conquest: Trigram1",
-                    delegate
-                    {
-                        t1Itfc.Draw(Main.spriteBatch, new GameTime());
-                        return true;
-                    },
-                    InterfaceScaleType.UI
-                    )
-                );
-            }
-        }
-    }
 }

@@ -13,6 +13,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Conquest.Assets.GUI.ETData;
 
 namespace Conquest.Assets.Common
 {
@@ -24,7 +25,7 @@ namespace Conquest.Assets.Common
         public override bool InstancePerEntity => true;
         public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
         {
-            if (T1.p6On == true && projectile.DamageType == DamageClass.Magic)
+            if (etPoints[0][5].unlocked == true && projectile.DamageType == DamageClass.Magic)
             {
                 projectile.GetGlobalProjectile<MyProjectile>().bombOnKill = true;
             }
@@ -32,7 +33,7 @@ namespace Conquest.Assets.Common
         }
         public override void AI(Projectile projectile)
         {
-            if (T1.p3On == true && projectile.DamageType == DamageClass.Magic)
+            if (etPoints[0][2].unlocked == true && projectile.DamageType == DamageClass.Magic)
             {
                 projectile.GetGlobalProjectile<MyProjectile>().manaOnKill = true;
             }
@@ -41,7 +42,7 @@ namespace Conquest.Assets.Common
         public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
             Player player = Main.player[projectile.owner];
-            if (T3.p27On == true && projectile.DamageType == DamageClass.Ranged && projectile.type != ProjectileID.MolotovCocktail && projectile.type != ProjectileID.MolotovFire && projectile.type != ProjectileID.MolotovFire2 && projectile.type != ProjectileID.MolotovFire3)
+            if (etPoints[2][6].unlocked == true && projectile.DamageType == DamageClass.Ranged && projectile.type != ProjectileID.MolotovCocktail && projectile.type != ProjectileID.MolotovFire && projectile.type != ProjectileID.MolotovFire2 && projectile.type != ProjectileID.MolotovFire3)
             {
                 if (Main.rand.NextFloat() >= 0.9f)
                 {

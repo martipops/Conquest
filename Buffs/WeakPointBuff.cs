@@ -30,7 +30,7 @@ namespace Conquest.Buffs {
                 }
             }
 
-            if (!T3.p24On) {
+            if (!ETData.etPoints[2][3].unlocked) {
                 player.DelBuff(buffIndex);
                 buffIndex--;
             }

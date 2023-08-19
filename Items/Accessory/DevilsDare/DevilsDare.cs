@@ -10,7 +10,6 @@ using Terraria.DataStructures;
 using Terraria.GameContent;
 using Conquest;
 using System.Collections.Generic;
-using Conquest;
 using Mono.Cecil;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;

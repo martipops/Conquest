@@ -18,6 +18,8 @@ using Conquest.Projectiles.Melee;
 using Conquest.Projectiles;
 using Conquest.Projectiles.Ranged;
 using Conquest.NPCs.Bosses.RatKing;
+using static Conquest.Assets.GUI.ETData;
+
 
 namespace Conquest.Assets.Common
 {
@@ -124,21 +126,21 @@ namespace Conquest.Assets.Common
                     Terraria.Dust.NewDust(Player.position, 32, 48, DustID.GreenFairy);
                 }
             }
-            if (NPC.downedBoss1 == true && EightTrigrams.tMaxLoad < 6)
+            if (NPC.downedBoss1 == true && tMaxLoad < 6)
             {
-                EightTrigrams.tMaxLoad = 6;
+                tMaxLoad = 6;
             }
-            if (Main.hardMode == true && EightTrigrams.tMaxLoad < 10)
+            if (Main.hardMode == true && tMaxLoad < 10)
             {
-                EightTrigrams.tMaxLoad = 10;
+                tMaxLoad = 10;
             }
-            if (NPC.downedPlantBoss == true && EightTrigrams.tMaxLoad < 18)
+            if (NPC.downedPlantBoss == true && tMaxLoad < 18)
             {
-                EightTrigrams.tMaxLoad = 18;
+                tMaxLoad = 18;
             }
-            if (NPC.downedMoonlord == true && EightTrigrams.tMaxLoad < 24)
+            if (NPC.downedMoonlord == true && tMaxLoad < 24)
             {
-                EightTrigrams.tMaxLoad = 24;
+                tMaxLoad = 24;
             }
             if (NPC.AnyNPCs(ModContent.NPCType<RatKingBoss>()))
             {
@@ -155,21 +157,21 @@ namespace Conquest.Assets.Common
 
         public override void PostUpdateEquips()
         {
-            if (T6.p37On == true)
+            if (etPoints[5][6].unlocked == true)
             {
                 Player.GetDamage<SummonDamageClass>() *= 1f + (Player.maxMinions * 0.02f + Player.maxTurrets * 0.04f);
                 Player.GetDamage<SummonMeleeSpeedDamageClass>() *= 1f + (Player.maxMinions * 0.02f + Player.maxTurrets * 0.04f);
             }
-            if (T6.p33On == true)
+            if (etPoints[5][2].unlocked == true)
             {
                 Player.maxMinions += 2;
             }
-            if (T6.p35On == true)
+            if (etPoints[5][4].unlocked == true)
             {
                 Player.maxMinions += (int)(Player.statManaMax2 / 100);
                 Player.maxTurrets += (int)(Player.maxMinions / 4);
             }
-            if (T6.p31On)
+            if (etPoints[5][0].unlocked)
             {
 
                 Player.GetDamage(DamageClass.Summon) += 0.02f;
@@ -178,173 +180,34 @@ namespace Conquest.Assets.Common
 
 
         }
+
         public override void SaveData(TagCompound tag)
         {
-            tag.Add("TLoad", EightTrigrams.tLoad);
-
+            tag.Add("TLoad", tLoad);
 
             if (Player.GetModPlayer<MyPlayer>().immune == true)
             {
                 tag.Add("immune", Player.GetModPlayer<MyPlayer>().immune);
 
             }
-            if (T1.p1On == true)
-            {
-                tag.Add("isP1On", T1.p1On);
-            }
-            if (T1.p2On == true)
-            {
-                tag.Add("isP2On", T1.p2On);
-            }
-            if (T1.p3On == true)
-            {
-                tag.Add("isP3On", T1.p3On);
-            }
-            if (T1.p4On == true)
-            {
-                tag.Add("isP4On", T1.p4On);
-            }
-            if (T1.p5On == true)
-            {
-                tag.Add("isP5On", T1.p5On);
-            }
-            if (T1.p6On == true)
-            {
-                tag.Add("isP6On", T1.p6On);
-            }
-            if (T1.p7On == true)
-            {
-                tag.Add("isP7On", T1.p7On);
-            }
 
-            if (T8.p11On == true)
-            {
-                tag.Add("isP11On", T8.p11On);
-            }
-            if (T8.p12On == true)
-            {
-                tag.Add("isP12On", T8.p12On);
-            }
-            if (T8.p13On == true)
-            {
-                tag.Add("isP13On", T8.p13On);
-            }
-            if (T8.p14On == true)
-            {
-                tag.Add("isP14On", T8.p14On);
-            }
-            if (T8.p15On == true)
-            {
-                tag.Add("isP15On", T8.p15On);
-            }
-            if (T8.p16On == true)
-            {
-                tag.Add("isP16On", T8.p16On);
-            }
-            if (T8.p17On == true)
-            {
-                tag.Add("isP17On", T8.p17On);
-            }
+            foreach (PointData[] pointList in etPoints)
+                foreach (PointData point in pointList)
+                    tag.Add(point.keyName, point.unlocked);
 
-            if (T3.p21On == true)
-            {
-                tag.Add("isP21On", T3.p21On);
-            }
-            if (T3.p22On == true)
-            {
-                tag.Add("isP22On", T3.p22On);
-            }
-            if (T3.p23On == true)
-            {
-                tag.Add("isP23On", T3.p23On);
-            }
-            if (T3.p24On == true)
-            {
-                tag.Add("isP24On", T3.p24On);
-            }
-            if (T3.p25On == true)
-            {
-                tag.Add("isP25On", T3.p25On);
-            }
-            if (T3.p26On == true)
-            {
-                tag.Add("isP26On", T3.p26On);
-            }
-            if (T3.p27On == true)
-            {
-                tag.Add("isP27On", T3.p27On);
-            }
-
-            if (T6.p31On == true)
-            {
-                tag.Add("isP31On", T6.p31On);
-            }
-            if (T6.p32On == true)
-            {
-                tag.Add("isP32On", T6.p32On);
-            }
-            if (T6.p33On == true)
-            {
-                tag.Add("isP33On", T6.p33On);
-            }
-            if (T6.p34On == true)
-            {
-                tag.Add("isP34On", T6.p34On);
-            }
-            if (T6.p35On == true)
-            {
-                tag.Add("isP35On", T6.p35On);
-            }
-            if (T6.p36On == true)
-            {
-                tag.Add("isP36On", T6.p36On);
-            }
-            if (T6.p37On == true)
-            {
-                tag.Add("isP37On", T6.p37On);
-            }
         }
         public override void LoadData(TagCompound tag)
         {
-            EightTrigrams.tLoad = tag.GetInt("TLoad");
+            tLoad = tag.GetInt("TLoad");
 
             Player.GetModPlayer<MyPlayer>().immune = tag.GetBool("immune");
 
-            T1.p1On = tag.GetBool("isP1On");
-            T1.p2On = tag.GetBool("isP2On");
-            T1.p3On = tag.GetBool("isP3On");
-            T1.p4On = tag.GetBool("isP4On");
-            T1.p5On = tag.GetBool("isP5On");
-            T1.p6On = tag.GetBool("isP6On");
-            T1.p7On = tag.GetBool("isP7On");
-
-            T8.p11On = tag.GetBool("isP11On");
-            T8.p12On = tag.GetBool("isP12On");
-            T8.p13On = tag.GetBool("isP13On");
-            T8.p14On = tag.GetBool("isP14On");
-            T8.p15On = tag.GetBool("isP15On");
-            T8.p16On = tag.GetBool("isP16On");
-            T8.p17On = tag.GetBool("isP17On");
-
-            T3.p21On = tag.GetBool("isP21On");
-            T3.p22On = tag.GetBool("isP22On");
-            T3.p23On = tag.GetBool("isP23On");
-            T3.p24On = tag.GetBool("isP24On");
-            T3.p25On = tag.GetBool("isP25On");
-            T3.p26On = tag.GetBool("isP26On");
-            T3.p27On = tag.GetBool("isP27On");
-
-            T6.p31On = tag.GetBool("isP31On");
-            T6.p32On = tag.GetBool("isP32On");
-            T6.p33On = tag.GetBool("isP33On");
-            T6.p34On = tag.GetBool("isP34On");
-            T6.p35On = tag.GetBool("isP35On");
-            T6.p36On = tag.GetBool("isP36On");
-            T6.p37On = tag.GetBool("isP37On");
-
-            //    Player.GetModPlayer<ETControl>().onShield = false;
+            for (int i = 0; i < etPoints.Length; i++)
+                for (int j = 0; j < etPoints[i].Length; j++)
+                    etPoints[i][j].unlocked = tag.GetBool(etPoints[i][j].keyName);
 
         }
+
         bool rez;
         public override bool FreeDodge(Player.HurtInfo info)
         {
@@ -354,7 +217,7 @@ namespace Conquest.Assets.Common
                 Player.GetModPlayer<MyPlayer>().emeraldBoom = true;
                 return true;
             }
-            if (T8.p15On == true && info.Damage >= Player.statLife && info.Damage < Player.statLife + Player.GetModPlayer<MyPlayer>().lostLife)
+            if (etPoints[7][4].unlocked == true && info.Damage >= Player.statLife && info.Damage < Player.statLife + Player.GetModPlayer<MyPlayer>().lostLife)
             {
                 Player.GetModPlayer<MyPlayer>().lostLife -= info.Damage;
 
@@ -363,7 +226,7 @@ namespace Conquest.Assets.Common
 
                 return true;
             }
-            if (T6.p34On == true && info.Damage >= Player.statLife && Player.GetModPlayer<MyPlayer>().immune == true && !rez)
+            if (etPoints[5][3].unlocked == true && info.Damage >= Player.statLife && Player.GetModPlayer<MyPlayer>().immune == true && !rez)
             {
                 rez = true;
                 Player.GetModPlayer<MyPlayer>().summonCD = 1000;
@@ -471,25 +334,25 @@ namespace Conquest.Assets.Common
             {
                 Player.ClearBuff(ModContent.BuffType<ChikageBuff>());
             }
-            if (T1.p1On == true)
+            if (etPoints[0][0].unlocked == true)
             {
                 Player.GetDamage(DamageClass.Magic) += 0.02f;
                 //Player.statManaMax2 += 20;
             }
-            if (T1.p4On == true)
+            if (etPoints[0][3].unlocked == true)
             {
                 Player.GetDamage(DamageClass.Magic) += (float)Player.statMana / 1000;
             }
-            if (T3.p21On == true)
+            if (etPoints[2][0].unlocked == true)
             {
                 Player.GetDamage(DamageClass.Ranged) += 0.02f;
                 Player.GetCritChance(DamageClass.Generic) += 0.02f;
             }
-            if (T3.p25On == true)
+            if (etPoints[2][4].unlocked == true)
             {
                 Player.GetCritChance(DamageClass.Ranged) += 10f;
             }
-            if (T3.p22On == true)
+            if (etPoints[2][1].unlocked == true)
             {
                 if (Player.HeldItem.DamageType == DamageClass.Ranged)
                 {
@@ -513,7 +376,7 @@ namespace Conquest.Assets.Common
                     Player.GetModPlayer<MyPlayer>().unshootingTime = 0;
                 }
             }
-            if (T3.p23On == true && Player.HeldItem.DamageType == DamageClass.Ranged)
+            if (etPoints[2][2].unlocked == true && Player.HeldItem.DamageType == DamageClass.Ranged)
             {
                 /*
                 if (Player.controlUseItem)
@@ -523,16 +386,16 @@ namespace Conquest.Assets.Common
                 */
                 /// what??????
             }
-            if (item.useTime >= 35 && item.DamageType.CountsAsClass(DamageClass.Ranged) && T3.p26On)
+            if (item.useTime >= 35 && item.DamageType.CountsAsClass(DamageClass.Ranged) && etPoints[2][5].unlocked)
             {
                 Player.GetDamage(DamageClass.Ranged) += 0.25f;
             }
 
-            if (T6.p32On)
+            if (etPoints[5][1].unlocked)
             {
                 Player.GetDamage(DamageClass.Summon).Flat += 2;
             }
-            if (T8.p16On == true)
+            if (etPoints[7][5].unlocked == true)
             {
                 if (Player.statLife >= Player.statLifeMax2 / 4)
                 {
@@ -545,7 +408,7 @@ namespace Conquest.Assets.Common
                 }
             }
 
-            if (T8.p17On == true)
+            if (etPoints[7][6].unlocked == true)
             {
                 Player.GetModPlayer<MyPlayer>().exLifeRegen = (int)(Player.statLifeMax2 / 25f);
 
@@ -563,11 +426,11 @@ namespace Conquest.Assets.Common
                     }
                 }
             }
-            if (T8.p12On == true)
+            if (etPoints[7][1].unlocked == true)
             {
                 Player.GetAttackSpeed(DamageClass.Melee) += exMeleeSpeed;
             }
-            if (T8.p14On == true)
+            if (etPoints[7][3].unlocked == true)
             {
                 if (Player.velocity.Y > 0)
                 {
@@ -579,11 +442,11 @@ namespace Conquest.Assets.Common
                 }
             }
 
-            if (T8.p11On == true)
+            if (etPoints[7][0].unlocked == true)
             {
                 Player.GetDamage(DamageClass.Melee) += 0.02f;
             }
-            if (T6.p34On == true && Player.HeldItem.DamageType == DamageClass.Summon && Player.GetModPlayer<MyPlayer>().summonCD <= 0)
+            if (etPoints[5][3].unlocked == true && Player.HeldItem.DamageType == DamageClass.Summon && Player.GetModPlayer<MyPlayer>().summonCD <= 0)
             {
                 if (Player.controlUseItem)
                 {
@@ -610,7 +473,7 @@ namespace Conquest.Assets.Common
         }
         public override void PostUpdateMiscEffects()
         {
-            if (T8.p11On == true)
+            if (etPoints[7][0].unlocked == true)
             {
                 Player.statLifeMax2 += 20;
             }
@@ -655,7 +518,7 @@ namespace Conquest.Assets.Common
         }
         public override void OnHurt(Player.HurtInfo info)
         {
-            if (T8.p15On == true && info.Damage < Player.statLife)
+            if (etPoints[7][4].unlocked == true && info.Damage < Player.statLife)
             {
                 {
                     Player.GetModPlayer<MyPlayer>().lostLife += (int)info.Damage;
@@ -766,11 +629,11 @@ namespace Conquest.Assets.Common
                 timer = 0;
                 stop = false;
             }
-            if (T1.p7On == true && !Player.HasBuff<StarSpirit>())
+            if (etPoints[0][6].unlocked == true && !Player.HasBuff<StarSpirit>())
             {
                 Player.AddBuff(ModContent.BuffType<StarSpirit>(), 999);
             }
-            if (T3.p24On)
+            if (etPoints[2][3].unlocked)
             {
                 Player.AddBuff(ModContent.BuffType<WeakPointBuff>(), 900);
             }
@@ -854,7 +717,7 @@ namespace Conquest.Assets.Common
 
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (T8.p12On == true)
+            if (etPoints[7][1].unlocked == true)
             {
                 if (item.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee <= 5)
                 {
@@ -872,11 +735,11 @@ namespace Conquest.Assets.Common
                     exMeleeSpeed = target.GetGlobalNPC<MyNpc>().speedMelee * target.GetGlobalNPC<MyNpc>().speedMelee / 100;
                 }
             }
-            if (T8.p13On == true)
+            if (etPoints[7][2].unlocked == true)
             {
                 Player.GetModPlayer<MyPlayer>().blocking = true;
             }
-            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
+            if (etPoints[7][4].unlocked == true && Player.GetModPlayer<MyPlayer>().lostLife > 0)
             {
                 Player.GetModPlayer<MyPlayer>().lostLifeRegen = hit.Damage / 50;
                 if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
@@ -899,11 +762,11 @@ namespace Conquest.Assets.Common
         int fired;
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (T1.p2On == true && proj.DamageType == DamageClass.Magic)
+            if (etPoints[0][1].unlocked == true && proj.DamageType == DamageClass.Magic)
             {
                 target.AddBuff(BuffID.OnFire, 60, false);
             }
-            if (T8.p12On == true)
+            if (etPoints[7][1].unlocked == true)
             {
                 if (proj.DamageType == DamageClass.Melee && target.GetGlobalNPC<MyNpc>().speedMelee <= 5)
                 {
@@ -925,7 +788,7 @@ namespace Conquest.Assets.Common
             {
                 target.AddBuff(BuffID.Midas, 60 * 5);
             }
-            if (T8.p15On == true && Player.GetModPlayer<MyPlayer>().lostLife > 0 && proj.DamageType == DamageClass.Melee)
+            if (etPoints[7][4].unlocked == true && Player.GetModPlayer<MyPlayer>().lostLife > 0 && proj.DamageType == DamageClass.Melee)
             {
                 Player.GetModPlayer<MyPlayer>().lostLifeRegen = proj.damage / 100;
                 if (Player.GetModPlayer<MyPlayer>().lostLifeRegen > 10)
@@ -965,11 +828,11 @@ namespace Conquest.Assets.Common
         }
         public override void ModifyHitByProjectile(Projectile proj, ref Player.HurtModifiers modifiers)
         {
-            if (T1.p5On == true)
+            if (etPoints[0][4].unlocked == true)
             {
                 Player.statMana += (int)(proj.damage * 0.25);
             }
-            if (T8.p13On == true && Player.GetModPlayer<MyPlayer>().blocking == true)
+            if (etPoints[7][2].unlocked == true && Player.GetModPlayer<MyPlayer>().blocking == true)
             {
                 if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 4 >= proj.damage / 2)
                 {
@@ -983,7 +846,7 @@ namespace Conquest.Assets.Common
         }
         public override void ModifyHitByNPC(NPC npc, ref Player.HurtModifiers modifiers)
         {
-            if (T8.p13On == true && Player.GetModPlayer<MyPlayer>().blocking == true)
+            if (etPoints[7][2].unlocked == true && Player.GetModPlayer<MyPlayer>().blocking == true)
             {
                 if (Player.HeldItem.DamageType == DamageClass.Melee && Player.HeldItem.damage / 2 >= npc.damage * 0.75)
                 {
@@ -1018,13 +881,13 @@ namespace Conquest.Assets.Common
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (T6.p32On == true && proj.DamageType == DamageClass.Summon)
+            if (etPoints[5][1].unlocked == true && proj.DamageType == DamageClass.Summon)
             {
                 if (Main.rand.NextFloat() >= 0.9)
                     proj.damage += (int)(proj.damage * 0.5f);
             }
 
-            if (T6.p36On == true && proj.DamageType == DamageClass.Summon)
+            if (etPoints[5][5].unlocked == true && proj.DamageType == DamageClass.Summon)
             {
                 target.GetGlobalNPC<MyNpc>().minionMark += 1;
                 if (target.GetGlobalNPC<MyNpc>().minionMark >= 4)
